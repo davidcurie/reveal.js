@@ -1,0 +1,228 @@
+<!--decks/software_carpentry/guide.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Software Carpentry Guide</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+        <link
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <!-- ... -->
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>Software Carpentry</h2>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review Slide-->
+                    <h3>Overview</h3>
+                    <section> <!-- New subsection -->
+                        <h4 style="color:red">Unix Shell</h4>
+                        <ul>
+                            <li>Files and Directories</li>
+                            <li>History and Tab Completion</li>
+                            <li>Pipes and Redirection</li>
+                            <li>Looping Over Files</li>
+                            <li>Creating and Running Shell Scripts</li>
+                            <li>Finding Things</li>
+                            <li><a href="https://swcarpentry.github.io/shell-novice/reference/">Reference...</a></li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h4 style="color:red">Version Control with Git</h4>
+                        <ul>
+                            <li>Creating a Repository</li>
+                            <li>Recording Changes to Files: <code>add</code>, <code>commit</code>, ...</li>
+                            <li>Viewing Changes: <code>status</code>, <code>diff</code>, ...</li>
+                            <li>Ignoring Files</li>
+                            <li>Working on the Web: <code>clone</code>, <code>pull</code>, <code>push</code>, ...</li>
+                            <li>Resolving Conflicts</li>
+                            <li>Open Licenses</li>
+                            <li>Where to Host Work, and Why</li>
+                            <li><a href="https://swcarpentry.github.io/git-novice/reference">Reference...</a></li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h4 style="color:red">Programming in Python</h4>
+                        <ul>
+                            <li>Using Libraries</li>
+                            <li>Working with Arrays</li>
+                            <li>Reading and Plotting Data</li>
+                            <li>Creating and Using Functions</li>
+                            <li>Loops and Conditionals</li>
+                            <li>Defensive Programming</li>
+                            <li>Using Python from the Command Line</li>
+                            <li><a href="https://swcarpentry.github.io/python-novice-inflammation/reference/">Reference...</a></li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section> <!-- New slide -->
+                    <section> <!-- New subsection -->
+                        <h4 style="color:red">Version Control with Git</h4>
+                        <h5>What is Git?</h5>
+                        <ul>
+                            <li>Version control is like an unlimited 'undo'</li>
+                            <li>Version control allows many people to work in parallel</li>
+                            <li>Works on project-wide scale</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section>
+                        <figure>
+                            <iframe src="https://swcarpentry.github.io/git-novice/01-basics/index.html" style="overflow-y: auto !important; bottom: 10px" onload="this.width=screen.width;this.height=screen.height"></iframe>
+                        </figure>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <h5>How do I Git?</h5>
+                        <ul>
+                            <li>Install <code>Git</code> application on machine</li>
+                            <li>Use command lines on local machine</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Getting Started</h5>
+                        MacOS and Linux
+                        <pre class="bash"><code data-trim>
+                            $ git config --global core.autocrlf input
+                        </code></pre>
+                        Windows
+                        <pre class="bash"><code data-trim>
+                            $ git config --global core.autocrlf true
+                        </code></pre>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Creating a Repository</h5>
+                        Navigate to your file
+                        <pre class="bash"><code data-trim>
+                            $ cd ~/Desktop
+                            $ mkdir MyProject
+                            $ cd MyProject
+                        </code></pre>
+                        Initialize git
+                        <pre class="bash"><code data-trim>
+                            $ git init
+                        </code></pre>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>What did I just do?</h5>
+                        Output
+                        <pre class="bash"><code data-trim>
+                            Initialized empty Git repository in /Users/Dave/Desktop/MyProject/.git/
+                        </code></pre>
+                        Created a hidden file <code>.git</code> that stores repository data
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Typical Workflow</h5>
+                        <ol>
+                            <li>Create files</li>
+                            <li>Take snapshot of entire directory</li>
+                            <li>Modify files</li>
+                            <li>Update snapshot</li>
+                        </ol>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Updating snapshots</h5>
+                        <mark>Saving a file in a directory does NOT update .git</mark>
+                        <br/>
+                        <ol>
+                            <li>Tell .git which files to update</li>
+                            <ul>
+                                <li none><pre style="bash"><code>$ git add myEditedFile.txt</code></pre></li>
+                            </ul>
+                            <li>Review all changes (optional)</li>
+                            <ul>
+                                <li none><pre style="bash"><code>$ git diff --staged</code></pre></li>
+                            </ul>
+                            <li>Publish changes to repository</li>
+                            <ul>
+                                <li none><pre style="bash"><code>$ git commit -m "Brief summary of changes"</code></pre></li>
+                            </ul>
+                        </ol>
+                    </section> <!-- End subsection -->
+                    <section>
+                        <figure>
+                            <center><img class="plain"
+                                src="./images/git-staging-area.svg"
+                                alt="git staging area"
+                                style="height:100%"></img></center>
+                        </figure>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <h5>Other commands</h5>
+                        <ul>
+                            <li>Compare versions</li>
+                            <li>Ignore (stop tracking) certain files</li>
+                            <li>Share repository with others</li>
+                            <ul>
+                                <li style="list-style-type: none; color:red"> Requires GitHub account (free)</li>
+                            </ul>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+			</div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+           
+				dependencies: [
+                    { src: '../../plugin/math/math.js', async: true },
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true },
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../plugin/multiplex/master.js', async: true },
+                    { src: '../../lib/js/clock.js', async: true},
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+				]
+			});
+		</script>
+	</body>
+</html>

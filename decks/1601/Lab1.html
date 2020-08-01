@@ -1,0 +1,160 @@
+<!--decks/1601/Lab1.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Measurement and Uncertainty</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+        <link
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>1601 Lab 1 </h2>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 0</h3>
+                    <section> <!-- New subsection -->
+                        Best approaches
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section>
+                    <center>Polls</center>
+                </section>
+                <section> <!-- New slide -->
+                    <h3> Lab 1: Measurement and Uncertainty</h3>
+                    <section> <!-- New subsection -->
+                        Primer: How do we know the mass of an electron?
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        Simpler: How do we know what 1000 kg is?
+                    </section> <!-- End subsection -->
+                    <section>
+                        <center><figure style="width: 50%">
+                        <img class="plain" src="images/Kilometre_definition.svg" width="100%"/>
+                        <figcaption>Definition of a meter</figcaption>
+                        <p style="font-size: 0.3em">Wikimedia Commons. Author: US Government; adapted by User:Martinvl</p>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <text class="my-blue">Why should we care?</text>
+                        <ul>
+                            <li>It allows us to determine if the difference between two independent results is real, or just due to sloppy measurement</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <text class="my-blue">Where does uncertainty come from?</text>
+                        <ul>
+                            <li>The measuring instrument</li>
+                            <li>The item being measured</li>
+                            <li>The measurement process</li>
+                            <li>"Imported" uncertainties</li>
+                            <li>Operator skill</li>
+                            <li>Sampling issues</li>
+                            <li>The environment</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <text class="my-blue">Tips for reducing uncertainty</text>
+                        <ul>
+                            <li>Calibrate your instrument</li>
+                            <li>Make your measurements traceable to national standards</li>
+                            <li>Choose the best measurement instrument</li>
+                            <li>Repeat measurements</li>
+                            <li>Use rounding correctly in your calculations</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section>
+                    <center><figure style="width: 80%">
+                    <img class="plain" src="images/string.png" width="100%"/>
+                    <figcaption>How long is a piece of string?</figcaption>
+                    <p style="font-size: 0.3em">Stephanie Bell, <em>A Beginner's Guide to Uncertainty of Measurement</em>. National Physical Laboratory. 1999</p>
+                    </figure></center>
+                </section>
+                <section> <!-- Help slides -->
+                    <section>
+                        <h3>To be completed</h3>
+                        <ul>
+                            <li>Carefully read and complete the distributed handout.</li>
+                            <li>Upload directly to Brightspace: Lab 1</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section>
+                        <h3>Requirements</h3>
+                        <ul>
+                            <li>Stay present in Zoom until you have all measurements</li>
+                            <li>Pop back in the Zoom meeting if you leave, but have further questions</li>
+                        </ul>
+                        <h3>Recommendations</h3>
+                        <ul>
+                            <li>Share measurements with your breakout group</li>
+                            <li>Stay connected with audio and video muted while you work</li>
+                        </ul>
+                    </section>
+                </section> <!-- End help slides-->
+			</div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '15802593337006639529', // null so the clients do not have control of the master presentation
+                    id: 'fe29af9395129ae0', // id, obtained from socket.io server
+                    url: 'http://10.66.150.63:1948' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+           
+				dependencies: [
+                    { src: '../../plugin/math/math.js', async: true },
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true },
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../plugin/multiplex/master.js', async: true },
+                    { src: '../../lib/js/clock.js', async: true},
+				]
+			});
+		</script>
+	</body>
+</html>

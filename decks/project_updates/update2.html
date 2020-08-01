@@ -1,0 +1,86 @@
+<!-- decks/project_updates/update1.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Update March 3 2020</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section> <!-- New Slide -->
+                    <h1> Project Update </h1>
+                    <center>
+                    <p> David Curie </p>
+                    <p> Mar 3, 2020 </p>
+                    </center>
+                </section> <!-- End slide - Overview -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <figure>
+                        <img class="plain "src="images/Instrument_WiTec.jpg" alt="WiTec microscope mount" style="width: 40%"/>
+                        <img class="plain" src="images/Instrument_KL1500.png" alt="WiTec halogen light source" style="width: 20%"/>
+                        <img class="plain" src="images/Instrument_SP2300.jpg" alt="Princeton Instruments monochromator" style="width: 30%; position: absolute; top: 10px; right: 100px"/>
+                        <img class="plain" src="images/Instrument_VersArray.png" alt="CCD camera and controller" style="width: 30%"/>
+                    </figure>
+                </section> <!-- End section -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <figure style="float: right; width: 35%">
+                        <img class="plain "src="images/Screenshot_MicroscopeController.png" alt="WiTec microscope mount" style="width: 80%"/>
+                    </figure>
+                    <p style="color: green">Pros</p>
+                    <ul style="width:60%">
+                        <li> Able to open ScanCtrl_Spectroscopy_Plus</li>
+                        <li> Can move sample stage with software and remote control</li>
+                        <li>Can get "something" to "collect data"</li>
+                    </ul>
+                    <br/>
+                    <p style="color:red">Cons</p>
+                    <ul style="width:60%">
+                        <li> Program crashes for no apaprent reason at random times</li>
+                        <li> No live video feed of sample</li>
+                        <li> Unable to access all settings outlined in manual </li>
+                    </ul>
+                </section> <!-- End section -->
+
+            </div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                center: true, /* vertical centering of slides */
+                width: "100%",
+                height: "100%",
+                slideNumber: true,
+				dependencies: [
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

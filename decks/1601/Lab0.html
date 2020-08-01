@@ -1,0 +1,164 @@
+<!--decks/1601/Lab0.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Estimation and Problem Solving</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+        <link
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>1601 Lab 0 </h2>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Introduction Slide-->
+                    <h2>Introduction</h2>
+                    <section> <!-- New subsection -->
+                        About Me
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        Syllabus
+                        <div style="float: right; width: 80">
+                            <ul>
+                                <li>12 labs - No skipping</li>
+                                <li>Due by the end of the attendance day</li>
+                                <li><mark><code>[Surname]_[section]_LabX</code></mark>.pdf
+                                    <ul>
+                                        <li=none>.docx, .pages, .txt, .img</li>
+                                        <li> ex: <code>Curie_01_Lab0.pdf</code>
+                                    </ul>
+                            </ul>
+                        </div>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <figure style="width: 100%; font-size: 0.8em; margin-left: auto; margin-right: auto">
+                            <img class="plain" src="images/Zoom_layout.png" style="width: 100%; "/>
+                            <figcaption>
+                                Suggested workflow <br>
+                            </figcaption>
+                        </figure>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        Expectations
+                        <p> 1601 is an <del>introductory physics</del> <ins> information literacy</ins> lab </p> <br>
+                        <p> 1602 is <del>the second semester of physics</del> <ins>an abbreviated 'Circuits 101' and 'Optics 101' </ins> lab</p>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <blockquote> Just because you are unknowledgabe does not mean you are unintelligent </blockquote> <br>
+                        <blockquote>
+                            The formulation of a problem is often more essential than its solution&hellip;
+                            <footer>
+                                &mdash; Einstein & Infeld, 1938
+                            </footer>
+                        </blockquote>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <blockquote style="font-size:0.7em">
+                            If you’re doing an experiment, you should report everything that you think might make it invalid – not only what you think is right about it: other causes that could possibly explain your results; and things you thought of that you’ve eliminated by some other experiment and how they worked – to make sure the other fellow can tell they have been eliminated.
+                            <footer>
+                                &mdash; Richard Feynmnan (Cal Tech commencement speech 1974)
+                            </footer>
+                        </blockquote>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Introduction Slide -->
+                <section>
+                    <section>
+                        <center>Polls</center>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <blockquote> Learning is more about making distinctions about information that matters and information that doesn’t than it is about retaining information</blockquote>
+                    </section> <!-- End subsection -->
+                </section>
+                <section> <!-- New slide -->
+                    <h3> Lab 0: Estimation and Problem Solving</h3>
+                    <section> <!-- New subsection -->
+                        How tall are you?
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        How tall is a VW Beetle?
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        What makes a measurement scientific?
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        Fermi problems
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section> <!-- Help slides -->
+                    <blockquote>Haw many kilograms of paper was consumed by the Vanderbilt student body in the <nobr>2019&mdash;2020</nobr> academic year?</blockquote>
+                    <br/>
+                    <h3>To be submitted</h3>
+                    <ul>
+                        <li>Write up a coherent answer to the question above</li>
+                        <li>Complete sentences not required</li>
+                        <li>Complete thoughts <strong>are</strong> required</li>
+                    </ul>
+                    <br/><br/><br/>
+                </section> <!-- End help slides-->
+			</div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '15802593337006639529', // null so the clients do not have control of the master presentation
+                    id: 'fe29af9395129ae0', // id, obtained from socket.io server
+                    url: 'http://10.66.150.63:1948' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+           
+				dependencies: [
+                    { src: '../../plugin/math/math.js', async: true },
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true },
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../plugin/multiplex/master.js', async: true },
+                    { src: '../../lib/js/clock.js', async: true},
+				]
+			});
+		</script>
+	</body>
+</html>
