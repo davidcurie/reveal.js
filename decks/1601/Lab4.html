@@ -1,0 +1,131 @@
+<!--decks/1601/Lab4.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Force and Acceleration</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+        <link
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <!-- ... -->
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>1601 Lab 4 </h2>
+                    <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+                    <br/><br/>
+                    iOLab for Scientists and Engineers<br/>
+                    &emsp;Lab 3: Force and Acceleration
+                    <br/><br/>
+                    You will need:<br/>
+                    <ul>
+                        <li>IOLab device (+included attachments)</li>
+                        <li>USB-A connection</li>
+                        <li>Smooth table</li>
+                        <li>Heavy weight (placeholder)</li>
+                    </ul>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 3</h3>
+                    <section> <!-- New subsection -->
+                        <ul>
+                            <li>Include name of lab partners</li>
+                            <li>Don't worry too much about formatting</li>
+                            <ul>
+                                <li><mark>Spend more time on data/understanding than perfecting your report</mark></li>
+                            </ul>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section>
+                    <section>
+                        <center>Polls</center>
+                    </section>
+                    <section>
+                        Questions 4&ndash;6
+                        <center><figure>
+                            <img class="plain" src="./images/projectile.png" alt="projectile motion"
+                            style="width:60%"/>
+                            <figcaption style="font-size:0.6em">https://www.mwit.ac.th/~physicslab/applet_04/physics_classroom/Class/vectors/u3l2a.html</figcaption>
+                        </figure></center>
+                    </section>
+                </section>
+                <section> <!-- Help slides -->
+                    <section>
+                        <h3>To be completed</h3>
+                        <ul>
+                            <li>Follow along online lab manual. Complete "Lab 3"</li>
+                            <li>Submit a report to Brightspace</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    
+                </section> <!-- End help slides-->
+			</div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '15802593337006639529', // null so the clients do not have control of the master presentation
+                    id: 'fe29af9395129ae0', // id, obtained from socket.io server
+                    url: 'http://10.66.150.63:1948' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+           
+				dependencies: [
+                    { src: '../../plugin/math/math.js', async: true },
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true },
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../plugin/multiplex/master.js', async: true },
+                    { src: '../../lib/js/clock.js', async: true},
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+				]
+			});
+		</script>
+	</body>
+</html>

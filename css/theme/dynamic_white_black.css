@@ -1,0 +1,568 @@
+/**
+ * Custom hack for Dark Mode
+ * Default:
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * When browsing in Dark Mode
+ * By Hakim El Hattab, http://hakim.se
+ */
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #fff;
+  background-color: #fff; }
+
+div.fill-screen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.reveal {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+  color: #222; }
+
+::selection {
+  color: #fff;
+  background: #98bdef;
+  text-shadow: none; }
+
+::-moz-selection {
+  color: #fff;
+  background: #98bdef;
+  text-shadow: none; }
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    body {
+        background: #191919;
+        background-color: #191919; }
+    
+    .reveal {
+        color: #fff; }
+    
+    ::selection {
+        color: #fff;
+        background: #bee4fd;
+        text-shadow: none; }
+    
+    ::-moz-selection {
+        color: #fff;
+        background: #bee4fd;
+        text-shadow: none; }
+} /* End dark mode */
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #222;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+        color: #fff; }
+} /* End dark mode */
+
+.reveal h1 {
+  font-size: 2.5em;
+  text-align: center; }
+
+.reveal h2 {
+  font-size: 1.6em; }
+
+.reveal h3 {
+  font-size: 1.3em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.reveal h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3; }
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 85%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+/* class="simple-table" (centered, no borders)*/
+.reveal table.simple-table th,
+.reveal table.simple-table td{
+  text-align: center;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 0px; }
+}
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+.reveal del {
+    text-decoration: line-through;
+    background-color: #fbb;
+    color: #555; }
+
+.reveal ins {
+    text-decoration: none;
+    background-color: #d4fcbc; }
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal del {
+        background-color: #f65; }
+    
+    .reveal ins {
+        background-color: #a4ca9a; }
+} /* End dark mode */
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #2a76dd;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #6ca0e8;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #1a53a1; }
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal a {
+        color: #42affa; }
+    
+    .reveal a:hover {
+        color: #8dcffc; }
+    
+    .reveal .roll span:after {
+        color: #fff;
+        background: #068de9; }
+} /* End dark mode */
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+  background: rgba(0,0,0,0);
+}
+
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #2a76dd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #2a76dd; }
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal .controls {
+        color: #42affa; }
+} /* End dark mode */
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #2a76dd;
+  height:5px;
+}
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal .progress {
+        background: rgba(255, 255, 255, 0.2);
+        color: #42affa; }
+} /* End dark mode */
+
+.reveal .progress span {
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * SLIDE NUMBERS
+ *********************************************/
+
+.reveal .slide-number {
+    left: 8px;
+    font-size: 0.8em;
+    color: #2a76dd;
+    background-color: rgba(0,0,0,0);
+    width: 0.8em;
+}
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal .slide-number{
+    color: #42affa; }
+}/* End dark mode */
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #fff; } }
+
+/*********************************************
+ * SLIDES
+ *********************************************/
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+    padding: 0px;
+}
+
+/*********************************************
+ * HELP BOX (ON TITLE)
+ *********************************************/
+
+.alert {
+    padding: 15px 15px 0px;
+    background-color: rgba(0,0,0,0.2) ;
+    color: white;
+    width: 270px;
+    position: fixed;
+    bottom: 15px;
+    right: 60px;
+    font-size: 0.5em;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    bottom: 5px;
+}
+
+.closebtn:hover {
+    color: #2a76dd;
+}
+
+@media (prefers-color-scheme: dark) {
+    .alert {
+        background-color: rgba(255,255,255,0.2);
+        color: #777 ;
+    }
+    .closebtn {
+        color: #777;
+    }
+    .closebtn:hover {
+        color: #42affa;
+    }
+}
+
+/******************************
+ ** Fragment animation overrides
+ ******************************/
+
+
+/* fragment step-fade-in-then-out*/
+.reveal .slides section .fragment.step-fade-in-then-out {
+    opacity: 0;
+    display: none; }
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+    opacity: 1;
+    display: inline; }
+
+
+/******************************
+** Color shortcuts
+******************************/
+
+
+
+.my-red {
+    color: red;
+    fill: red;
+    stroke: red;
+}
+.my-blue {
+    color: #2a76dd;
+    fill: #2a76dd;
+    stroke: #2a76dd;
+}
+.my-green {
+    color: green;
+    fill: green;
+    stroke: green;
+}
+.my-orange {
+    color: orange;
+    fill: orange;
+    stroke: orange;
+}
+.my-gold {
+    color: #bf8f00;
+    fill: #bf8f00;
+    stroke: #bf8f00;
+}
+.my-gray{
+    color: gray;
+    fill: gray;
+    stroke: gray;
+}
+.my-purple{
+    color: mediumslateblue;
+    fill: mediumslateblue;
+    stroke: mediumslateblue;
+}
+.my-plain{
+    color:currentcolor;
+    fill:currentcolor;
+    stroke:currentcolor;
+}
+.my-solar{
+    background: #f8e4cc;
+    color: #153450;
+    fill:#447294;
+    stroke:#447294;
+}
+@media (prefers-color-scheme: dark) {
+    .my-red {
+        color: #f65;
+        fill: #f65;
+        stroke: #f65;
+    }
+    .my-blue {
+        color: #42affa;
+        fill: #42affa;
+        stroke: #42affa;
+    }
+    .my-green {
+        color: lightgreen ;
+        fill: lightgreen;
+        stroke: lightgreen;
+        /* #0ffaaf
+         #a4ca9a*/
+    }
+    .my-orange {
+        color: orange;
+        fill: orange;
+        stroke: orange;
+    }
+    .my-gold{
+        color: #ffe699;
+        fill: #ffe699;
+        stroke: #ffe699;
+    }
+    .my-gray{
+        color: lightgray;
+        fill: lightgray;
+        stroke: lightgray;
+    }
+    .my-purple{
+        color: violet;
+        fill: violet;
+        stroke: violet;
+    }
+    .my-plain{
+        color:currentcolor;
+        fill:currentcolor;
+        stroke:currentcolor;
+    }
+    .my-solar{
+        background: #153450;
+        color:#f8e4cc;
+        fill:#f4d6bc;
+        stroke:#f8e4cc;
+    }
+}

@@ -1,0 +1,33 @@
+HowTo:
+
+// move to home directory
+cd reveal.js
+
+// Run multiplex.
+node plugin/multiplex
+
+// Get token at multiplex port (1948 by default)
+http:localhost:1948/token
+
+// Copy secret to [master_slides].html
+// Copy ID to [master_slides].html and [client_slides].html
+
+// Start local server hosting. In a new terminal, navigate back to reveal.js
+npm start
+
+// Give URL to students to follow along.
+// e.g. http://localhost:8000/decks/1502/Lab2.html
+// replace localhost with IP address of host computer
+
+// When done with presentation, you may close terminals that are running npm start and multiplex
+
+
+-----
+
+Other notes:
+
+// Disable all navigation on client slides. Place these lines after Reveal.initialize({
+
+keyboard: false,
+touch: false,
+controls: false,

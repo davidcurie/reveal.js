@@ -1,0 +1,378 @@
+<!-- decks/project_updates/update1.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Update Oct 15 2019</title>
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="images/HMM.svg" data-background-size=contain data-background-transition="slide"> <!-- New Slide -->
+                    <h1> Project Update </h1>
+                    <p> David Curie </p>
+                    <p> Oct 15, 2019 </p>
+                </section> <!-- End slide - Overview -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> Ag AFM Surface Roughness </p>
+                    <section data-background="images/Ag_10nm_AFM_roughness_3D.png" data-background-size=60% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table>
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Image Standard Deviation</td>
+                                <td> 5.54 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Image Z Range</td>
+                                <td> <mark>39.6 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Image Surface Area</td>
+                                <td> 1.229 &mu;m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Image Projected Surface Area</td>
+                                <td> 1.000 &mu;m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Image Surface Area Difference</td>
+                                <td> 22.9 %</td>
+                            </tr>
+                            <tr>
+                                <td>Image R<sub>q</sub></td>
+                                <td> <mark>5.54 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Image R<sub>a</sub></td>
+                                <td> 4.09 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Image R<sub>max</sub></td>
+                                <td> 39.6 nm</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - Ag AFM roughness -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> Ag AFM Thickness </p>
+                    <section data-background="images/Ag_10nm_AFM_Step_Image.jpg" data-background-size=85% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section data-background="images/Ag_10nm_AFM_Step_Plot.svg" data-background-size=75% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table >
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Horizontal Distance</td>
+                                <td> 6.110 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Vertical Distance</td>
+                                <td> <mark>-20.469 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Surface Distance</td>
+                                <td> 6.173 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Angle</td>
+                                <td> -0.192 &int;</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>max</sub></td>
+                                <td> 148.445 nm</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>z</sub></td>
+                                <td> 140.574 nm</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>z</sub> count</td>
+                                <td> 2.000</td>
+                            </tr>
+                            <tr>
+                                <td>RMS</td>
+                                <td> 28.232 nm</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <table>
+                            <tr>
+                                <td>R<sub>a</sub> (Frequency Cutoff)</td>
+                                <td> 25.059 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Frequency Cutoff</td>
+                                <td> 0.096 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Radius</td>
+                                <td> 14.117 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Radius Sigma</td>
+                                <td> 0.093 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Length</td>
+                                <td> 6.110 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral Period</td>
+                                <td> 10.449 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral Frequency</td>
+                                <td> 0.096 /&mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral RMS Amplitude</td>
+                                <td> 17.619 nm</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - Ag AFM thickness -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> TiO<sub>x</sub> AFM Thickness </p>
+                    <section data-background="images/TiOx_30nm_AFM_Step_Image.jpg" data-background-size=95% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section data-background="images/TiOx_30nm_AFM_Step_Plot.svg" data-background-size=75% data-background-transition="slide"> <!-- New slide-->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table >
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Horizontal Distance</td>
+                                <td> 23.304 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Vertical Distance</td>
+                                <td> <mark>9.294 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Surface Distance</td>
+                                <td> 23.308 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Angle</td>
+                                <td> 0.023 &int;</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>max</sub></td>
+                                <td> 25.650 nm</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>z</sub></td>
+                                <td> 5.862 nm</td>
+                            </tr>
+                            <tr>
+                                <td>R<sub>z</sub> count</td>
+                                <td> 10.000</td>
+                            </tr>
+                            <tr>
+                                <td>RMS</td>
+                                <td> 2.621 nm</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <table>
+                            <tr>
+                                <td>R<sub>a</sub> (Frequency Cutoff)</td>
+                                <td> 1.931 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Frequency Cutoff</td>
+                                <td> 0.000 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Radius</td>
+                                <td> 4957.878 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Radius Sigma</td>
+                                <td> 0.003 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Length</td>
+                                <td> 23.304 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral Period</td>
+                                <td> 0.000 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral Frequency</td>
+                                <td> 0.000 /&mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Spectral RMS Amplitude</td>
+                                <td> 4.610 nm</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - TiOx AFM thickness -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> TiO<sub>x</sub> Profilometry </p>
+                    <section data-background="images/TiOx_30nm_Profilometry_Step_Plot.svg" data-background-size=75% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table>
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Scan Type</td>
+                                <td>Standard Scan</td>
+                            </tr>
+                            <tr>
+                                <td>Stylus</td>
+                                <td>Radius: 12.5 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Length</td>
+                                <td>500.0 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Duration</td>
+                                <td>120 sec</td>
+                            </tr>
+                            <tr>
+                                <td>Resolution</td>
+                                <td>0.014 &mu;/sample</td>
+                            </tr>
+                            <tr>
+                                <td>Force</td>
+                                <td>6.50 mg</td>
+                            </tr>
+                            <tr>
+                                <td>Measurement Range</td>
+                                <td>6.5 &mu;m</td>
+                            </tr>
+                            <tr>
+                                <td>Profile</td>
+                                <td>Hills & Valleys</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - TiOx Profilometry -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> Ag Ellipsometry </p>
+                    <section data-background="images/Ag_10nm_Ellipsometry_Model.png" data-background-size=70% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section data-background="images/Ag_10nm_Ellipsometry_Constants.png" data-background-size=70% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table>
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Roughness</td>
+                                <td>-7.12 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Ag Film Thickness</td>
+                                <td><mark>46.17 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Substrate</td>
+                                <td>SI_JAW</td>
+                            </tr>
+                            <tr>
+                                <td>Angle Offset</td>
+                                <td>0.000</td>
+                            </tr>
+                            <tr>
+                                <td>MSE</td>
+                                <td>1.427</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - Ag Ellipsometry -->
+                <section data-background-transition="slide"> <!-- New section -->
+                    <p> TiO<sub>x</sub> Ellipsometry </p>
+                    <section data-background="images/TiOx_30nm_Ellipsometry_Model.png" data-background-size=70% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section data-background="images/TiOx_30nm_Ellipsometry_Constants.png" data-background-size=70% data-background-transition="slide"> <!-- New slide -->
+                    </section>
+                    <section> <!-- New slide -->
+                        <table>
+                            <tr>
+                                <th colspan="2"> Parameters </th>
+                            </tr>
+                            <tr>
+                                <td>Roughness</td>
+                                <td>0.00 nm</td>
+                            </tr>
+                            <tr>
+                                <td>TiO<sub>x</sub> Film Thickness</td>
+                                <td><mark>24.31 nm</mark></td>
+                            </tr>
+                            <tr>
+                                <td>Substrate</td>
+                                <td>SI_JAW</td>
+                            </tr>
+                            <tr>
+                                <td>Angle Offset</td>
+                                <td>0.000</td>
+                            </tr>
+                            <tr>
+                                <td>MSE</td>
+                                <td>1.513</td>
+                            </tr>
+                        </table>
+                    </section>
+                </section> <!-- End section - TiOx Ellipsometry -->
+
+            </div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                center: false, /* vertical centering of slides */
+                width: "100%",
+                height: "100%",
+                slideNumber: true,
+				dependencies: [
+					{ src: '../../plugin/markdown/marked.js' },
+					{ src: '../../plugin/markdown/markdown.js' },
+					{ src: '../../plugin/notes/notes.js', async: true },
+					{ src: '../../plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

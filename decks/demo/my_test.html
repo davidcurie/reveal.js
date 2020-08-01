@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>My Sample Presentation</title>
+        
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+                
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/reveal.css">
+		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <section > <!-- New subsection -->
+                        <h2> Slide 1 </h2>
+                        <p> This is sample text on slide 1 </p>
+                    </section> <!-- End subsection -->
+                    <section id="themes"> <!-- New subsection -->
+                        <h2> Settings </h2>
+                        <p>
+                        The deault theme is white (black if browsing in Dark Mode). Click on a theme below to override theme settings: <br>
+                        <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/black.css'); return false;">Black</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/white.css'); return false;">White</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../.../css/theme/league.css'); return false;">League</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/sky.css'); return false;">Sky</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/beige.css'); return false;">Beige</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/simple.css'); return false;">Simple</a> <br>
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/serif.css'); return false;">Serif</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/blood.css'); return false;">Blood</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/night.css'); return false;">Night</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/moon.css'); return false;">Moon</a> -
+                        <a href="#" onclick="document.getElementById('theme').setAttribute('href','../../css/theme/solarized.css'); return false;">Solarized</a>
+                        </p>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section data-background-iframe="https://hakim.se" data-background-interactive scrolling="yes">
+                </section> <!-- End slide-->
+                <section>Slide 2</section>
+			</div>
+		</div>
+
+		<script src="../../js/reveal.js"></script>
+
+        <script>
+            
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                              controls: true,
+                              progress: true,
+                              center: true,
+                              hash: true,
+                              
+                              transition: 'slide', // none/fade/slide/convex/concave/zoom
+                              
+                              // More info https://github.com/hakimel/reveal.js#dependencies
+                              dependencies: [
+                                             { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: '../../plugin/highlight/highlight.js', async: true },
+                                             { src: '../../plugin/search/search.js', async: true },
+                                             { src: '../../plugin/zoom-js/zoom.js', async: true },
+                                             { src: '../../plugin/notes/notes.js', async: true }
+                                             ]
+                              });
+                              
+            </script>
+	</body>
+</html>
