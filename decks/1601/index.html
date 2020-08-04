@@ -1,4 +1,4 @@
-<!--decks/1502/index.html -->
+<!--decks/1601/index.html -->
 <!doctype html>
 <html>
 	<head>
@@ -7,21 +7,13 @@
 
 		<title>1601 Landing Page</title>
 
-		<link rel="stylesheet" href="../../css/reset.css">
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../../lib/css/monokai.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -45,34 +37,30 @@
 			</div>
 		</div>
 
-		<script src="../../js/reveal.js"></script>
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/search/search.js"></script>
 
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-                keyboard: false,
-                touch: false,
-                controls: false,
-                
                 
                 // Multiplex for client-side updates
                 multiplex: {
                     // Example values. To generate your own, see the socket.io server instructions.
                     secret: null, // null so the clients do not have control of the master presentation
-                    id: 'e3f64545bb056ee9', // id, obtained from socket.io server
-                    url: 'http://10.66.163.121:1948' // Location of socket.io server
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
                 },
                 
-				dependencies: [
-					{ src: '../../plugin/markdown/marked.js' },
-					{ src: '../../plugin/markdown/markdown.js' },
-					{ src: '../../plugin/notes/notes.js', async: true },
-					{ src: '../../plugin/highlight/highlight.js', async: true },
-                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-                    { src: '../../plugin/multiplex/client.js', async: true },
-				]
+                plugins: [
+                    RevealMarkdown,
+                    RevealHighlight,
+                    RevealSearch,
+                  ]
 			});
 		</script>
 	</body>
