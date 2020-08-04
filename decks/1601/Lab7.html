@@ -7,23 +7,14 @@
 
 		<title>Hooke's Law</title>
 
-		<link rel="stylesheet" href="../../css/reset.css">
-		<link rel="stylesheet" href="../../css/reveal.css">
-		<link rel="stylesheet" href="../../css/theme/dynamic_white_black.css">
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../../lib/css/monokai.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
 
-        <link
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-        <!-- ... -->
+        <!-- Extra plugin scripts -->
         <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
         <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
 	</head>
@@ -82,7 +73,13 @@
 			</div>
 		</div>
 
-		<script src="../../js/reveal.js"></script>
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+
 
 		<script>
 			// More info about config & dependencies:
@@ -100,9 +97,9 @@
                 // Multiplex for client-side updates
                 multiplex: {
                     // Example values. To generate your own, see the socket.io server instructions.
-                    secret: '15802593337006639529', // null so the clients do not have control of the master presentation
-                    id: 'fe29af9395129ae0', // id, obtained from socket.io server
-                    url: 'http://10.66.150.63:1948' // Location of socket.io server
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
                 },
                 
                 // For Latex math
@@ -112,17 +109,20 @@
                     // pass other options into `MathJax.Hub.Config()`
                     TeX: { Macros: { RR: "{\\bf R}" } }
                 },
+                              
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                ],
            
 				dependencies: [
-                    { src: '../../plugin/math/math.js', async: true },
-					{ src: '../../plugin/markdown/marked.js' },
-					{ src: '../../plugin/markdown/markdown.js' },
-					{ src: '../../plugin/notes/notes.js', async: true },
-					{ src: '../../plugin/highlight/highlight.js', async: true },
-                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-                    { src: '../../plugin/multiplex/master.js', async: true },
-                    { src: '../../lib/js/clock.js', async: true},
-                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+//                    { src: '../../plugin/multiplex/master.js', async: true },
+//                    { src: '../../lib/js/clock.js', async: true},
+//                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
 				]
 			});
 		</script>
