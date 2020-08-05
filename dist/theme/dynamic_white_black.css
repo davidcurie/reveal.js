@@ -6,25 +6,41 @@
  * When browsing in Dark Mode
  * By Hakim El Hattab, http://hakim.se
  */
-@import url(../..fonts/source-sans-pro/source-sans-pro.css);
+@import url(fonts/source-sans-pro/source-sans-pro.css);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
-body {
+:root {
+  --background-color: #fff;
+  --main-font: Source Sans Pro, Helvetica, sans-serif;
+  --main-font-size: 42px;
+  --main-color: #222;
+  --block-margin: 20px;
+  --heading-margin: 0 0 20px 0;
+  --heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --heading-color: #222;
+  --heading-line-height: 1.2;
+  --heading-letter-spacing: normal;
+  --heading-text-transform: uppercase;
+  --heading-text-shadow: none;
+  --heading-font-weight: 600;
+  --heading1-text-shadow: none;
+  --heading1-size: 2.5em;
+  --heading2-size: 1.6em;
+  --heading3-size: 1.3em;
+  --heading4-size: 1em;
+  --code-font: monospace;
+  --link-color: #2a76dd;
+  --link-color-hover: #6ca0e8;
+  --selection-background-color: #98bdef;
+  --selection-color: #fff; }
+
+.reveal-viewport {
   background: #fff;
   background-color: #fff; }
-
-div.fill-screen {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    text-align: center;
-}
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -32,12 +48,12 @@ div.fill-screen {
   font-weight: normal;
   color: #222; }
 
-::selection {
+.reveal ::selection {
   color: #fff;
   background: #98bdef;
   text-shadow: none; }
 
-::-moz-selection {
+.reveal ::-moz-selection {
   color: #fff;
   background: #98bdef;
   text-shadow: none; }
@@ -49,22 +65,30 @@ div.fill-screen {
 
 /* Dark Mode overwrites */
 @media (prefers-color-scheme: dark){
-    body {
-        background: #191919;
-        background-color: #191919; }
-    
+    :root {
+      --background-color: #191919;
+      --main-color: #fff;
+      --heading-color: #fff;
+      --link-color: #42affa;
+      --link-color-hover: #8dcffc;
+      --selection-background-color: #bee4fd;
+      --selection-color: #fff; }
+
+    .reveal-viewport {
+      background: #191919;
+      background-color: #191919; }
+
     .reveal {
-        color: #fff; }
-    
-    ::selection {
-        color: #fff;
-        background: #bee4fd;
-        text-shadow: none; }
-    
-    ::-moz-selection {
-        color: #fff;
-        background: #bee4fd;
-        text-shadow: none; }
+      color: #fff; }
+
+    .reveal ::selection {
+      color: #fff;
+      background: #bee4fd; }
+
+    .reveal ::-moz-selection {
+      color: #fff;
+      background: #bee4fd; }
+
 } /* End dark mode */
 
 /*********************************************
@@ -310,6 +334,32 @@ div.fill-screen {
 } /* End dark mode */
 
 /*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal a .r-frame {
+  transition: all .15s linear; }
+
+.reveal a:hover .r-frame {
+  border-color: #2a76dd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/* Dark Mode overwrites */
+@media (prefers-color-scheme: dark){
+    .reveal .r-frame {
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+    .reveal a:hover .r-frame {
+      border-color: #42affa;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+} /* End dark mode */
+
+/*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
@@ -376,7 +426,7 @@ div.fill-screen {
     font-size: 0.8em;
     color: #2a76dd;
     background-color: rgba(0,0,0,0);
-    width: 0.8em;
+    width: 2.3em;
 }
 
 /* Dark Mode overwrites */
