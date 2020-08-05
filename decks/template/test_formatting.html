@@ -1,0 +1,792 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Test CSS Formatting</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <!-- Extra plugin scripts -->
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <section data-menu-title="TEXT FORMATTING">
+                        <center>Text Formatting</center>
+                    </section>
+                    <section data-menu-title="Headings" > <!-- New subsection -->
+                        <h1> Heading 1 </h1>
+                        <h2> Heading 2 </h2>
+                        <h3> Heading 3 </h3>
+                        <h4> Heading 4 </h4>
+                        <h5> Heading 5 </h5>
+                        <h6> Heading 6 </h6>
+                        <p> This is paragraph text on slide 1 </p>
+                    </section> <!-- End subsection -->
+                    <section data-menu-title="Lists"> <!-- New subsection -->
+                        <div style="width: 45%; float:left">
+                            <ol>
+                                <li>List item 1</li>
+                                <li>List item 2</li>
+                                <ol>
+                                    <li>Sub item</li>
+                                    <ol>
+                                        <li>Sub sub item</li>
+                                    </ol>
+                                </ol>
+                            </ol>
+                        </div>
+                        <div style="width: 45%; float:right">
+                            <ul>
+                                <li>List item 1</li>
+                                <li>List item 2</li>
+                                <ul>
+                                    <li>Sub item</li>
+                                    <ul>
+                                        <li>Sub sub item</li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </section> <!-- End subsection -->
+                    <section data-menu-title="Spreadsheet">
+                        Interactive spreadsheet
+                        <div class="spreadsheet" data-rows="9" data-cols="3">
+                        , mass (g), deviation
+                        , 2.43,
+                        , 2.54,
+                        , 2.49,
+                        , ,
+                        , ,
+                        Mean, '=AVERAGE(B1:B6)' ,
+                        St. Dev, ,
+                        SDOM , ,
+                        </div>
+                        Adjust the numbers or enter formulas in the above table.
+                    </section>
+                    <section data-menu-title="Tables">
+                        <table class="simple-table" style="width:45%; float:left">
+                            <caption>Simple Table</caption>
+                            <thead>
+                                <tr>
+                                    <th class="simple-table">Header 1</th>
+                                    <th>Header 2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Body 1</th>
+                                    <th>Body 2</th>
+                                </tr>
+                                <tr>
+                                    <th>$\vec{v} = \frac{\text d \vec{x}}{\text d t}$</th>
+                                    <th>$\vec{\omega} = \frac{\text d \vec{\theta}}{\text d t}$</th>
+                                </tr>
+                                <tr>
+                                    <th>$\vec{a} = \frac{\text d \vec{v}}{\text d t}$</th>
+                                    <th>$\vec{\alpha} = \frac{\text d \vec{\omega}}{\text d t}$</th>
+                                </tr>
+                                <tr>
+                            </tbody>
+                            <tfoot>
+                                    <th>Footer</th>
+                                    <th>$\Sigma_i^n x$</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <table style="width:45%; float:right">
+                            <caption>Normal Table</caption>
+                            <thead>
+                                <tr>
+                                    <th>Header 1</th>
+                                    <th>Header 2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Body 1</th>
+                                    <th>Body 2</th>
+                                </tr>
+                                <tr>
+                                    <th>$\vec{v} = \frac{\text d \vec{x}}{\text d t}$</th>
+                                    <th>$\vec{\omega} = \frac{\text d \vec{\theta}}{\text d t}$</th>
+                                </tr>
+                                <tr>
+                                    <th>$\vec{a} = \frac{\text d \vec{v}}{\text d t}$</th>
+                                    <th>$\vec{\alpha} = \frac{\text d \vec{\omega}}{\text d t}$</th>
+                                </tr>
+                                <tr>
+                            </tbody>
+                            <tfoot>
+                                    <th>Footer</th>
+                                    <th>$\Sigma_i^n x$</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+                </section> <!-- End slide -->
+                <section>
+                    <section data-menu-title="COLOR FORMATTING">
+                        <center>Color Formatting</center>
+                    </section>
+                    <section data-menu-title="Color overrides">
+                        <div style="font-size:0.8em">
+                            <div>
+                                <code>Default:</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-plain">
+                                <code style="white-space:pre">Plain  :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-solar">
+                                <code style="white-space:pre">Solar  :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-gray">
+                                <code style="white-space:pre">Gray   :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-red">
+                                <code style="white-space:pre">Red    :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-orange">
+                                <code style="white-space:pre">Orange :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-gold">
+                                <code style="white-space:pre">Gold   :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-green">
+                                <code style="white-space:pre">Green  :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-blue">
+                                <code style="white-space:pre">Blue   :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                            <div class="my-purple">
+                                <code style="white-space:pre">Purple :</code>
+                                <strong>Strong</strong> <em>Emph</em>
+                                <svg width="35" height="30">
+                                    <text x="0" y="15" style="font-size:0.35em">stroke=</text>
+                                    <text x="0" y="28" style="font-size:0.35em">fill=</text>
+                                </svg>
+                                <svg width="50" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.4em">""</text>
+                                    <text x="30" y="28" style="font-size:0.4em">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill=""/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="">""</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="" fill="currentcolor">""</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="currentcolor" fill="none"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="currentcolor" fill="none">"currentcolor"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="currentcolor" fill="none">"none"</text>
+                                </svg>
+                                <svg width="100" height="30">
+                                    <circle cx="15" cy="15" r="13" stroke="none" fill="currentcolor"/>
+                                    <text x="30" y="15" style="font-size:0.35em" stroke="none" fill="currentcolor">"none"</text>
+                                    <text x="30" y="28" style="font-size:0.35em" stroke="none" fill="currentcolor">"currentcolor"</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+                    <section data-menu-title="Highlighting">
+                        <div style="font-size:0.8em">
+                            <div>
+                                <code>Default:</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-plain">
+                                <code style="white-space:pre">Plain  :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-solar">
+                                <code style="white-space:pre">Solar  :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-gray">
+                                <code style="white-space:pre">Gray   :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-red">
+                                <code style="white-space:pre">Red    :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-orange">
+                                <code style="white-space:pre">Orange :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-gold">
+                                <code style="white-space:pre">Gold   :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-green">
+                                <code style="white-space:pre">Green  :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-blue">
+                                <code style="white-space:pre">Blue   :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                            <div class="my-purple">
+                                <code style="white-space:pre">Purple :</code>
+                                <strong><mark>Str</mark>ong</strong>
+                                <em><mark>Em</mark>ph</em>
+                                <u><mark>Under</mark>line</u>
+                                <ins>ins</ins>
+                                <del>del</del>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section data-menu-title="CODE FORMATTING">
+                        <center>Code Formatting</center>
+                    </section>
+                    <section data-menu-title="js / css">
+                        <pre><code data-trim data-noescape class="language-js">
+                                /* js exerpt */
+                                
+                                import Controls from './controllers/controls.js'
+                                
+                                // Remember which directions that the user has navigated towards
+                                navigationHistory = {
+                                    hasNavigatedHorizontally: false,
+                                    hasNavigatedVertically: false
+                                },
+                        </code></pre>
+                        <pre><code data-trim data-noescape class="language-css">
+                                /* css exerpt */
+                                
+                                :root {
+                                --background-color: #fff; }
+                                
+                                @media (prefers-color-scheme: dark){
+                                .reveal h1 {
+                                    color: #fff; }
+                                }
+                        </code></pre>
+                    </section>
+                    <section data-menu-title="HTML">
+                        <pre><code data-trim data-noescape class="language-html">
+                                &lt;!-- html exerpt --&gt;
+                                
+                                &lt;html&gt;
+                                    &lt;head&gt;
+                                        &lt;meta charset="utf-8"&gt;
+                                        &lt;title&gt;Test CSS Formatting&lt;/title&gt;
+                                    &lt;/head&gt;
+                                    &lt;body&gt;
+                                        &lt;div class="reveal"&gt;
+                                            &lt;div class="slides"&gt;
+                                                &lt;section&gt;
+                                                Be sure to escape &lt; and &gt; with &amp;lt; and &amp;gt;
+                                                &lt;/section&gt;
+                                    &lt;/body&gt;
+                                &lt;/html&gt;
+                        </code></pre>
+                        </section>
+                        <section data-menu-title="Markdown">
+                            <pre><code data-trim data-noescape class="language-markdown">
+                                > markdown exerpt
+                                
+                                you can write text [with links](http://example.com) inline or [link references][1].
+
+                                * one _thing_ has *em*phasis
+                                * two __things__ are **bold**
+
+                                [1]: http://example.com
+
+                                ---
+
+                                hello world
+                                ===========
+
+                                <this_is inline="xml"></this_is>
+
+                                > markdown is so cool
+
+                                    so are code segments
+
+                            </code></pre>
+                        </section>
+                        <section data-menu-title="Latex">
+                            <pre><code data-trim data-noescape class="language-latex">
+                                % LaTex exerpt
+                                
+                                \documentclass{article}
+                                \usepackage[koi8-r]{inputenc}
+                                \hoffset=0pt
+                                \voffset=.3em
+                                \tolerance=400
+                                \newcommand{\eTiX}{\TeX}
+                                \begin{document}
+                                \section*{Highlight.js}
+                                \begin{table}[c|c]
+                                $\frac 12\, + \, \frac 1{x^3}\text{Hello \! world}$ & \textbf{Goodbye\~ world} \\\eTiX $ \pi=400 $
+                                \end{table}
+                                Ch\'erie, \c{c}a ne me pla\^\i t pas! % comment \b
+                                G\"otterd\"ammerung~45\%=34.
+                                $$
+                                    \int\limits_{0}^{\pi}\frac{4}{x-7}=3
+                                $$
+                                \end{document}
+                            </code></pre>
+                        </section>
+                        <section data-menu-title="Python">
+                            <pre><code data-trim data-noescape class="language-python">
+                                # Python exerpt
+                                
+                                @requires_authorization
+                                def somefunc(param1='', param2=0):
+                                    r'''A docstring'''
+                                    if param1 > param2: # interesting
+                                        print 'Gre\'ater'
+                                    return (param2 - param1 + 1 + 0b10l) or None
+
+                                class SomeClass:
+                                    pass
+
+                                >>> message = '''interpreter
+                                ... prompt'''
+                            </code></pre>
+                        </section>
+                        <section data-menu-title="Bash">
+                            <pre><code data-trim data-noescape class="language-bash">
+                                #!/bin/bash
+
+                                ###### CONFIG
+                                ACCEPTED_HOSTS="/root/.hag_accepted.conf"
+                                BE_VERBOSE=false
+
+                                if [ "$UID" -ne 0 ]
+                                then
+                                 echo "Superuser rights required"
+                                 exit 2
+                                fi
+
+                                genApacheConf(){
+                                 echo -e "# Host ${HOME_DIR}$1/$2 :"
+                                }
+
+                                echo '"quoted"' | tr -d \" > text.txt
+                            </code></pre>
+                        </section>
+                        <section data-menu-title="Shell">
+                            <pre><code data-trim data-noescape class="language-shell">
+                                $ echo $EDITOR
+                                vim
+                                $ git checkout master
+                                Switched to branch 'master'
+                                Your branch is up-to-date with 'origin/master'.
+                                $ git push
+                                Everything up-to-date
+                                $ echo 'All
+                                > done!'
+                                All
+                                done!
+                            </code></pre>
+                        </section>
+                    </section>
+                </section>
+                <section>
+                    <section data-menu-title="PLUGIN FORMATTING">
+                        <center>Plugin Operation</center>
+                    </section>
+                    <section data-menu-title="Skip Fragments">
+                        <p class="fragment">This is a first fragment</p>
+                        <p class="fragment">This is a second fragment</p>
+                    </section>
+                </section>
+            </div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+                // For synchronization b/w master/client
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
+                },
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                    numbers: true,
+                    useTextContentForMissingTitles: true,
+                    openButton: false,
+                    openSlideNumber: true,
+
+                  custom: [
+                    {
+                      title: 'Links',
+                      icon: '<i class="fa fa-external-link">',
+                      src: 'links.html'
+                    },
+                    {
+                      title: 'About',
+                      icon: '<i class="fa fa-info">',
+                      content: '<p>This slidedeck is created with reveal.js</p>'
+                    }
+                  ]
+                },
+
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+				dependencies: [
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
+//                    { src: '../../lib/js/clock.js', async: true},
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+				]
+			});
+		</script>
+	</body>
+</html>
