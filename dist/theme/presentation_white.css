@@ -1,8 +1,9 @@
 /**
  * Custom build, modeled after 'white' theme.
  * Used for presentations when the screen needs to be exactly white.
- * Changes from default white.css
+ * Changes from default white.css:
  *  Change slide-number color and background
+ *  <ins> <del> colors
  *  Clock color
  *  Define Global colors
  *
@@ -237,6 +238,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal img {
   margin: 20px 0; }
+
+.reveal del {
+    text-decoration: line-through;
+    background-color: #fbb;
+    color: #555; }
+
+.reveal ins {
+    text-decoration: none;
+    background-color: #d4fcbc; }
+
 
 /*********************************************
  * LINKS

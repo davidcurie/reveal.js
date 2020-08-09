@@ -1,5 +1,13 @@
 /**
- * Black theme for reveal.js.
+ * Night theme for reveal.js.
+ * This has been tweaked from its original theme from reveal.js
+ * Changes:
+ *  Default Text color (main color, color)
+ *  Header colors
+ *  Formatted <del> and <ins> and <mark>
+ *  Formatted .clock colors
+ *  Spreadsheet overrides
+ *  Global color shortcuts
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
@@ -28,7 +36,8 @@
   --heading3-size: 1.55em;
   --heading4-size: 1em;
   --code-font: monospace;
-  --link-color: #e7ad52;
+/*  --link-color: #e7ad52;*/
+  --link-color: #D8AB4C;
   --link-color-hover: #f3d7ac;
   --selection-background-color: #e7ad52;
   --selection-color: #fff; }
@@ -41,7 +50,9 @@
   font-family: "Open Sans", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #eee; }
+  /* color: #fdf9e7; */
+  color: #F5EAD2;
+}
 
 .reveal ::selection {
   color: #fff;
@@ -68,7 +79,7 @@
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee;
+  /*color: #eee; */
   font-family: "Montserrat", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -78,16 +89,31 @@
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  color: #D8AB4C;
+/*  font-size: 3.77em; */
+  font-size: 3.70em; }
 
 .reveal h2 {
-  font-size: 2.11em; }
+  color: #DDB562;
+/*  font-size: 2.11em; }*/
+  font-size: 2.00em; }
 
 .reveal h3 {
-  font-size: 1.55em; }
+  color: #E2C079;
+/*  font-size: 1.55em; }*/
+  font-size: 1.5em; }
 
 .reveal h4 {
+  color: #E7CA8F;
   font-size: 1em; }
+
+.reveal h5 {
+  color: #ECD5A6;
+}
+
+.reveal h6 {
+  color: #F0DFBC;
+}
 
 .reveal h1 {
   text-shadow: none; }
@@ -231,16 +257,34 @@
 .reveal img {
   margin: 20px 0; }
 
+.reveal del {
+    text-decoration: line-through;
+    background-color: #f65;
+    color: #555; }
+
+.reveal ins {
+    text-decoration: none;
+    background-color: #8ec07c;
+    color: #efe; }
+
+.reveal mark {
+    background-color: #FFC300; }
+
+
 /*********************************************
  * LINKS
  *********************************************/
 .reveal a {
-  color: #e7ad52;
+  color: #D8AB4C;
   text-decoration: none;
   transition: color .15s ease; }
 
+.reveal section a:hover {
+    text-decoration: underline;
+}
+
 .reveal a:hover {
-  color: #f3d7ac;
+  color: #e8ce96;
   text-shadow: none;
   border: none; }
 
@@ -266,14 +310,23 @@
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #e7ad52; }
+  color: #D8AB4C }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #e7ad52; }
+  color: #D8AB4C }
+
+/*********************************************
+ * SLIDE NUMBERS
+ *********************************************/
+
+.reveal .slide-number {
+    color: #D8AB4C;
+    background-color: rgba(0,0,0,0); }
+
 
 /*********************************************
  * PRINT BACKGROUND
@@ -281,3 +334,106 @@
 @media print {
   .backgrounds {
     background-color: #111; } }
+
+
+/********************************************
+ * CLOCK
+ ********************************************/
+
+.clock {
+    color: #D8AB4C
+}
+
+/********************************************
+ * SPREADSHEETS
+ ********************************************/
+
+.spreadsheet td, .spreadhseet input {
+    background-color: #5E5E5E;
+    color: #FAF4E9;
+}
+
+.spreadsheet td {
+    border: solid #AEAEAE 1px;
+}
+
+.spreadsheet input {
+    color: #F5EAD2;
+}
+
+.spreadsheet tr:first-child td, .spreadsheet td:first-child {
+    background-color: #434343;
+    /*background-color: darkgray; */
+}
+
+.spreadsheet td:hover {
+    background-color: #797979;
+}
+
+.spreadsheet td.formula:not(:hover)  {
+    /*background-color: lightgray; */
+    background-color: #949494;
+}
+
+.spreadsheet td.error:not(:hover)  {
+    /* background-color: red; */
+    background-color: #9F3620;
+}
+
+
+
+
+/******************************
+** Color shortcuts
+******************************/
+
+
+
+.my-red {
+    color: #FF5733;
+    fill: #FF5733;
+    stroke: #FF5733;
+}
+.my-blue {
+    color: #6e8bb9;
+    fill: #6e8bb9;
+    stroke: #6e8bb9;
+}
+.my-green {
+    color: #8ec07c ;
+    fill: #8ec07c;
+    stroke: #8ec07c;
+    /* #0ffaaf
+     #a4ca9a*/
+}
+.my-orange {
+    color: #FFC300;
+    fill: #FFC300;
+    stroke: #FFC300;
+}
+.my-gold{
+    color: #e8ce96;
+    fill: #e8ce96;
+    stroke: #e8ce96;
+}
+.my-gray{
+    color: #928374;
+    fill: #928374;
+    stroke: #928374;
+}
+.my-purple{
+    color: #d3869b;
+    fill: #d3869b;
+    stroke: #d3869b;
+}
+.my-plain{
+    color:currentcolor;
+    fill:currentcolor;
+    stroke:currentcolor;
+}
+.my-solar{
+    background: #153450;
+    color:#f8e4cc;
+    fill:#f4d6bc;
+    stroke:#f8e4cc;
+}

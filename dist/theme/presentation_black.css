@@ -4,6 +4,13 @@
  * (The default 'black' theme gives a dark gray background)
  *
  *
+ * This has been tweaked from its original theme from reveal.js
+ * Changes:
+ *  Change slide-number color and background
+ *  Formatted .clock colors
+ *  Spreadsheet overrides
+ *  Global color shortcuts
+ *
  * Black theme by Hakim El Hattab, http://hakim.se
  */
 @import url(fonts/source-sans-pro/source-sans-pro.css);
@@ -347,6 +354,44 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .clock {
     color: #42affa;
 }
+
+/********************************************
+* SPREADSHEETS
+********************************************/
+
+
+.spreadsheet td, .spreadhseet input {
+    background-color: #5E5E5E;
+    color: white;
+}
+
+.spreadsheet td {
+    border: solid white 1px;
+}
+
+.spreadsheet input {
+    color: whitesmoke;
+}
+
+.spreadsheet tr:first-child td, .spreadsheet td:first-child {
+    background-color: #434343;
+    /*background-color: darkgray; */
+}
+
+.spreadsheet td:hover {
+    background-color: #797979;
+}
+
+.spreadsheet td.formula:not(:hover)  {
+    /*background-color: lightgray; */
+    background-color: #949494;
+}
+
+.spreadsheet td.error:not(:hover)  {
+    /* background-color: red; */
+    background-color: #9F3620;
+}
+
 
 /***************************
  ** Color shortcuts
