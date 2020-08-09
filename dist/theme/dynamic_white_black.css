@@ -1,10 +1,15 @@
 /**
- * Custom hack for Dark Mode
- * Default:
- * White theme for reveal.js. This is the opposite of the 'black' theme.
+ * Light mode default with Dark mode options
+ * Uses default 'white' mode with a few custom tweaks
+ *  Change slide-number color and background
+ *  Clock color
+ *  Define Global colors
  *
- * When browsing in Dark Mode
- * By Hakim El Hattab, http://hakim.se
+ * Dark mode overrides for all color options
+ *
+ * Use with 'overrides.css' for complete formatting
+ *
+ * Original white/black theme by Hakim El Hattab, http://hakim.se
  */
 @import url(fonts/source-sans-pro/source-sans-pro.css);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
@@ -109,7 +114,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word;
-  text-align: left;
 }
 
 /* Dark Mode overwrites */
@@ -124,8 +128,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 } /* End dark mode */
 
 .reveal h1 {
-  font-size: 2.5em;
-  text-align: center; }
+  font-size: 2.5em; }
 
 .reveal h2 {
   font-size: 1.6em; }
@@ -245,14 +248,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
   border-bottom: 1px solid; }
-
-/* class="simple-table" (centered, no borders)*/
-.reveal table.simple-table th,
-.reveal table.simple-table td{
-  text-align: center;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 0px; }
-}
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
@@ -402,7 +397,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
   color: #2a76dd;
-  height:5px;
 }
 
 /* Dark Mode overwrites */
@@ -412,27 +406,20 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
         color: #42affa; }
 } /* End dark mode */
 
-.reveal .progress span {
-  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
 /*********************************************
  * SLIDE NUMBERS
  *********************************************/
 
 .reveal .slide-number {
-    left: 8px;
-    font-size: 0.8em;
     color: #2a76dd;
     background-color: rgba(0,0,0,0);
-    width: 2.3em;
 }
 
 /* Dark Mode overwrites */
 @media (prefers-color-scheme: dark){
     .reveal .slide-number{
-    color: #42affa; }
+        color: #42affa; }
 }/* End dark mode */
 
 /*********************************************
@@ -442,18 +429,6 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   .backgrounds {
     background-color: #fff; } }
 
-/*********************************************
- * SLIDES
- *********************************************/
-
-.reveal .slides {
-    text-align: left;
-}
-
-.reveal .slides > section,
-.reveal .slides > section > section {
-    padding: 0px;
-}
 
 /*********************************************
  * HELP BOX (ON TITLE)
@@ -500,18 +475,19 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     }
 }
 
-/******************************
- ** Fragment animation overrides
- ******************************/
+/********************************************
+ * CLOCK
+ ********************************************/
 
+.clock {
+    color: #2a76dd;
+}
 
-/* fragment step-fade-in-then-out*/
-.reveal .slides section .fragment.step-fade-in-then-out {
-    opacity: 0;
-    display: none; }
-.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
-    opacity: 1;
-    display: inline; }
+@media (prefers-color-scheme: dark) {
+    .clock{
+        color: #42affa;
+    }
+}
 
 
 /******************************
