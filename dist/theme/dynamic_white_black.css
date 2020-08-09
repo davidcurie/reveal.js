@@ -3,6 +3,7 @@
  * Uses default 'white' mode with a few custom tweaks
  *  Change slide-number color and background
  *  Clock color
+ *  Spreadsheet overrides
  *  Define Global colors
  *
  * Dark mode overrides for all color options
@@ -489,6 +490,45 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     }
 }
 
+/********************************************
+ * SPREADSHEETS
+ ********************************************/
+
+@media (prefers-color-scheme: dark) {
+
+    .spreadsheet td, .spreadhseet input {
+        background-color: #5E5E5E;
+        color: white;
+    }
+
+    .spreadsheet td {
+        border: solid white 1px;
+    }
+
+    .spreadsheet input {
+        color: whitesmoke;
+    }
+
+    .spreadsheet tr:first-child td, .spreadsheet td:first-child {
+        background-color: #434343;
+        /*background-color: darkgray; */
+    }
+
+    .spreadsheet td:hover {
+        background-color: #797979;
+    }
+
+    .spreadsheet td.formula:not(:hover)  {
+        /*background-color: lightgray; */
+        background-color: #949494;
+    }
+
+    .spreadsheet td.error:not(:hover)  {
+        /* background-color: red; */
+        background-color: #9F3620;
+    }
+
+}
 
 /******************************
 ** Color shortcuts
