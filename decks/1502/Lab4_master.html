@@ -1,123 +1,28 @@
 <!--decks/1502/Lab4.html -->
+<!--master-->
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Building and Analyzing Simple Circuits I</title>
+        <title>Building and Analyzing Simple Circuits I</title>
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
-        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
 
         <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-                <section> <!-- Title Slide-->
-                    <h2>1502 Lab 4 </h2>
-                    <p>To follow along with these slides, go to <br> <a href="">http://10.66.4.119:8000/decks/1502/Lab4.html </a></p>
-                </section> <!-- End Title Slide -->
-				<section> <!-- Review slides -->
-                    <h3> Leftover comments from Lab 3 </h3>
-                    <section > <!-- New subsection -->
-                        <dl>
-                            <dt>Ex 3 #6 (pg 46)</dt>
-                            <dd>How did the image size scale with focal length?</dd>
-                            <dt class="fragment" data-fragment-index=1>Ex 6 #20 (pg 50)</dt>
-                            <dd class="fragment" data-fragment-index=1>How does the apparent image size (i.e.&nbsp;magnification) relate to focal length?</dd>
-                        </dl>
-                    </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
-                        <center>
-                        <figure>
-                            <img class="plain" src="images/lab3_post.svg" width="55%"/>
-                        </figure>
-                        </center>
-                    </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
-                        What would happen to an image if I cover up the top half of a lens?
-                    </section> <!-- End subsection -->
-                    <section > <!-- New subsection -->
-                        
-                    </section> <!-- End subsection -->
-                </section> <!-- End review slides -->
-                <section> <!-- Blank slide during quiz -->
-                    <center>Quiz</center>
-                </section>
-                <section> <!-- Introduction slides for this lab -->
-                    
-                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
-                        <h3> Lab 4: Simple Circuits I</h3>
-                        
-                        <figure style="float: left; width:50%;">
-                            <img class="plain" style="background-color: #fff" src="images/EX330_cover.pdf"/>
-                        </figure>
-                        <div style="float:right; width: 45%; font-size:0.5em">
-                            <a href="http://www.extech.com/products/resources/EX330_UM-en.pdf"> http://www.extech.com/products/resources/EX330_UM-en.pdf</a>
-                        </div>
-                    </section> <!-- End subsection -->
-                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
-                        <h3> Lab 4: Simple Circuits I</h3>
-                        <figure style="float:left; width: 50%">
-                            <img class="plain" src="images/EX330_voltage.png" height="596px">
-                        </figure>
-                        <div style="float:right; width: 45%">
-                            Voltage
-                            <ul>
-                                <li>Measure in parallel</li>
-                                <li>May leave circuit intact</li>
-                            </ul>
-                        </div>
-                    </section> <!-- End subsection -->
-                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
-                        <h3> Lab 4: Simple Circuits I</h3>
-                        <figure style="float:left; width: 50%">
-                            <img class="plain" src="images/EX330_current.png" height="596px"/>
-                        </figure>
-                        <div style="float:right; width: 45%">
-                            Current
-                            <ul>
-                                <li>Measure in series</li>
-                                <li><mark>Need to break apart circuit</mark> and insert ammeter in place</li>
-                            </ul>
-                        </div>
-                    </section> <!-- End subsection -->
-                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
-                        <h3> Lab 4: Simple Circuits I</h3>
-                        <figure style="float:left; width: 50%">
-                            <img class="plain" src="images/EX330_resistance.png" height="596px"/>
-                        </figure>
-                        <div style="float:right; width: 45%">
-                            Resistance
-                            <ul>
-                                <li>Measure in parallel</li>
-                                <li><mark>Must be isolated</mark></li>
-                            </ul>
-                        </div>
-                    </section> <!-- End subsection -->
-                </section> <!-- End slide -->
-                <section> <!-- Help slides -->
-                    
-                    <div id="MyClockDisplay" class="clock" style="text-align: right; float: right;"  onload="showTime()"></div>
-                    <h2>Advice</h2>
-                    <ul>
-                        <li>Measure currents with 10&nbsp;A port first.</li>
-                        <ul>
-                            <li>If $I<1&nbsp;A$, move to &mu;A scale</li>
-                        </ul>
-                        <li><mark>Keep track of +/- signs</mark></li>
-                        <li>Learn how to translate a schematic to a real circuit.</li>
-                        <ul>
-                            <li>Pay attention to connections. Taking pictures or making notes will help.</li>
-                        </ul>
-                    </ul>
-                </section> <!-- End help slides-->
-			</div>
-		</div>
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Insert all slides from external, pre-formatted file-->
+                <section data-external-replace="Lab4_content.html"></section>
+            </div>
+        </div>
 
         <script src="../../dist/reveal.js"></script>
         <script src="../../plugin/notes/notes.js"></script>
@@ -125,12 +30,13 @@
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
                 //center: false,
                 //width: "100%",
                 //height: "100%",
@@ -154,21 +60,69 @@
                     // pass other options into `MathJax.Hub.Config()`
                     TeX: { Macros: { RR: "{\\bf R}" } }
                 },
-                              
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab4_info.html'
+                      },
+                    ]
+                },
+
                 plugins: [
-                      RevealMath,
-                      RevealMarkdown,
-                      RevealNotes,
-                      RevealHighlight,
-                      RevealSearch,
+                    RevealMath,
+                    RevealMarkdown,
+                    RevealNotes,
+                    RevealHighlight,
+                    RevealSearch,
+                    RevealMenu,
                 ],
 
-				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../plugin/multiplex/master.js', async: true },
+                dependencies: [
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
+//                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
                     { src: '../../lib/js/clock.js', async: true},
-				]
-			});
-		</script>
-	</body>
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                   // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                            return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                ]
+            });
+        </script>
+    </body>
 </html>

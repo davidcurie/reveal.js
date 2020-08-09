@@ -1,30 +1,46 @@
 /**
- * Custom hack for Dark Mode
- * Default:
- * White theme for reveal.js. This is the opposite of the 'black' theme.
+ * Custom build, modeled after 'black' theme.
+ * Used for presentations when the screen needs to be exactly black.
+ * (The default 'black' theme gives a dark gray background)
  *
- * When browsing in Dark Mode
- * By Hakim El Hattab, http://hakim.se
+ *
+ * Black theme by Hakim El Hattab, http://hakim.se
  */
-@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import url(fonts/source-sans-pro/source-sans-pro.css);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
-body {
+:root {
+  --background-color: #000;
+  --main-font: Source Sans Pro, Helvetica, sans-serif;
+  --main-font-size: 42px;
+  --main-color: #fff;
+  --block-margin: 20px;
+  --heading-margin: 0 0 20px 0;
+  --heading-font: Source Sans Pro, Helvetica, sans-serif;
+  --heading-color: #fff;
+  --heading-line-height: 1.2;
+  --heading-letter-spacing: normal;
+  --heading-text-transform: uppercase;
+  --heading-text-shadow: none;
+  --heading-font-weight: 600;
+  --heading1-text-shadow: none;
+  --heading1-size: 2.5em;
+  --heading2-size: 1.6em;
+  --heading3-size: 1.3em;
+  --heading4-size: 1em;
+  --code-font: monospace;
+  --link-color: #42affa;
+  --link-color-hover: #8dcffc;
+  --selection-background-color: #bee4fd;
+  --selection-color: #fff; }
+
+.reveal-viewport {
   background: #000;
   background-color: #000; }
-
-div.fill-screen {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    text-align: center;
-}
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -32,40 +48,20 @@ div.fill-screen {
   font-weight: normal;
   color: #fff; }
 
-::selection {
+.reveal ::selection {
   color: #fff;
   background: #bee4fd;
   text-shadow: none; }
 
-::-moz-selection {
+.reveal ::-moz-selection {
   color: #fff;
-  background: #bee4fd;
+  background: #98bdef;
   text-shadow: none; }
 
 .reveal .slides section,
 .reveal .slides section > section {
   line-height: 1.3;
   font-weight: inherit; }
-
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    body {
-        background: #191919;
-        background-color: #191919; }
-    
-    .reveal {
-        color: #fff; }
-    
-    ::selection {
-        color: #fff;
-        background: #bee4fd;
-        text-shadow: none; }
-    
-    ::-moz-selection {
-        color: #fff;
-        background: #bee4fd;
-        text-shadow: none; }
-} /* End dark mode */
 
 /*********************************************
  * HEADERS
@@ -85,23 +81,10 @@ div.fill-screen {
   text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word;
-  text-align: left;
 }
 
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    .reveal h1,
-    .reveal h2,
-    .reveal h3,
-    .reveal h4,
-    .reveal h5,
-    .reveal h6 {
-        color: #fff; }
-} /* End dark mode */
-
 .reveal h1 {
-  font-size: 2.5em;
-  text-align: center; }
+  font-size: 2.5em; }
 
 .reveal h2 {
   font-size: 1.6em; }
@@ -260,24 +243,14 @@ div.fill-screen {
     text-decoration: none;
     background-color: #93b989; }
 
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    .reveal del {
-        background-color: #f65; }
-    
-    .reveal ins {
-        background-color: #a4ca9a; }
-} /* End dark mode */
 
 /*********************************************
  * LINKS
  *********************************************/
 .reveal a {
   color: #42affa;
-  text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+   text-decoration: none;
+   transition: color .15s ease; }
 
 .reveal a:hover {
   color: #8dcffc;
@@ -288,18 +261,19 @@ div.fill-screen {
   color: #fff;
   background: #068de9; }
 
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    .reveal a {
-        color: #42affa; }
-    
-    .reveal a:hover {
-        color: #8dcffc; }
-    
-    .reveal .roll span:after {
-        color: #fff;
-        background: #068de9; }
-} /* End dark mode */
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal a .r-frame {
+  transition: all .15s linear; }
+
+.reveal a:hover .r-frame {
+  border-color: #42affa;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * IMAGES
@@ -332,12 +306,6 @@ div.fill-screen {
 .reveal .controls {
   color: #42affa; }
 
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    .reveal .controls {
-        color: #42affa; }
-} /* End dark mode */
-
 /*********************************************
  * PROGRESS BAR
  *********************************************/
@@ -347,17 +315,11 @@ div.fill-screen {
   height:5px;
 }
 
-/* Dark Mode overwrites
-@media (prefers-color-scheme: dark){
-    .reveal .progress {
-        background: rgba(255, 255, 255, 0.2);
-        color: #42affa; }
-} /* End dark mode */
-
-.reveal .progress span {
-  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
-  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+/* Makes progress bar jumpy, deprecated as of V4.0 */
+/*.reveal .progress span {*/
+/*  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);*/
+/*  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);*/
+/*  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }*/
 
 /*********************************************
  * SLIDE NUMBERS
@@ -371,12 +333,6 @@ div.fill-screen {
     width: 0.8em;
 }
 
-/* Dark Mode overwrites 
-@media (prefers-color-scheme: dark){
-    .reveal .slide-number{
-    color: #42affa; }
-}/* End dark mode */
-
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/
@@ -384,75 +340,63 @@ div.fill-screen {
   .backgrounds {
     background-color: #fff; } }
 
-/*********************************************
- * SLIDES
- *********************************************/
-
-.reveal .slides {
-    text-align: left;
-}
-
-.reveal .slides > section,
-.reveal .slides > section > section {
-    padding: 0px;
-}
-
-/*********************************************
- * HELP BOX (ON TITLE)
- *********************************************/
-
-.alert {
-    padding: 15px 15px 0px;
-    background-color: rgba(0,0,0,0.2) ;
-    color: white;
-    width: 270px;
-    position: fixed;
-    bottom: 15px;
-    right: 60px;
-    font-size: 0.5em;
-}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
-    bottom: 5px;
-}
-
-.closebtn:hover {
-    color: #2a76dd;
-}
-
-@media (prefers-color-scheme: dark) {
-    .alert {
-        background-color: rgba(255,255,255,0.2);
-        color: #777 ;
-    }
-    .closebtn {
-        color: #777;
-    }
-    .closebtn:hover {
-        color: #42affa;
-    }
-}
-
 /********************************************
  * CLOCK
  ********************************************/
 
 .clock {
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);*/
     color: #42affa;
-    font-size: 2em;
-    /*font-family: Orbitron;*/
-    letter-spacing: 7px;
+}
+
+/***************************
+ ** Color shortcuts
+ **************************/
+
+.my-red {
+    color: #f65;
+    fill: #f65;
+    stroke: #f65;
+}
+.my-blue {
+    color: #42affa;
+    fill: #42affa;
+    stroke: #42affa;
+}
+.my-green {
+    color: lightgreen ;
+    fill: lightgreen;
+    stroke: lightgreen;
+    /* #0ffaaf
+     #a4ca9a*/
+}
+.my-orange {
+    color: orange;
+    fill: orange;
+    stroke: orange;
+}
+.my-gold{
+    color: #ffe699;
+    fill: #ffe699;
+    stroke: #ffe699;
+}
+.my-gray{
+    color: lightgray;
+    fill: lightgray;
+    stroke: lightgray;
+}
+.my-purple{
+    color: violet;
+    fill: violet;
+    stroke: violet;
+}
+.my-plain{
+    color:currentcolor;
+    fill:currentcolor;
+    stroke:currentcolor;
+}
+.my-solar{
+    background: #153450;
+    color:#f8e4cc;
+    fill:#f4d6bc;
+    stroke:#f8e4cc;
 }

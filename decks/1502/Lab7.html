@@ -1,90 +1,28 @@
-<!--decks/1502/Lab5.html -->
+<!--decks/1502/Lab7.html -->
+<!--client-->
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Magnetism</title>
+        <title>Magnetism</title>
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
-        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
 
         <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-                <section> <!-- Title Slide-->
-                    <h2>1502 Lab 7 </h2>
-                    <p>To follow along with these slides, go to <br> <a href="">http://10.66.127.44:8000/decks/1502/Lab6.html </a></p>
-                </section> <!-- End Title Slide -->
-				<section> <!-- Review slides -->
-                    <h3> Leftover comments from Lab 6 </h3>
-                    <section> <!-- New subsection -->
-                        <dl>
-                           <dt style="color: #42affa">Poor</dt>
-                           <dd>The area was off</dd>
-                           <dt style="color: #42affa">Incomplete</dt>
-                           <dd>The area was off because the sheets moved when we closed the book</dd>
-                           <dt style="color: #42affa">Better</dt>
-                           <dd>The area was off because the sheets moved when we closed the book. This made the area <mark>[slightly]</mark> smaller, so the effective capacitance that we measure is smaller</dd>
-                        </dl>
-                    </section> <!-- End subsection -->
-                    <section>
-                        <dl>
-                            <dt style="color: #42affa">Problem</dt>
-                            <dd>Area is not 10x smaller.</dd>
-                            <dt style="color: #42affa">Other factors</dt>
-                            <dd>Distance b/w plates is also not 10x off</dd>
-                            <dt style="color: #42affa">Best</dt>
-                            <dd><mark>Quantify errors</mark>. Estimates are okay.</dd>
-                        </dl>
-                    </section>
-                    <section > <!-- New subsection -->
-                        <figure style="width: 30%; float: left">
-                            <img class="plain" src="images/Pointy_E_field.jpg" width="100%" alt="Electric field near sharp tips"/>
-                            <figcaption style="font-size: 0.3em">See more: <a href="https://courses.lumenlearning.com/physics/chapter/18-7-conductors-and-electric-fields-in-static-equilibrium/">https://courses.lumenlearning.com/physics/chapter/18-7-conductors-and-electric-fields-in-static-equilibrium/</a></figcaption>
-                        </figure>
-                        <figure style="width: 60%; float: right">
-                            <img class="plain" src="images/wrinkled_foil.jpg" width="100%" alt="Wrinkled aluminum foil"/>
-                            <figcaption style="font-size: 0.3em">Wrinkled alumuminum foil <a href="https://p1.pxfuel.com/preview/881/825/304/alu-aluminum-foil-structure-shiny.jpg">https://p1.pxfuel.com/preview/881/825/304/alu-aluminum-foil-structure-shiny.jpg</a></figcaption>
-                        </figure>
-                    </section> <!-- End subsection -->
-                    
-                </section> <!-- End review slides -->
-                <section> <!-- Blank slide during quiz -->
-                    <center>Quiz</center>
-                </section>
-                <section> <!-- Introduction slides for this lab -->
-                    <h3> Lab 7: Magnetism</h3>
-                    <section data-transition="fade out"> <!-- New subsection -->
-                        <dl>
-                            <dt>Key Topics</dt><br/>
-                            <dd>Right Hand Rule</dd><br/>
-                            <dd>Currents induce magnetic fields</dd>
-                        </dl>
-                            
-                    </section> <!-- End subsection -->
-                </section> <!-- End slide -->
-                <section> <!-- Help slides -->
-                    
-                    <div id="MyClockDisplay" class="clock" style="text-align: right; float: right"  onload="showTime()"></div>
-                    <h2>Advice</h2>
-                    <ul>
-                        <li>Keep magneprobes away from permanent magnets</li>
-                        <br/>
-                        <li>Pay attention to direction of current.</li>
-                            <ul>
-                                <li>Proper connections to ammeter are important.</li>
-                                <li>For convenience, make your lab setup match the pictures and diagrams given.</li>
-                            </ul>
-                    </ul>
-                </section> <!-- End help slides-->
-			</div>
-		</div>
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Insert all slides from external, pre-formatted file-->
+                <section data-external-replace="Lab7_content.html"></section>
+            </div>
+        </div>
 
         <script src="../../dist/reveal.js"></script>
         <script src="../../plugin/notes/notes.js"></script>
@@ -92,13 +30,13 @@
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
 
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
                 //center: false,
                 //width: "100%",
                 //height: "100%",
@@ -122,21 +60,69 @@
                     // pass other options into `MathJax.Hub.Config()`
                     TeX: { Macros: { RR: "{\\bf R}" } }
                 },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab7_info.html'
+                      },
+                    ]
+                },
 
                 plugins: [
-                      RevealMath,
-                      RevealMarkdown,
-                      RevealNotes,
-                      RevealHighlight,
-                      RevealSearch,
+                    RevealMath,
+                    RevealMarkdown,
+                    RevealNotes,
+                    RevealHighlight,
+                    RevealSearch,
+                    RevealMenu,
                 ],
-                              
-				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../plugin/multiplex/master.js', async: true },
+
+                dependencies: [
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+//                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
                     { src: '../../lib/js/clock.js', async: true},
-				]
-			});
-		</script>
-	</body>
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                   // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                            return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                ]
+            });
+        </script>
+    </body>
 </html>

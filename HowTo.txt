@@ -4,7 +4,7 @@ HowTo:
 cd reveal.js
 
 // Run multiplex.
-node plugin/multiplex
+node node_modules/reveal-multiplex
 
 // Get token at multiplex port (1948 by default)
 http:localhost:1948/token
@@ -13,7 +13,8 @@ http:localhost:1948/token
 // Copy ID to [master_slides].html and [client_slides].html
 
 // Start local server hosting. In a new terminal, navigate back to reveal.js
-npm start
+static
+** used to be `npm start`
 
 // Give URL to students to follow along.
 // e.g. http://localhost:8000/decks/1502/Lab2.html
@@ -21,6 +22,16 @@ npm start
 
 // When done with presentation, you may close terminals that are running npm start and multiplex
 
+// Be sure dependencies are loaded in the presentation
+ dependencies: [
+    { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+    { src: 'node_modules/reveal-multiplex/master.js', async: true },
+
+    // and if you want speaker notes
+    { src: 'node_modules/reveal-notes-server/client.js', async: true }
+
+<script src="socket.io/socket.io.js"></script>
+<script src="node_modules/reveal-notes-server/client.js"></script>
 
 -----
 

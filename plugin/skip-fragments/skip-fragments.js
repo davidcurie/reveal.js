@@ -17,7 +17,7 @@ const SkipFragments = (function (Reveal) {
             return;
         }
         const shortcut = {
-            view: config.skipFragmentsShowShortcut || 'v',
+            view: config.skipFragmentsShowShortcut || 'V',
             hide: config.skipFragmentsHideShortcut || 'C'
         };
         const keyboard = config.keyboard === true ? {} : config.keyboard;

@@ -9,10 +9,12 @@
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
-        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
 
         <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+
 
         <style>
             #subtitle {
@@ -80,7 +82,8 @@
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
-
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
@@ -90,14 +93,61 @@
                 width: "100%",
                 height: "100%",
                 slideNumber: true,
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/index_info.html'
+                      },
+                    ]
+                },
                 plugins: [
                       RevealMath,
                       RevealMarkdown,
                       RevealNotes,
                       RevealHighlight,
                       RevealSearch,
+                      RevealMenu,
                 ],
 				dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
 				]
 			});
 		</script>

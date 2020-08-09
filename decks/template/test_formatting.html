@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
-
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+            
         <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
         <!-- Extra plugin scripts -->
@@ -750,24 +751,43 @@
                   TeX: { Macros: { RR: "{\\bf R}" } }
                 },
                 // Slide out menu changes (press `m`)
+                // Slide out menu changes (press `m`)
                 menu: {
-                    numbers: true,
-                    useTextContentForMissingTitles: true,
-                    openButton: false,
-                    openSlideNumber: true,
-
-                  custom: [
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
                     {
-                      title: 'Links',
-                      icon: '<i class="fa fa-external-link">',
-                      src: 'links.html'
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
                     },
                     {
-                      title: 'About',
-                      icon: '<i class="fa fa-info">',
-                      content: '<p>This slidedeck is created with reveal.js</p>'
-                    }
-                  ]
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab2_info.html'
+                      },
+                    ]
                 },
 
                 plugins: [
@@ -785,6 +805,13 @@
 //                    { src: '../../lib/js/clock.js', async: true},
                     { src: '../../plugin/spreadsheet/spreadsheet.js' },
                     { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
 				]
 			});
 		</script>

@@ -1,69 +1,28 @@
 <!--decks/1502/Lab5.html -->
+<!--master-->
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Building and Analyzing Simple Circuits II</title>
+        <title>Building and Analyzing Simple Circuits II</title>
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
-        <link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
 
         <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-                <section> <!-- Title Slide-->
-                    <h2>1502 Lab 5 </h2>
-                    <p>To follow along with these slides, go to <br> <a href="">http://10.66.81.226:8000/decks/1502/Lab5.html </a></p>
-                </section> <!-- End Title Slide -->
-				<section> <!-- Review slides -->
-                    <h3> Leftover comments from Lab 4 </h3>
-                    <section > <!-- New subsection -->
-                        <dl>
-                           <dt>Activity 2 #16 (pg 60)</dt>
-                           <dd>How does $R_\text{total}$ change when you add resistors in series?</dd>
-                           <dt>Activity 2 #19 (pg 61)</dt>
-                           <dd>How does $R_\text{total}$ change when you add resistors in parallel?</dd>
-                       </dl>
-                    </section> <!-- End subsection -->
-                </section> <!-- End review slides -->
-                <section> <!-- Blank slide during quiz -->
-                    <center>Quiz</center>
-                </section>
-                <section> <!-- Introduction slides for this lab -->
-                    <h3> Lab 5: Simple Circuits II</h3>
-                    <section> <!-- New subsection -->
-                        <h4>Kirchoff's Laws</h4>
-                        <p>How do each of these properties behave when they are in SERIES or in PARALLEL?</p>
-                        <ul>
-                            <li>$R_\text{total}$</li>
-                            <li>$I_\text{total}$</li>
-                            <li>$V_\text{total}$</li>
-                        </ul>
-                    </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
-                        <figure>
-                            <img src="images/Resistors_comparison.svg" style="width: 100%; background: rgba(255,255,255,1)"/>
-                        </figure>
-                    </section> <!-- End subsection -->
-                </section> <!-- End slide -->
-                <section> <!-- Help slides -->
-                    
-                    <div id="MyClockDisplay" class="clock" style="text-align: right; float:right"  onload="showTime()"></div>
-                    <h2>Advice</h2>
-                    <ul>
-                        <li>Reference Lab 4 often</li>
-                        <li>Keep track of your +/- signs</li>
-                        <li>Negative resistance isn't a thing</li>
-                    </ul>
-                </section> <!-- End help slides-->
-			</div>
-		</div>
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Insert all slides from external, pre-formatted file-->
+                <section data-external-replace="Lab5_content.html"></section>
+            </div>
+        </div>
 
         <script src="../../dist/reveal.js"></script>
         <script src="../../plugin/notes/notes.js"></script>
@@ -71,12 +30,13 @@
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
                 //center: false,
                 //width: "100%",
                 //height: "100%",
@@ -92,7 +52,7 @@
                     id: '', // id, obtained from socket.io server
                     url: '' // Location of socket.io server
                 },
-                
+
                 // For Latex math
                 math: {
                     mathjax: '../../node_modules/mathjax/MathJax.js',
@@ -100,21 +60,69 @@
                     // pass other options into `MathJax.Hub.Config()`
                     TeX: { Macros: { RR: "{\\bf R}" } }
                 },
-                              
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab5_info.html'
+                      },
+                    ]
+                },
+
                 plugins: [
-                      RevealMath,
-                      RevealMarkdown,
-                      RevealNotes,
-                      RevealHighlight,
-                      RevealSearch,
+                    RevealMath,
+                    RevealMarkdown,
+                    RevealNotes,
+                    RevealHighlight,
+                    RevealSearch,
+                    RevealMenu,
                 ],
 
-				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../plugin/multiplex/master.js', async: true },
+                dependencies: [
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
+//                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
                     { src: '../../lib/js/clock.js', async: true},
-				]
-			});
-		</script>
-	</body>
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                   // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                            return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                ]
+            });
+        </script>
+    </body>
 </html>
