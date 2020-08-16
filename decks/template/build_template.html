@@ -1,0 +1,142 @@
+<!-- ${full_file}-->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Reveal Settings -->
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        ${Append_CSS}
+if_spreadsheet
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+fi_spreadsheet
+        <!-- Coloring and styling -->
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>${Replace_Title}</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Content from ${Parent_File} inserted with the following variables-->
+                <!-- ${Replace_Content} -->
+                
+            </div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+if_spreadsheet
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+fi_spreadsheet
+        ${Append_Script}
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+if_multi
+                // For synchronization b/w master/client
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '${secret}', // null so the clients do not have control of the master presentation
+                    id: '${socket_id}', // id, obtained from socket.io server
+                    url: '${socket_url}' // Location of socket.io server
+                },
+fi_multi
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/${base}_info.html'
+                      },
+                    ]
+                },
+                ${Append_Init}
+
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                      ${Append_Plugin}
+                ],
+				dependencies: [
+if_multi
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
+fi_multi
+if_spreadsheet
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+fi_spreadsheet
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    { src: '../../lib/js/clock.js', async: true},
+                   ${Append_Depend}
+				]
+			});
+		</script>
+	</body>
+</html>
