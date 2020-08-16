@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
-        
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
         <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
         <link rel="stylesheet" href="../../dist/theme/overrides.css">
@@ -839,7 +839,7 @@
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
-        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+
 
 		<script>
 			// More info about config & dependencies:
@@ -850,7 +850,7 @@
                 // For synchronization b/w master/client
                 multiplex: {
                     // Example values. To generate your own, see the socket.io server instructions.
-                    secret: '15970205758604717501', // null so the clients do not have control of the master presentation
+                    secret: null, // null so the clients do not have control of the master presentation
                     id: 'd3545686f74752c0', // id, obtained from socket.io server
                     url: 'http://10.0.0.136:1948' // Location of socket.io server
                 },
@@ -861,6 +861,7 @@
                   // pass other options into `MathJax.Hub.Config()`
                   TeX: { Macros: { RR: "{\\bf R}" } }
                 },
+                // Slide out menu changes (press `m`)
                 // Slide out menu changes (press `m`)
                 menu: {
                   numbers: true,
@@ -910,9 +911,9 @@
                       RevealMenu,
                 ],
 				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
 //                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
-//                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
+                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
 //                    { src: '../../lib/js/clock.js', async: true},
                     { src: '../../plugin/spreadsheet/spreadsheet.js' },
                     { src: '../../plugin/skip-fragments/skip-fragments.js' },
@@ -923,8 +924,6 @@
                            return !!document.querySelector( '[data-external],[data-external-replace]' );
                         }
                     },
-                   { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
-                   { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
 				]
 			});
 		</script>
