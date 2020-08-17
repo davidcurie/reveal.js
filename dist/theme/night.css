@@ -4,6 +4,7 @@
  * Changes:
  *  Default Text color (main color, color)
  *  Header colors
+ *  Definition (term) background color
  *  Formatted <del> and <ins> and <mark>
  *  Formatted .clock colors
  *  Spreadsheet overrides
@@ -91,7 +92,8 @@
 .reveal h1 {
   color: #D8AB4C;
 /*  font-size: 3.77em; */
-  font-size: 3.70em; }
+  font-size: 3.70em;
+  text-shadow: none; }
 
 .reveal h2 {
   color: #DDB562;
@@ -115,8 +117,6 @@
   color: #F0DFBC;
 }
 
-.reveal h1 {
-  text-shadow: none; }
 
 /*********************************************
  * OTHER
@@ -166,6 +166,7 @@
   margin-left: 40px; }
 
 .reveal dt {
+  background-color: rgba(216, 172, 76, 0.1);
   font-weight: bold; }
 
 .reveal dd {
