@@ -1,28 +1,227 @@
-<!--decks/1502/Lab3.html -->
-<!--Client  -->
+<!-- /reveal.js/decks/1502/Lab3.html -->
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-        <title>Geometric Optics - Lenses</title>
-
+	<head>
+		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Reveal Settings -->
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <!-- Coloring and styling -->
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
-        <link rel="stylesheet" href="../../dist/theme/overrides.css">
-
-        <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
-    </head>
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <!-- Insert all slides from external, pre-formatted file-->
-                <section data-external-replace="Lab3_content.html"></section>
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>Geometric Optics - Lenses</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slides from content/Lab3x.html inserted with the following variables-->
+                <!-- decks/1502/content/Lab3x.html
+                title="Geometric Optics - Lenses"
+                is_multi
+                depend="{ src: '../../lib/js/clock.js', async: true}"
+                -->
+                <section> <!-- Title Slide-->
+                    <h2>1502 Lab 3 </h2>
+                    <p>To follow along with these slides, go to <br> <a href="">http://10.66.227.19:8000/decks/1502/Lab3.html </a></p>
+                    <aside class="notes">
+                        <p>These are notes for the title slide</p>
+                    </aside>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review slides -->
+                    <section data-menu-title="Lab 2: Leftover comments" > <!-- New subsection -->
+                        <h3> Leftover comments from Lab 2 </h3>
+                        <ul>
+                            <li>Refraction occurs when changing speed</li><br/>
+                            <li>The [typical] convention for labelling</li>
+                            <ul>
+                                <li>n<sub>1</sub> = starting material</li>
+                                <li>n<sub>2</sub> = reflecting/refracting material</li>
+                            </ul><br/>
+                            <li>Mnemonic to remember</li>
+                            <ul>
+                                <li><span class="my-blue">BBB</span> - <span class="my-blue">B</span>lue <span class="my-blue">B</span>ends <span class="my-blue">B</span>etter</li>
+                                <li><span class="my-red">RRR</span> - <span class="my-red">R</span>ed <span class="my-red">R</span>efracts <span class="my-red">R</span>otten</li>
+                            </ul>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section data-menu-title="Mirage quiz"> <!-- Mirage subsection -->
+                        <ul>
+                            <li>Warm air is less dense than cold air</li>
+                            <li>Which correctly explains a mirage?</li>
+                        </ul>
+                        <figure style="font-size: 0.6em">
+                            <figure style="width: 50%; float: left">
+                                <figcaption>A</figcaption>
+                                <img class="plain" style="display: block" src="images/Mirage1.svg" />
+                            </figure>
+                            <figure style="width: 50%; float: right">
+                                <figcaption>B</figcaption>
+                                <img class="plain" style="display: block" src="images/Mirage2.svg"/>
+                            </figure>
+                            <figure style="width: 50%; float: left">
+                                <img class="plain" style="display: block" src="images/Mirage3.svg"/>
+                                <figcaption>C</figcaption>
+                            </figure>
+                            <figure style="width: 50%; float: right">
+                                <img class="plain" style="display: block" src="images/Mirage4.svg"/>
+                                <figcaption>D</figcaption>
+                            </figure>
+                        </figure>
+                    </section> <!-- End subsection -->
+                    <section data-menu-title="Types of mirages">
+                        <figure class="r-stretch" style="font-size: 0.4em">
+                            <img style="width: 100%" src="images/Superior_and_inferior_mirage.svg" alt="Superior and inferior mirage"/>
+                            <figcaption>Types of mirages. <br/>
+                                Ludovica Lorenzelli, DensityDesign Research Lab. Own work, CC BY-SA 4.0 <br/>
+                                <a href="https://commons.wikimedia.org/w/index.php?curid=37081455">https://commons.wikimedia.org/w/index.php?curid=37081455</a>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="Superior mirage example">
+                        <figure class="r-stretch" style="font-size: 0.4em">
+                            <img src="images/Superior_mirage.jpg" alt="Superior mirage at sea"/>
+                            <figcaption>
+                                Brocken Inaglory. 2008. CC BY-SA 3.0 <br/>
+                                <a href="https://commons.wikimedia.org/wiki/File:Superior_mirage_of_a_boat_floating_over_superior_mirage_of_the_waves.jpg">https://commons.wikimedia.org/wiki/File:Superior_mirage_of_a_boat_floating_over_superior_mirage_of_the_waves.jpg</a>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="SOFAR Channel">
+                        <figure style="font-size: 0.4em">
+                            <img src="images/Sofar.jpg" alt="Sound Fixing and Ranging Channel illustration"/>
+                            <figcaption>National Ocean Service. NOAA. <br/>
+                            <a href="https://oceanservice.noaa.gov/facts/sofar.html">https://oceanservice.noaa.gov/facts/sofar.html</a></figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="SOFAR sphere">
+                        <center><figure style="font-size: 0.4em; width: 70%">
+                            <img class="plain" src="images/Globe.svg" alt="Globe view of Atlantic Ocean"width="100%"/>
+                            <figcaption>Atlantic Ocean</figcaption>
+                            <svg width="100%" height="100%" style="position: absolute; left:0; top: 0"> <!-- Overlay on top of previous image -->
+                                <ellipse cx="50%" cy="30%" rx="10" ry="9" fill="#42affa" />
+                                <ellipse cx="35%" cy="22%" rx="5" ry="4" fill="red" />
+                                <ellipse cx="32%" cy="25%" rx="5" ry="4" fill="red" />
+                                <ellipse cx="31%" cy="29%" rx="5" ry="4" fill="red" />
+                            </svg>
+                        </figure></center>
+                        
+                    </section>
+                    <section data-menu-title="Atmospheric analogue">
+                        <figure style="font-size: 0.4em; width: 100%">
+                            <img class="plain" src="images/tropispheric_ducting.jpg" alt="Illustration of tropsheric ducting as an atmoshperic analogue to SOFAR" width="100%"/>
+                            <figcaption>Tropispheric ducting enables radio waves to transmitt long distances. Image from BBC. <br/>
+                                <a href="https://www.bbc.co.uk/reception/help-guides/analogue-radio/effect-of-tropospheric-ducting-on-radio">https://www.bbc.co.uk/reception/help-guides/analogue-radio/effect-of-tropospheric-ducting-on-radio</a>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="Roswell">
+                        <figure style="font-size: 0.4em; width: 40%; float: left">
+                            <img class="plain" src="images/roswell.jpg" alt="Authorities inspecting weather balloon debris in Roswell" width="100%"/>
+                            <figcaption>Roswell weather balloon debris.<br/>
+                                <a href="https://www.history.com/news/roswell-ufo-aliens-what-happened">https://www.history.com/news/roswell-ufo-aliens-what-happened</a>
+                            </figcaption>
+                        </figure>
+                        <figure style="font-size: 0.4em; width: 60%; float: right">
+                            <img class="plain" src="images/roswelldailyrecord.jpg" alt="Roswell Daily Record. July 8, 1947 : RAAF Captures Flying Saucer on Ranch in Roswell Region" width="100%"/>
+                            <figcaption>Roswell Daily Record. July 8, 1947.<br/> Reprinted in Smithsonian Magazine. <br/>
+                                <a href="https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/">https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/</a>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <h3>See more:</h3>
+                        <dl>
+                            <dt>Internet Historian</dt>
+                            <dd>The Roswell Incident (4:19) - <a href="https://youtu.be/VT128ElBWkM">https://youtu.be/VT128ElBWkM</a></dd>
+                            <dt>Richard Muller</dt>
+                            <dd>Sound Channel Lecture (25:43) - <a href="https://youtu.be/k4ygiQHSNDc">https://youtu.be/k4ygiQHSNDc</a></dd>
+                        </dl>
+                    </section>
+                </section> <!-- End review slides -->
+                <section> <!-- Blank slide during quiz -->
+                    <center>Quiz</center>
+                </section> <!-- End blank slide -->
+                <section> <!-- Introduction slides for this lab -->
+                    <h3> Lab 3: Lenses</h3>
+                    <section  data-menu-title="Lab 3: Lenses" data-transition="slide-in fade-out"> <!-- New subsection -->
+                        <center>
+                            <img class="plain" src="images/lens_build1.svg" width="70%" />
+                        </center>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                        <center>
+                            <img class="plain" src="images/lens_build2.svg" width="70%" />
+                        </center>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                        <center>
+                            <img class="plain" src="images/lens_build3.svg" width="70%" />
+                        </center>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                        <center>
+                            <img class="plain" src="images/lens_build4.svg" width="70%" />
+                        </center>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                        <center>
+                            <img class="plain" src="images/lens_build5.svg" width="70%" />
+                        </center>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                            <figure style="float: left; width: 40%">
+                                <img class="plain" src="images/lens_build6.svg" width="100%"/>
+                            </figure>
+                            <div style="width: 55%; float: right">
+                                <dl>
+                                    <dt>Focal point:</dt>
+                                    <dl>
+                                        <dt>Converging Lens</dt>
+                                            <dd>Soonest point rays converge</dd>
+                                    </dl>
+                                    <div style="border: 0.1em solid yellow; padding: 10px; margin: 0.3em;">Measured from center of lens!</div>
+                                    <dl>
+                                        <dt>Diverging Lens</dt>
+                                            <dd>Apparent source point</dd>
+                                    </dl>
+                                </dl>
+                            <div>
+                    </section> <!-- End subsection -->
+                    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+                            <figure style="float: left; width: 40%">
+                                <img class="plain" src="images/lens_build6.svg" width="100%"/>
+                            </figure>
+                            <div style="width: 55%; float: right">
+                                Other Notes:
+                                <ul>
+                                    <li>Focal point assumes light is coming in parallel <br/>(i.e. $p = \infty$)</li>
+                                    <li>Thin lens approximation:
+                                    <br/>[width of lens] $\ll f $</li>
+                                </ul>
+                            <div>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section> <!-- Help slides -->
+                    
+                    <div id="MyClockDisplay" class="clock" style="text-align: right; float: right"  onload="showTime()"></div>
+                    <h2>Advice</h2>
+                    
+                    <ul>
+                        <li>Learn what $+f$ and $-f$ mean</li>
+                        <li>Ex 6: Hold magnifying lens over eye; bring head to paper</li>
+                        <li>Thin lens approximation: [width&nbsp;of&nbsp;lens]&nbsp;$\ll~f$</li>
+                    </ul>
+                </section> <!-- End help slides-->
+                
             </div>
-        </div>
+		</div>
 
         <script src="../../dist/reveal.js"></script>
         <script src="../../plugin/notes/notes.js"></script>
@@ -31,34 +230,27 @@
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
 
-        <script>
-            // More info about config & dependencies:
-            // - https://github.com/hakimel/reveal.js#configuration
-            // - https://github.com/hakimel/reveal.js#dependencies
-            Reveal.initialize({
-                //center: false,
-                //width: "100%",
-                //height: "100%",
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
                 slideNumber: true,
-                //keyboard: false,
-                //touch: false,
-                //controls: false,
-                
-                // Multiplex for client-side updates
+                // For synchronization b/w master/client
                 multiplex: {
                     // Example values. To generate your own, see the socket.io server instructions.
-                    secret: '', // null so the clients do not have control of the master presentation
+                    secret: 'null', // null so the clients do not have control of the master presentation
                     id: '', // id, obtained from socket.io server
                     url: '' // Location of socket.io server
                 },
-
                 // For Latex math
                 math: {
-                    mathjax: '../../node_modules/mathjax/MathJax.js',
-                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-                    // pass other options into `MathJax.Hub.Config()`
-                    TeX: { Macros: { RR: "{\\bf R}" } }
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
                 },
                 // Slide out menu changes (press `m`)
                 menu: {
@@ -99,31 +291,33 @@
                       },
                     ]
                 },
+                
 
                 plugins: [
-                    RevealMath,
-                    RevealMarkdown,
-                    RevealNotes,
-                    RevealHighlight,
-                    RevealSearch,
-                    RevealMenu,
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                      
                 ],
-
-                dependencies: [
+				dependencies: [
                     { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
                     { src: '../../node_modules/reveal-multiplex/client.js', async: true },
-                    { src: '../../lib/js/clock.js', async: true},
                     { src: '../../plugin/skip-fragments/skip-fragments.js' },
-                   // For inserting external .html reveal slides/conent
+                    // For inserting external .html reveal slides/conent
                     {
                         src: '../../plugin/external/external.js',
                         condition: function() {
-                            return !!document.querySelector( '[data-external],[data-external-replace]' );
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
                         }
                     },
-                ]
-            });
-        </script>
-    </body>
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    { src: '../../lib/js/clock.js', async: true}, // Inserted from content/Lab3x.html
+				]
+			});
+		</script>
+	</body>
 </html>

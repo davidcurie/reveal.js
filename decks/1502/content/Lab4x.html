@@ -1,12 +1,15 @@
-<!--decks/1502/Lab4.html -->
-
-<section> <!-- Title Slide-->
+<!-- decks/1502/content/Lab4x.html
+title="Building and Analyzing Simple Circuits I"
+is_multi
+depend="{ src: '../../lib/js/clock.js', async: true}"
+-->
+<section data-menu-title="1502 Lab 4"> <!-- Title Slide-->
     <h2>1502 Lab 4 </h2>
     <p>To follow along with these slides, go to <br> <a href="">http://10.66.4.119:8000/decks/1502/Lab4.html </a></p>
 </section> <!-- End Title Slide -->
 <section> <!-- Review slides -->
     <h3> Leftover comments from Lab 3 </h3>
-    <section > <!-- New subsection -->
+    <section data-menu-title="Lab 3: Leftover comments"> <!-- New subsection -->
         <dl>
             <dt>Ex 3 #6 (pg 46)</dt>
             <dd>How did the image size scale with focal length?</dd>
@@ -14,39 +17,36 @@
             <dd class="fragment" data-fragment-index=1>How does the apparent image size (i.e.&nbsp;magnification) relate to focal length?</dd>
         </dl>
     </section> <!-- End subsection -->
-    <section> <!-- New subsection -->
+    <section data-menu-title="Comparison of images"> <!-- New subsection -->
         <center>
         <figure>
             <img class="plain" src="images/lab3_post.svg" width="55%"/>
         </figure>
         </center>
     </section> <!-- End subsection -->
-    <section> <!-- New subsection -->
-        What would happen to an image if I cover up the top half of a lens?
-    </section> <!-- End subsection -->
-    <section > <!-- New subsection -->
-        
+    <section data-menu-title="Lens question"> <!-- New subsection -->
+        <p class="fragment fade-out">What would happen to an image if I cover up the top half of a lens?</p>
     </section> <!-- End subsection -->
 </section> <!-- End review slides -->
-<section> <!-- Blank slide during quiz -->
+<section data-menu-title="Quiz"> <!-- Blank slide during quiz -->
     <center>Quiz</center>
 </section>
 <section> <!-- Introduction slides for this lab -->
     
-    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+    <section data-menu-title="Lab 4: Simple Circuits I" data-transition="fade-in fade-out"> <!-- New subsection -->
         <h3> Lab 4: Simple Circuits I</h3>
         
         <figure style="float: left; width:50%;">
-            <img class="plain" style="background-color: #fff" src="images/EX330_cover.pdf"/>
+            <img class="plain" style="background-color: #fff" src="images/EX330_cover.pdf" alt="Cover of manual for EX330 series multimeter"/>
         </figure>
         <div style="float:right; width: 45%; font-size:0.5em">
             <a href="http://www.extech.com/products/resources/EX330_UM-en.pdf"> http://www.extech.com/products/resources/EX330_UM-en.pdf</a>
         </div>
     </section> <!-- End subsection -->
-    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+    <section data-menu-title="Voltage" data-transition="fade-in fade-out"> <!-- New subsection -->
         <h3> Lab 4: Simple Circuits I</h3>
         <figure style="float:left; width: 50%">
-            <img class="plain" src="images/EX330_voltage.png" height="596px">
+            <img class="plain" src="images/EX330_voltage.png" alt="User illustration on how to connect voltmeter probes in a circuit" height="596px">
         </figure>
         <div style="float:right; width: 45%">
             Voltage
@@ -56,10 +56,10 @@
             </ul>
         </div>
     </section> <!-- End subsection -->
-    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+    <section data-menu-title="Current" data-transition="fade-in fade-out"> <!-- New subsection -->
         <h3> Lab 4: Simple Circuits I</h3>
         <figure style="float:left; width: 50%">
-            <img class="plain" src="images/EX330_current.png" height="596px"/>
+            <img class="plain" src="images/EX330_current.png" alt="User illustration on how to conect an ammeter in a circuit" height="596px"/>
         </figure>
         <div style="float:right; width: 45%">
             Current
@@ -69,10 +69,10 @@
             </ul>
         </div>
     </section> <!-- End subsection -->
-    <section data-transition="fade-in fade-out"> <!-- New subsection -->
+    <section data-menu-title="Resistance" data-transition="fade-in fade-out"> <!-- New subsection -->
         <h3> Lab 4: Simple Circuits I</h3>
         <figure style="float:left; width: 50%">
-            <img class="plain" src="images/EX330_resistance.png" height="596px"/>
+            <img class="plain" src="images/EX330_resistance.png" alt="User illustration on how to measure resistance with an ohmmeter" height="596px"/>
         </figure>
         <div style="float:right; width: 45%">
             Resistance
