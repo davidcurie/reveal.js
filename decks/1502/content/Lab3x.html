@@ -1,5 +1,8 @@
-<!--decks/1502/Lab3.html -->
-
+<!-- decks/1502/content/Lab3x.html
+title="Geometric Optics - Lenses"
+is_multi
+depend="{ src: '../../lib/js/clock.js', async: true}"
+-->
 <section> <!-- Title Slide-->
     <h2>1502 Lab 3 </h2>
     <p>To follow along with these slides, go to <br> <a href="">http://10.66.227.19:8000/decks/1502/Lab3.html </a></p>
@@ -8,7 +11,7 @@
     </aside>
 </section> <!-- End Title Slide -->
 <section> <!-- Review slides -->
-    <section > <!-- New subsection -->
+    <section data-menu-title="Lab 2: Leftover comments" > <!-- New subsection -->
         <h3> Leftover comments from Lab 2 </h3>
         <ul>
             <li>Refraction occurs when changing speed</li><br/>
@@ -19,12 +22,12 @@
             </ul><br/>
             <li>Mnemonic to remember</li>
             <ul>
-                <li><span style="color: #42affa">BBB</span> - <span style="color: #42affa">B</span>lue <span style="color: #42affa">B</span>ends <span style="color: #42affa">B</span>etter</li>
-                <li><span style="color: #f65">RRR</span> - <span style="color: #f65">R</span>ed <span style="color: #f65">R</span>efracts <span style="color: #f65">R</span>otten</li>
+                <li><span class="my-blue">BBB</span> - <span class="my-blue">B</span>lue <span class="my-blue">B</span>ends <span class="my-blue">B</span>etter</li>
+                <li><span class="my-red">RRR</span> - <span class="my-red">R</span>ed <span class="my-red">R</span>efracts <span class="my-red">R</span>otten</li>
             </ul>
         </ul>
     </section> <!-- End subsection -->
-    <section > <!-- Mirage subsection -->
+    <section data-menu-title="Mirage quiz"> <!-- Mirage subsection -->
         <ul>
             <li>Warm air is less dense than cold air</li>
             <li>Which correctly explains a mirage?</li>
@@ -48,26 +51,34 @@
             </figure>
         </figure>
     </section> <!-- End subsection -->
-    <section data-background-iframe="images/Superior_and_inferior_mirage.svg" data-background-transition="slide">
-        <p style="font-size: 0.3em; position: fixed; left: 10%; bottom:10%">Ludovica Lorenzelli, DensityDesign Research Lab. Own work, CC BY-SA 4.0 <br/>
-            <a href="https://commons.wikimedia.org/w/index.php?curid=37081455">https://commons.wikimedia.org/w/index.php?curid=37081455</a>
-        </p>
+    <section data-menu-title="Types of mirages">
+        <figure class="r-stretch" style="font-size: 0.4em">
+            <img style="width: 100%" src="images/Superior_and_inferior_mirage.svg" alt="Superior and inferior mirage"/>
+            <figcaption>Types of mirages. <br/>
+                Ludovica Lorenzelli, DensityDesign Research Lab. Own work, CC BY-SA 4.0 <br/>
+                <a href="https://commons.wikimedia.org/w/index.php?curid=37081455">https://commons.wikimedia.org/w/index.php?curid=37081455</a>
+            </figcaption>
+        </figure>
     </section>
-    <section data-background-iframe="images/Superior_mirage.jpg">
-            <p style="font-size: 0.3em; position: fixed; left: 10%; bottom:10%; background: #0005">Brocken Inaglory. 2008. CC BY-SA 3.0 <br/>
+    <section data-menu-title="Superior mirage example">
+        <figure class="r-stretch" style="font-size: 0.4em">
+            <img src="images/Superior_mirage.jpg" alt="Superior mirage at sea"/>
+            <figcaption>
+                Brocken Inaglory. 2008. CC BY-SA 3.0 <br/>
                 <a href="https://commons.wikimedia.org/wiki/File:Superior_mirage_of_a_boat_floating_over_superior_mirage_of_the_waves.jpg">https://commons.wikimedia.org/wiki/File:Superior_mirage_of_a_boat_floating_over_superior_mirage_of_the_waves.jpg</a>
-            </p>
+            </figcaption>
+        </figure>
     </section>
-    <section>
-        <figure style="font-size: 0.3em">
-            <img src="images/Sofar.jpg"/>
+    <section data-menu-title="SOFAR Channel">
+        <figure style="font-size: 0.4em">
+            <img src="images/Sofar.jpg" alt="Sound Fixing and Ranging Channel illustration"/>
             <figcaption>National Ocean Service. NOAA. <br/>
             <a href="https://oceanservice.noaa.gov/facts/sofar.html">https://oceanservice.noaa.gov/facts/sofar.html</a></figcaption>
         </figure>
     </section>
-    <section>
-        <center><figure style="font-size: 0.3em; width: 70%">
-            <img class="plain" src="images/Globe.svg" width="100%"/>
+    <section data-menu-title="SOFAR sphere">
+        <center><figure style="font-size: 0.4em; width: 70%">
+            <img class="plain" src="images/Globe.svg" alt="Globe view of Atlantic Ocean"width="100%"/>
             <figcaption>Atlantic Ocean</figcaption>
             <svg width="100%" height="100%" style="position: absolute; left:0; top: 0"> <!-- Overlay on top of previous image -->
                 <ellipse cx="50%" cy="30%" rx="10" ry="9" fill="#42affa" />
@@ -78,23 +89,23 @@
         </figure></center>
         
     </section>
-    <section>
-        <figure style="font-size: 0.3em; width: 100%">
-            <img class="plain" src="images/tropispheric_ducting.jpg" width="100%"/>
+    <section data-menu-title="Atmospheric analogue">
+        <figure style="font-size: 0.4em; width: 100%">
+            <img class="plain" src="images/tropispheric_ducting.jpg" alt="Illustration of tropsheric ducting as an atmoshperic analogue to SOFAR" width="100%"/>
             <figcaption>Tropispheric ducting enables radio waves to transmitt long distances. Image from BBC. <br/>
                 <a href="https://www.bbc.co.uk/reception/help-guides/analogue-radio/effect-of-tropospheric-ducting-on-radio">https://www.bbc.co.uk/reception/help-guides/analogue-radio/effect-of-tropospheric-ducting-on-radio</a>
             </figcaption>
         </figure>
     </section>
-    <section>
-        <figure style="font-size: 0.3em; width: 40%; float: left">
-            <img class="plain" src="images/roswell.jpg" width="100%"/>
+    <section data-menu-title="Roswell">
+        <figure style="font-size: 0.4em; width: 40%; float: left">
+            <img class="plain" src="images/roswell.jpg" alt="Authorities inspecting weather balloon debris in Roswell" width="100%"/>
             <figcaption>Roswell weather balloon debris.<br/>
                 <a href="https://www.history.com/news/roswell-ufo-aliens-what-happened">https://www.history.com/news/roswell-ufo-aliens-what-happened</a>
             </figcaption>
         </figure>
-        <figure style="font-size: 0.3em; width: 60%; float: right">
-            <img class="plain" src="images/roswelldailyrecord.jpg" width="100%"/>
+        <figure style="font-size: 0.4em; width: 60%; float: right">
+            <img class="plain" src="images/roswelldailyrecord.jpg" alt="Roswell Daily Record. July 8, 1947 : RAAF Captures Flying Saucer on Ranch in Roswell Region" width="100%"/>
             <figcaption>Roswell Daily Record. July 8, 1947.<br/> Reprinted in Smithsonian Magazine. <br/>
                 <a href="https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/">https://www.smithsonianmag.com/smithsonian-institution/in-1947-high-altitude-balloon-crash-landed-roswell-aliens-never-left-180963917/</a>
             </figcaption>
@@ -115,7 +126,7 @@
 </section> <!-- End blank slide -->
 <section> <!-- Introduction slides for this lab -->
     <h3> Lab 3: Lenses</h3>
-    <section data-transition="slide-in fade-out"> <!-- New subsection -->
+    <section  data-menu-title="Lab 3: Lenses" data-transition="slide-in fade-out"> <!-- New subsection -->
         <center>
             <img class="plain" src="images/lens_build1.svg" width="70%" />
         </center>
