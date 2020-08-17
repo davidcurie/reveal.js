@@ -4,6 +4,7 @@
  * Changes:
  *  Default Text color (main color, color)
  *  Header colors
+ *  Definition (term) background color
  *  Formatted <del> and <ins> and <mark>
  *  Formatted .clock colors
  *  Spreadsheet overrides
@@ -35,7 +36,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading-text-shadow: none;
   --r-heading-font-weight: normal;
   --r-heading1-text-shadow: none;
-  --r-heading1-size: 3.77em;
+  --r-heading1-size: 3.70em;
   --r-heading2-size: 2.11em;
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
@@ -195,6 +196,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .reveal dt {
+  background-color: rgba(216, 172, 76, 0.1);
   font-weight: bold;
 }
 
