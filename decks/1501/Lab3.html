@@ -1,0 +1,196 @@
+<!--decks/1501/Lab3.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>1D Motion</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+
+        <!-- Extra plugin scripts -->
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>1501 Lab 3 </h2>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 2</h3>
+                    <section> <!-- New subsection -->
+                        <dl>
+                            <dt>Method 1</dt>
+                            <dd>Avg time $=\bar{t} \rightarrow \bar{\Delta t} = \frac{\sigma}{\sqrt{N}}$<br/>
+                                Then use $r = \frac{V}{t}$ and propagate uncertainty</dd><br/>
+                            <dt>Method 2</dt>
+                            <dd>Compute $r = \frac{V}{t}$ from each $t$ measurement<br/>
+                                Then take $\mathrm{(avg\;rate)} = \bar{r} \rightarrow \bar{\Delta r} = \frac{\sigma}{\sqrt{N}}$ </dd><br/>
+                        </dl>
+                        <mark>Other valid methods exist, but they are less robust</mark>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section>
+                    <section>
+                        <center>Polls</center>
+                    </section>
+                    <section>
+                        <p>Consider the hypothetical results below:
+                        <ul>
+                            <li>$N = 16$</li>
+                            <li>$\mu = 17.34~\mathrm{kg}$</li>
+                            <li>$\sigma = 4.84~\mathrm{kg}$</li>
+                        </ul>
+                                  </p>
+                              Question:
+                              <ol style="font-size:0.8em">
+                                  <li>If I made a 17th measurement, approximately how much can I expect this to be off from my average?</li>
+                                  <li>What happens to the uncertainty in #1 if I make 4 more measurements??</li>
+                                  <li>What is a reasonable way to report the expected mass of the object with uncertainty?</li>
+                                  <li>In Excel, do we use STDEV.S or STDEV.P?</li>
+                                </ol>
+
+                    </section>
+                </section>
+                <section> <!-- New slide -->
+                    <h3> Lab 3: Linear Kinematics</h3>
+                    <section> <!-- New subsection -->
+                        <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+                        <br/><br/>
+                        iOLab for Scientists and Engineers<br/>
+                        &emsp;Lab 2: Linear Kinematics
+                        <br/><br/>
+                        You will need:<br/>
+                        <ul>
+                            <li>IOLab device</li>
+                            <li>USB-A connection</li>
+                            <li>Table</li>
+                            <li>Pillow/cushion</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section> <!-- Help slides -->
+                    <section>
+                        <h3>To be completed</h3>
+                        <ul>
+                            <li>Follow along online lab manual. Complete "Lab 2"</li>
+                            <li>Submit a report to Brightspace</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    
+                </section> <!-- End help slides-->
+			</div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab3_info.html'
+                      },
+                    ]
+                },
+           
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+                              
+				dependencies: [
+//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+//                    { src: '../../plugin/multiplex/master.js', async: true },
+//                    { src: '../../lib/js/clock.js', async: true},
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+				]
+			});
+		</script>
+	</body>
+</html>
