@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 .idea/
 *.iml
 *.iws
 *.eml
 out/
+=======
+>>>>>>> f3764122e0d243f9feba380192b885a44804c58b
 .DS_Store
 .svn
 log/*.log
 tmp/**
 node_modules/
+<<<<<<< HEAD
 .sass-cache
 dist/*.map
+=======
+.sass-cache
+>>>>>>> f3764122e0d243f9feba380192b885a44804c58b
