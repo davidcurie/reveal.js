@@ -1,0 +1,177 @@
+<!--decks/1501/Lab4.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Force and Acceleration</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+
+        <!-- Extra plugin scripts -->
+        
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>1501 Lab 4 </h2>
+                    <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+                    <br/><br/>
+                    iOLab for Scientists and Engineers<br/>
+                    &emsp;Lab 3: Force and Acceleration
+                    <br/><br/>
+                    You will need:<br/>
+                    <ul>
+                        <li>IOLab device (+included attachments)</li>
+                        <li>USB-A connection</li>
+                        <li>Smooth table</li>
+                        <li>Heavy weight (placeholder)</li>
+                    </ul>
+                </section> <!-- End Title Slide -->
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 3</h3>
+                    <section> <!-- New subsection -->
+                        <ul>
+                            <li>Include name of lab partners</li>
+                            <li>Don't worry too much about formatting</li>
+                            <ul>
+                                <li><mark>Spend more time on data/understanding than perfecting your report</mark></li>
+                            </ul>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section>
+                    <section>
+                        <center>Polls</center>
+                    </section>
+                    <section>
+                        Questions 4&ndash;6
+                        <center><figure>
+                            <img class="plain" src="./images/projectile.png" alt="projectile motion"
+                            style="width:60%"/>
+                            <figcaption style="font-size:0.6em">https://www.mwit.ac.th/~physicslab/applet_04/physics_classroom/Class/vectors/u3l2a.html</figcaption>
+                        </figure></center>
+                    </section>
+                </section>
+                <section> <!-- Help slides -->
+                    <section>
+                        <h3>To be completed</h3>
+                        <ul>
+                            <li>Follow along online lab manual. Complete "Lab 3"</li>
+                            <li>Submit a report to Brightspace</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    
+                </section> <!-- End help slides-->
+			</div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+<!--        <script src="../../plugin/math/math.js"></script> -->
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+//                    mathjax: '../../node_modules/mathjax/MathJax.js',
+//                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+//                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab4_info.html'
+                      },
+                    ]
+                },
+                plugins: [
+//                      RevealMath,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+                              
+				dependencies: [
+//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+//                    { src: '../../plugin/multiplex/master.js', async: true },
+//                    { src: '../../lib/js/clock.js', async: true},
+//                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+				]
+			});
+		</script>
+	</body>
+</html>
