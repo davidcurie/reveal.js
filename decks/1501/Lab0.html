@@ -115,7 +115,7 @@
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
-        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        <script src="../../plugin/menu/menu.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -207,6 +207,8 @@
                                  return !!document.querySelector( '[data-external],[data-external-replace]' );
                              }
                         },
+                        { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                        { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
 				]
 			});
 		</script>
