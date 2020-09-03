@@ -14,3 +14,4 @@ dist/*.map
 !node_modules/reveal-multiplex/
 !node_modules/reveal-notes-server/
 !node_modules/reveal.js-menu/
+!node_modules/mathjax/
