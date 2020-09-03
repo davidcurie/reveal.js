@@ -1,0 +1,173 @@
+<!-- decks/1501/content/Lab6x.html
+title="Circular Motion"
+is_spreadsheet
+-->
+<section> <!-- Title Slide-->
+    <h2>1501 Lab 6 </h2>
+    <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+    <br/><br/>
+    iOLab for Scientists and Engineers<br/>
+    &emsp;Lab 5: Circular Motion
+    <br/><br/>
+    You will need:<br/>
+    <ul>
+        <li>IOLab device (+ USB-A connection)</li>
+        <li>Measuring tape</li>
+        <li>Hand-eye coordination</li>
+    </ul>
+</section> <!-- End Title Slide -->
+<section> <!-- Review Slide-->
+    <h3>Leftover comments from Lab 5</h3>
+    <section> <!-- New subsection -->
+        
+    </section> <!-- End subsection -->
+</section> <!-- End Review Slide -->
+<section>
+    <section>
+        <center>Polls</center>
+    </section>
+</section>
+<section>
+    <h3>Lab 6: Circular Motion</h3>
+    <section>
+        <table class="simple-table" style="width:100%">
+            <tr>
+                <th class="simple-table">Linear Motion</th>
+                <th>Rotational Motion</th>
+            </tr>
+            
+            <tr>
+                <th>$\vec{x}$</th>
+                <th>$\vec{\theta}$</th>
+            </tr>
+            <tr>
+                <th>$\vec{v} = \frac{\text d \vec{x}}{\text d t}$</th>
+                <th>$\vec{\omega} = \frac{\text d \vec{\theta}}{\text d t}$</th>
+            </tr>
+            <tr>
+                <th>$\vec{a} = \frac{\text d \vec{v}}{\text d t}$</th>
+                <th>$\vec{\alpha} = \frac{\text d \vec{\omega}}{\text d t}$</th>
+            </tr>
+            <tr>
+                <th>$m$</th>
+                <th>$I$</th>
+            </tr>
+            <tr>
+                <th>$\vec{F} = m \vec{a}$</th>
+                <th>$\vec{\tau} = I \vec{\alpha}$</th>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <table class="simple-table" style="width:100%">
+            <tr>
+                <th class="simple-table">Linear Motion with <u>constant</u> $a$</th>
+                <th>Rotational Motion with <u>constant</u> $\alpha$</th>
+            </tr>
+            
+            <tr>
+                <th style="text-align:left; padding-bottom:2em">$v = at + v_0$</th>
+                <th style="text-align:left; padding-bottom:2em">$\omega = \alpha t + \omega_0$</th>
+            </tr>
+            <tr>
+                <th style="text-align:left">$x = \frac{1}{2}at^2 + v_0t + x_0$</th>
+                <th style="text-align:left">$\theta = \frac{1}{2}\alpha t^2 + \omega_0 t + \theta_0$</th>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <center><figure style="height:600px">
+            <img class="plain" src="images/temp3.png">
+        </figure></center>
+    </section>
+    <section>
+        <center><figure style="height:600px">
+            <img class="plain" src="images/temp4.png">
+        </figure></center>
+    </section>
+    <section data-transition="fade-out">
+        <text class="my-blue">Why we graph</text><br/>
+        <ul>
+            <li>We need to verify $\alpha = r \omega^2$</li>
+        </ul>
+        <center><figure style="height:400px">
+            <img class="plain" src="images/cent_accel_plt1.png">
+        </figure></center>
+        <mark> Power fits are difficult to analyze meaningfully</mark>
+    </section>
+    <section data-transition="fade out">
+        <text class="my-blue">Why we graph</text><br/>
+        <ul>
+            <li>We need to verify $\alpha = r \omega^2$</li>
+        </ul>
+        <center><figure style="height:400px">
+            <img class="plain" src="images/cent_accel_plt2.png">
+        </figure></center>
+        <mark> Linear fits are easier</mark>
+    </section>
+</section>
+<section>
+    <h3>Hints</h3>
+    <section> <!-- Bad plots-->
+        <text class="my-blue">Take data over a wide range</text>
+        <ul>
+            <li>Include more than 3 data points</li>
+        </ul>
+        <div style="width:100%; height:450px">
+        <figure class="fragment step-fade-in-then-out" data-fragment-index="1" role="group">
+          <figcaption class="my-red">Bad plots</figcaption>
+          <figure style="width:45%; float:left">
+            <img src="images/cent_accel_plt1_bad.png" alt="Poor plot 1">
+            <figcaption>Unclear trend from minimal data</figcaption>
+          </figure>
+          <figure style="width:45%; float:right">
+            <img src="images/cent_accel_plt2_bad.png" alt="Poor plot 2">
+            <figcaption>Unreliable slope</figcaption>
+          </figure>
+        </figure>
+        <figure class="fragment step-fade-in-then-out" data-fragment-index="2" role="group">
+          <figcaption class="my-green">Good plots</figcaption>
+          <figure style="width:45%; float:left">
+            <img src="images/cent_accel_plt1.png" alt="Poor plot 1">
+            <figcaption>More obvious trend</figcaption>
+          </figure>
+          <figure style="width:45%; float:right">
+            <img src="images/cent_accel_plt2.png" alt="Poor plot 2">
+            <figcaption>y-intercept forced to zero</figcaption>
+          </figure>
+        </figure>
+        </div>
+    </section>
+    <section>
+        <text class="my-blue">Inspect data before you record it in your table</text>
+        <ul>
+            <li>Check to see that &sigma; is reasonable</li>
+            <ul>
+                <li>No need to explicitly include &sigma; in table</li>
+            </ul>
+            <li>Is $a_z$ actually zero?</li>
+            <li>Are $\omega_x$ and $\omega_y$ near zero?</li>
+        </ul>
+    </section>
+</section>
+<section>
+    <h3>To be completed</h3>
+    <section>
+        <div class="spreadsheet" data-rows="3" data-cols="5">
+            a_x (m/s^2), a_y (m/s^2), a_tot, &omega;_z (rad/s), (&omega;_z)^2 (rad/s)^2 </b>
+            0.904, -1.704, =SQRT(A2^2 + B2^2), 7.158, '=D2^2'
+        39.348, -38.774, '=SQRT(A3^2 + B3^2)', 40.071, '=D3^2'
+        </div>
+        <br/>
+        <ul>
+            <li>Value of r FROM EACH GRAPH</li>
+            <ul>
+                <li>Round to appropriate precision</li>
+            </ul>
+            <li>Comments on agreement</li>
+            <ul>
+                <li>Description of errors with an estimate of how much it affected your results</li>
+            </ul>
+        </ul>
+    </section>
+</section>
