@@ -10,6 +10,7 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+*.sh
 dist/*.map
 !node_modules/reveal-multiplex/
 !node_modules/reveal-notes-server/
