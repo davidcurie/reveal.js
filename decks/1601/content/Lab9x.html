@@ -1,0 +1,104 @@
+<!-- decks/1601/content/Lab9x.html
+title="Simple Harmonic Motion"
+-->
+<section> <!-- Title Slide-->
+    <h2>1601 Lab 9</h2>
+    <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+    <br/><br/>
+    iOLab for Scientists and Engineers<br/>
+    &emsp;Lab 8: Simple Harmonic Motion
+    <br/><br/>
+    You will need:<br/>
+    <ul>
+        <li>IOLab device (+ spring attachments)</li>
+        <li>Someplace to hang your device on a spring</li>
+        <li>Paperclip (+ 3rd hand)</li>
+    </ul>
+</section> <!-- End Title Slide -->
+<section> <!-- Review Slide-->
+    <h3>Leftover comments from Lab 8</h3>
+    <section> <!-- New subsection -->
+        Check Brightspace comments
+    </section> <!-- End subsection -->
+    <section> <!-- New subsection -->
+        <center class="my-green">$\begin{align}
+        \int_{t_1}^{t_2} F \mathrm{d}t
+        &= \int_{t_1}^{t_2} \left( ma \right)\mathrm{d}t\\[0.8em]
+        &= \int_{t_1}^{t_2} \left( m \frac{\mathrm{d}v}{\mathrm{d}t}\right)\mathrm{d}t\\[0.8em]
+        &= m \int_{v\left(t_1\right)}^{v\left(t_2\right)} \mathrm{d}v\\
+        &= m \left( v_f - v_i \right)\\
+        \end{align}$</center>
+    </section> <!-- End subsection -->
+    <section> <!-- New subsection -->
+        <center class="my-red">$\begin{align}
+        a &= b \\
+        a(a-b-2) &= b(a-b-2) \\
+        a^2 - ab - 2a &= ab - b^2 - 2b\\
+        a^2 - ab &= ab + 2a - b^2 - 2b \\
+        a(a-b) &= a(b+2) + (-b)(b+2) \\
+        a(a-b) &= (b+2)(a-b)\\
+        a &= b+2
+        \end{align}$</center>
+    </section> <!-- End subsection -->
+    <section>
+        What does it mean for values to be "close"?<br/>
+        <ul>
+            <li>Uncertainties overlap</li>
+            <li>(% Diff) $\le$ (Rel Unc)</li>
+        </ul>
+    </section>
+    <section>
+        If NOT close<br/>
+        <ul>
+            <li>Redo measurement</li>
+            <li>Identify SPECIFIC reason</li>
+            <ul>
+                <li>$\vec{F}$ not $\perp$ $\implies$ $F_{\mathrm{meas}}$ smaller $\implies$ $\int F \, \mathrm{d}t$ smaller </li>
+                <li>$v_{\mathrm{avg}}$ incorrect $\implies$ $\Delta v$ larger $\implies$ $m \Delta v$ larger </li><br/>
+                <li><del>Shaky hands</del></li>
+                <li><del>Human error</del></li>
+                <li><del>"Could have been friction"</del> (doesn't explain implication)</li>
+            </ul>
+        </ul>
+    </section>
+</section> <!-- End Review Slide -->
+<section>
+    <section>
+        <center>Polls</center>
+    </section>
+</section>
+
+<section>
+    <h3>Lab 9: Simple Harmonic Motion</h3>
+    <section>
+        <h4>Fourier Transform</h4>
+        $\displaystyle \color{#42affa}{{\hat {f}}(\xi )}=\int _{-\infty }^{\infty } \color{red}{f(x)}\ e^{-2\pi ix\xi }\,dx$
+        <center>
+        <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
+            <img class="plain" src="images/Fourier_transform.gif" alt="Fourier Transform animation"/>
+            <figcaption>
+                Lucas Barbosa, 2013<br>
+                <a href="https://en.wikipedia.org/wiki/Fourier_transform#/media/File:Fourier_transform_time_and_frequency_domains_(small).gif">
+                    Wikipedia: Fourier Transform
+                </a>
+            </figcaption>
+        </figure>
+        </center>
+    </section>
+    <section>
+        <h4>Why Fourier Transform?</h4>
+        <ul>
+            <li>Signal processing</li>
+            <li>Radiology</li>
+            <li>Cardiology</li>
+            <li>Acoustics</li>
+        </ul>
+    </section>
+    <section>
+        <center>
+        <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
+            <img class="plain" src="images/period_vs_wavelength.gif" alt="Types of waves"/>
+        </figure>
+        </center>
+    </section>
+</section>

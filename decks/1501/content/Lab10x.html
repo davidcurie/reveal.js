@@ -1,0 +1,104 @@
+<!-- decks/1501/content/Lab10x.html
+title="The Simple Pendulum"
+-->
+<section> <!-- Title Slide-->
+    <h2>1501 Lab 10</h2>
+    <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
+    <br/><br/>
+    iOLab for Scientists and Engineers<br/>
+    &emsp;Lab 9: The Simple Pendulum
+    <br/><br/>
+    You will need:<br/>
+    <ul>
+        <li>IOLab device</li>
+        <li>Someplace to swing your device</li>
+    </ul>
+</section> <!-- End Title Slide -->
+<section> <!-- Review Slide-->
+    <h3>Leftover comments from Lab 9</h3>
+    <section> <!-- New subsection -->
+        <dl>
+            <dt>Biggest Fault: FFT</dt>
+            <dd class="my-red">4096 bins was not sufficient in this lab.</dd>
+            <dt>Improvements:</dt>
+            <dd class="my-gold">Have more bins in FFT</dd>
+            <dd class="my-gold">Have a smaller oscillating frequency ($k$,$m$)</dd>
+            <dd class="my-green fragment" data-fragment-index="1">Decrease sampling rate</dd>
+            <dt class="fragment" data-fragment-index="1">Key lesson:</dt>
+            <dd class="fragment" data-fragment-index="1"><mark>Many cycles needed for FFT</mark></dd>
+        </dl>
+    </section> <!-- End subsection -->
+    <section>
+        <figure style="position:">
+            <img class="plain" src="images/sensors.png" height="450px" style="float:left"/>
+            <img class="plain" src="images/sensors2.png" height="450px" style="float:right"/>
+        </figure>
+    </section>
+    <section data-transition="fade-out">
+        <p class="my-blue">Comparing values</p>
+        <ul>
+            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega = \left(\sqrt{k}\right)m^{-1/2}$</ins></li>
+        </ul>
+        <center><figure style="height:400px">
+            <img class="plain" src="images/cent_accel_plt1.png">
+        </figure></center>
+        <mark> Power fits are difficult to analyze meaningfully</mark>
+    </section> <!-- End subsection -->
+    <section data-transition="fade out">
+        <p class="my-blue">Comparing values</p>
+        <ul>
+            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega^2 = k\left( \frac{1}{m} \right)$</ins></li>
+        </ul>
+        <center><figure style="height:400px">
+            <img class="plain" src="images/cent_accel_plt2.png">
+        </figure></center>
+        <mark> Linear fits are easier</mark>
+    </section>
+</section> <!-- End Review Slide -->
+<section>
+    <section>
+        <center>Polls</center>
+    </section>
+    <section>
+        Use this for Questions 1&ndash;2
+        <figure >
+            <svg class="my-plain" width="100%" height="450px">
+                
+                <ellipse cx="55%" cy="50%" rx="35%" ry="35%" fill="none" style="stroke:currentcolor; stroke-width:3;" />
+                
+                <polyline points="100,50 100,400 900,400" fill="none" style="stroke:currentcolor; stroke-width:5;" />
+                
+                <text x="10" y="250" transform="rotate(-90 40,250)" font-size="0.8em">Velocity (m/s)</text>
+                <text x="70" y="20%" font-size="0.7em">1</text>
+                <text x="70" y="50%" font-size="0.7em">0</text>
+                <text x="70" y="85%" font-size="0.7em">-1</text>
+                
+                <text x="45%" y="97%" font-size="0.8em">postion (m)</text>
+                <text x="20%" y="95%" font-size="0.7em">1</text>
+                <text x="90%" y="95%" font-size="0.7em">5</text>
+                
+                <ellipse cx="90%" cy="50%" rx="10" ry="10" />
+                <text x="92%" y="50%">A</text>
+                <ellipse cx="55%" cy="15%" rx="10" ry="10" />
+                <text x="52%" y="12%">B</text>
+                
+            </svg>
+            <figcaption class="my-blue" style="font-size:0.8em">
+                Phase plot for an oscillating spring, $k=10$&nbsp;N/m
+            </figcaption>
+        </figure>
+    </section>
+</section>
+
+<section>
+    <h3>Lab 10: The Simple Pendulum</h3>
+    <section>
+        <h4>To include</h4>
+        <ul>
+            <li>Clear procedure</li>
+            <li>Summary of measurements</li>
+            <li>Whether or not these prove $\;T= 2\pi \sqrt{\frac{L}{g}}$</li>
+            <li>Whether you believe the theory or your results</li>
+        </ul>
+    </section>
+</section>
