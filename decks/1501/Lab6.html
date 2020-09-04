@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../dist/reveal.css">
         <!-- Stylesheets for plugins -->
         
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
         <!-- Coloring and styling -->
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
         <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
@@ -24,7 +25,7 @@
 				<!-- Slides from content/Lab6x.html inserted with the following variables-->
                 <!-- decks/1501/content/Lab6x.html
                 title="Circular Motion"
-                is_spreadsheet
+                has_spreadsheet
                 -->
                 <section> <!-- Title Slide-->
                     <h2>1501 Lab 6 </h2>
@@ -206,6 +207,7 @@
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
         
 
 		<script>
@@ -272,6 +274,7 @@
                       
                 ],
 				dependencies: [
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
                     { src: '../../plugin/skip-fragments/skip-fragments.js' },
                     // For inserting external .html reveal slides/conent
                     {
