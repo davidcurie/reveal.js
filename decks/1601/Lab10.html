@@ -1,27 +1,30 @@
-<!--decks/1601/Lab10.html -->
+<!-- /reveal.js/decks/1601/Lab10.html -->
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>The Simple Pendulum</title>
-
+        <!-- Reveal Settings -->
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <!-- Coloring and styling -->
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
-        <link rel="stylesheet" href="../../dist/theme/overrides.css">
-
-        <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
-
-        <!-- Extra plugin scripts -->
-        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
-        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>The Simple Pendulum</title>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Slides from content/Lab10x.html inserted with the following variables-->
+                <!-- decks/1601/content/Lab10x.html
+                title="The Simple Pendulum"
+                -->
                 <section> <!-- Title Slide-->
                     <h2>1601 Lab 10</h2>
                     <text class="my-blue">Online textbook</text>: bookshelf.vitalsource.com
@@ -123,7 +126,8 @@
                         </ul>
                     </section>
                 </section>
-			</div>
+                
+            </div>
 		</div>
 
         <script src="../../dist/reveal.js"></script>
@@ -133,35 +137,20 @@
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
-
+        
 
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-                //center: false,
-                //width: "100%",
-                //height: "100%",
                 slideNumber: true,
-                //keyboard: false,
-                //touch: false,
-                //controls: false,
-                
-                // Multiplex for client-side updates
-                multiplex: {
-                    // Example values. To generate your own, see the socket.io server instructions.
-                    secret: '', // null so the clients do not have control of the master presentation
-                    id: '', // id, obtained from socket.io server
-                    url: '' // Location of socket.io server
-                },
-                
                 // For Latex math
                 math: {
-                    mathjax: '../../node_modules/mathjax/MathJax.js',
-                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-                    // pass other options into `MathJax.Hub.Config()`
-                    TeX: { Macros: { RR: "{\\bf R}" } }
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
                 },
                 // Slide out menu changes (press `m`)
                 menu: {
@@ -203,6 +192,7 @@
                     ]
                 },
                 
+
                 plugins: [
                       RevealMath,
                       RevealMarkdown,
@@ -210,23 +200,20 @@
                       RevealHighlight,
                       RevealSearch,
                       RevealMenu,
+                      
                 ],
-           
 				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../plugin/multiplex/master.js', async: true },
-//                    { src: '../../lib/js/clock.js', async: true},
-//                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
-//                    { src: '../../plugin/chart/Chart.min.js' },
-//                    { src: '../../plugin/chart/csv2chart.js' },
                     { src: '../../plugin/skip-fragments/skip-fragments.js' },
                     // For inserting external .html reveal slides/conent
-                     {
-                         src: '../../plugin/external/external.js',
-                         condition: function() {
-                             return !!document.querySelector( '[data-external],[data-external-replace]' );
-                         }
-                     },
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    
 				]
 			});
 		</script>
