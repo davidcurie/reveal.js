@@ -1,47 +1,53 @@
-<!--decks/1601/Lab0.html -->
+<!-- /reveal.js/decks/1601/Lab0.html -->
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>Estimation and Problem Solving</title>
-
+        <!-- Reveal Settings -->
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <!-- Coloring and styling -->
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
-        <link rel="stylesheet" href="../../dist/theme/overrides.css">
-
-        <!-- Theme used for syntax highlighting of code -->
         <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>Estimation and Problem Solving</title>
 	</head>
-    
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Slides from content/Lab0x.html inserted with the following variables-->
+                <!-- decks/1601/content/Lab0x.html
+                title="Estimation and Problem Solving"
+                -->
                 <section> <!-- Title Slide-->
                     <h2>1601 Lab 0 </h2>
                 </section> <!-- End Title Slide -->
                 <section> <!-- Introduction Slide-->
                     <h2>Introduction</h2>
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="About Me"> <!-- New subsection -->
                         About Me
                     </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Syllabus"> <!-- New subsection -->
                         Syllabus
                         <div style="float: right; width: 80">
                             <ul>
                                 <li>12 labs - No skipping</li>
-                                <li>Due by the end of the attendance day</li>
-                                <li><mark><code>[Surname]_[section]_LabX</code></mark>.pdf
+                                <li>Due 1 day after lab attendance</li>
+                                <li><mark><code>[Last]_[section]_Lab#</code></mark>.pdf
                                     <ul>
-                                        <li=none>.docx, .pages, .txt, .img</li>
-                                        <li> ex: <code>Curie_01_Lab0.pdf</code>
+                                        <li=none>.docx, .pages, .txt, .img, .xlsx</li>
+                                        <li>ex: <code>Smith_01_Lab0.pdf</code>
                                     </ul>
                             </ul>
                         </div>
                     </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Zoom layout"> <!-- New subsection -->
                         <figure style="width: 100%; font-size: 0.8em; margin-left: auto; margin-right: auto">
                             <img class="plain" src="images/Zoom_layout.png" style="width: 100%; "/>
                             <figcaption>
@@ -49,12 +55,12 @@
                             </figcaption>
                         </figure>
                     </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Expectations"> <!-- New subsection -->
                         Expectations
                         <p> 1601 is an <del>introductory physics</del> <ins> information literacy</ins> lab </p> <br>
                         <p> 1602 is <del>the second semester of physics</del> <ins>an abbreviated 'Circuits 101' and 'Optics 101' </ins> lab</p>
                     </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Inspirational quotes"> <!-- New subsection -->
                         <blockquote> Just because you are unknowledgabe does not mean you are unintelligent </blockquote> <br>
                         <blockquote>
                             The formulation of a problem is often more essential than its solution&hellip;
@@ -63,7 +69,7 @@
                             </footer>
                         </blockquote>
                     </section> <!-- End subsection -->
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Experimental quote"> <!-- New subsection -->
                         <blockquote style="font-size:0.7em">
                             If you’re doing an experiment, you should report everything that you think might make it invalid – not only what you think is right about it: other causes that could possibly explain your results; and things you thought of that you’ve eliminated by some other experiment and how they worked – to make sure the other fellow can tell they have been eliminated.
                             <footer>
@@ -76,7 +82,7 @@
                     <section>
                         <center>Polls</center>
                     </section>
-                    <section> <!-- New subsection -->
+                    <section data-menu-title="Learning quote"> <!-- New subsection -->
                         <blockquote> Learning is more about making distinctions about information that matters and information that doesn’t than it is about retaining information</blockquote>
                     </section> <!-- End subsection -->
                 </section>
@@ -106,7 +112,8 @@
                     </ul>
                     <br/><br/><br/>
                 </section> <!-- End help slides-->
-			</div>
+                
+            </div>
 		</div>
 
         <script src="../../dist/reveal.js"></script>
@@ -116,74 +123,61 @@
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
 
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-                //center: false,
-                //width: "100%",
-                //height: "100%",
                 slideNumber: true,
-                //keyboard: false,
-                //touch: false,
-                //controls: false,
-                
-                // Multiplex for client-side updates
-                multiplex: {
-                    // Example values. To generate your own, see the socket.io server instructions.
-                    secret: '', // null so the clients do not have control of the master presentation
-                    id: '', // id, obtained from socket.io server
-                    url: '' // Location of socket.io server
-                },
-                
                 // For Latex math
                 math: {
-                    mathjax: '../../node_modules/mathjax/MathJax.js',
-                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-                    // pass other options into `MathJax.Hub.Config()`
-                    TeX: { Macros: { RR: "{\\bf R}" } }
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
                 },
                 // Slide out menu changes (press `m`)
                 menu: {
-                numbers: true,
-                useTextContentForMissingTitles: true,
-                hideMissingTitles: true,
-                openButton: false,
-                openSlideNumber: true,
-                themes:
-                 [
-                  {
-                      name: 'Auto',
-                      theme: '../../dist/theme/dynamic_white_black.css',
-                      highlightTheme: '../../plugin/highlight/gruvbox.css'
-                  },
-                  {
-                      name: 'White',
-                      theme: '../../dist/theme/presentation_white.css',
-                      highlightTheme: '../../plugin/highlight/gruvbox-light.css'
-                  },
-                  {
-                       name: 'Black',
-                       theme: '../../dist/theme/presentation_black.css',
-                       highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
-                  },
-                  {
-                       name: 'Night',
-                       theme: '../../dist/theme/night.css',
-                       highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
-                  },
-                 ],
-
-                  custom: [
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
                     {
-                      title: 'Info',
-                      icon: '<i class="fa fa-info">',
-                      src: 'menu/Lab0_info.html'
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
                     },
-                  ]
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab0_info.html'
+                      },
+                    ]
                 },
+                
 
                 plugins: [
                       RevealMath,
@@ -192,21 +186,20 @@
                       RevealHighlight,
                       RevealSearch,
                       RevealMenu,
+                      
                 ],
-
 				dependencies: [
-//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
-//                    { src: '../../node_modules/reveal-multiplex/master.js', async: true },
-//                    { src: '../../node_modules/reveal-multiplex/client.js', async: true },
-//                        { src: '../../lib/js/clock.js', async: true},
-                        { src: '../../plugin/skip-fragments/skip-fragments.js' },
-                        // For inserting external .html reveal slides/conent
-                        {
-                         src: '../../plugin/external/external.js',
-                             condition: function() {
-                                 return !!document.querySelector( '[data-external],[data-external-replace]' );
-                             }
-                        },
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    
 				]
 			});
 		</script>
