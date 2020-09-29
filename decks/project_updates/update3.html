@@ -1,98 +1,73 @@
-<!-- decks/project_updates/index.html -->
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Project Updates</title>
+		<title>CNMS Requirements</title>
 
         <link rel="stylesheet" href="../../dist/reset.css">
         <link rel="stylesheet" href="../../dist/reveal.css">
         <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
         <link rel="stylesheet" href="../../dist/theme/overrides.css">
-
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
-
-
-        <style>
-            #subtitle {
-                -ms-transform: skew(20deg) rotate(20deg) scaleX(0.3); /* IE 9 */
-                -webkit-transform: skew(20deg) rotate(20deg) scaleX(0.3); /* Safari prior 9.0 */
-                transform: skew(25deg) rotate(25deg) scaleX(0.25) ; /* Standard syntax*/
-                position: absolute;
-                top: 60vh;
-                left: -25vw;
-                font-size: 5.5vw;
-            }
-            #author {
-                transform: skew(-25deg) rotate(-25deg) scaleX(0.3); /* Standard syntax*/
-                position: absolute;
-                top: 60vh;
-                left: 50vw;
-                font-size: 5.5vw;
-            }
-        </style>
-
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section> <!-- New slide -->
-                    <h1> Project Overview </h1>
-                    <h2 id="subtitle"> Improving Single-Photon Emitters with Hyperbolic Metamaterials </h2>
-                    <h2 id="author"> David Curie </h2>
-                    <div class="alert">
-                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        Press <strong>o</strong> or <strong>ESC</strong> for overview
-                    </div>
-                    <div class="fill-screen" style="z-index:-1">
-                        <img src="images/HMM.svg" alt="hBn on HMM with grating" width=60% height=auto />
-                    </div>
-                </section> <!-- End slide -->
-                <section data-background="images/gantt.png" data-background-size=contain data-background-transition="slide">
-                    <h2>Current Task</h2>
-                </section> <!-- End slide -->
+				<section data-background-image="images/HMM.svg" data-background-opacity=0.5>
+                    <h2>Objectives</h2>
+                    <ul>
+                        <li>Improve single-photon emission</li> 
+                        <ul>
+                            <li>Layer hBN on HMM</li> 
+                            <li>Observe reduced linewidth in PL</li> 
+                        </ul>
+                        <li>Investigate photon-phonon interaction</li> 
+                    </ul>
+                </section> <!-- End subsection -->
+				<section>
+                    <h2>Measurements</h2>
+                    <ul>
+                        <li>PL</li> 
+                        <li>CL</li> 
+                        <li>HBT</li> 
+                        <li>Ellipsometry</li>
+                    </ul>
+                </section> <!-- End subsection -->
                 <section>
-                    <section>
-                    <h2> Full overview</h2>
-                    <div class="fill-screen" style="z-index:-1">
-                        <img class="plain" src="images/gantt.svg" alt="Full Gantt chart" width=100% height=auto />
-                    </div>
-                    </section>
-                    <section>
-                        <h2>Description of Tasks</h2>
-                        <p> This is a paragraph. This is a long paragraph so that formatted text can be evaluated compared to the screen size. This is a long paragraph so that formatted text can be evaluated compared to the screen size. This is a long paragraph so that formatted text can be evaluated compared to the screen size.
-                        </p>
-                        <ol>
-                            <li> Apples </li>
-                            <li> Bananas </li>
-                            <li> Cherries </li>
-                        </ol>
-                    </section> <!-- End slide -->
-
-                </section> <!-- End slide -->
+                    <h2>Fabrication</h2>
+                    <ul>
+                        <li>2D stamping</li>
+                        <li>FIB</li>
+                        <li>Cleanroom</li>
+                    </ul>
+                </section>
 			</div>
 		</div>
 
         <script src="../../dist/reveal.js"></script>
         <script src="../../plugin/notes/notes.js"></script>
-        <script src="../../plugin/markdown/markdown.js"></script>
         <script src="../../plugin/highlight/highlight.js"></script>
         <script src="../../plugin/math/math.js"></script>
         <script src="../../plugin/search/search.js"></script>
         <script src="../../node_modules/reveal.js-menu/menu.js"></script>
-        
+
+
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-                center: false, /* vertical centering of slides */
-                width: "100%",
-                height: "100%",
                 slideNumber: true,
+ 
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+ 
                 // Slide out menu changes (press `m`)
                 menu: {
                   numbers: true,
@@ -134,7 +109,6 @@
                 },
                 plugins: [
                       RevealMath,
-                      RevealMarkdown,
                       RevealNotes,
                       RevealHighlight,
                       RevealSearch,
@@ -149,8 +123,6 @@
                              return !!document.querySelector( '[data-external],[data-external-replace]' );
                          }
                      },
-                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
-                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
 				]
 			});
 		</script>
