@@ -1,0 +1,292 @@
+<!-- /reveal.js/decks/1501/Lab2.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Reveal Settings -->
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+        <!-- Coloring and styling -->
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>Multiple Measurements</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slides from content/Lab2x.html inserted with the following variables-->
+                <!-- decks/1501/content/Lab2x.html
+                title="Multiple Measurements"
+                has_spreadsheet
+                -->
+                <section> <!-- Title Slide-->
+                    <h2>1501 Lab 2 </h2>
+                </section> <!-- End Title Slide -->
+                
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 1</h3>
+                    <section data-menu-title="Lab 1: Leftover Comments"> <!-- New subsection -->
+                        Clarification on policies
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Absolute vs Relative"> <!-- New subsection -->
+                        <h4>When to use absolute or relative uncertainty</h4>
+                        <dl>
+                          <dt>Absolute</dt>
+                              <dd>Adding and subtracting</dd>
+                              <dd>Has units:<br/>
+                                  <ins>$(63.1 \pm 0.2)~\mathrm{cm} \;\;$</ins>
+                                  <em>or</em>
+                                  <ins>$\;\; 63.1~\mathrm{cm} \pm 0.2~\mathrm{cm}$</ins>
+                              </dd>
+                          <dt>Relative</dt>
+                              <dd>Multiplying or dividing</dd>
+                              <dd>No units:<br/>
+                                  <ins>$63.1~\mathrm{cm} \pm 0.2 \;\;$</ins>
+                                  <em>or</em>
+                                  <ins>$\;\; 63.1~\mathrm{cm} \pm 20\%$</ins>
+                              </dd>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Improvements"> <!-- New subsection -->
+                        <h4>Advice</h4>
+                        <ul>
+                            <li>Use units in intermediate steps</li>
+                        </ul>
+                        <h4>Requests</h4>
+                        <ul>
+                            <li>Include lab partners at top of document</li>
+                            <li>If annotating PDF digitally: Use a different color</li>
+                            <li>Convert to PDF to avoid equation loss</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                
+                </section> <!-- End Review Slide -->
+                
+                <section>
+                
+                    <section data-menu-title="Polls">
+                        <center>Polls</center>
+                    </section>
+                
+                    <section data-menu-title="Values">
+                        <p>Consider the hypothetical results below:
+                        <ul>
+                            <li>$V = 164314.127~\mathrm{mm}^3$ (calculated using $l\times w\times h$ each of which only has 4 sig figs)</li>
+                            <li>$\Delta V = 14.1246~\mathrm{mm}^3$ (found through propagating uncertainties)</li>
+                        </ul>
+                        </p>
+                        <p>Question:</p>
+                        <ul>
+                            <li>Do I round  to abide by conventional sig fig rules?</li>
+                            <li>Do I round  so that it is at least as precise as the uncertainty?</li>
+                            <li>Do I round  so that the uncertainty can have 2 sig figs since it has a leading 1?</li>
+                        </ul>
+                    </section>
+                
+                </section>
+                
+                <section> <!-- New slide -->
+                    <h3> Lab 2: Multiple Measurements</h3>
+                
+                    <section data-menu-title="Lab 2: Intro"> <!-- New subsection -->
+                        <text class="my-blue">Revisit</text>: How do we know the mass of an electron?
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Simpler: 1000 kg"> <!-- New subsection -->
+                        <text class="my-blue">Simpler</text>: How do we know what 1000 kg is?
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Uncertainty of sets">
+                        <text class="my-blue">Either</text>: Propagate uncertainty of sum of 1,000 individual 1-kg masses<br/><br/>
+                        <text class="my-blue">Or</text>: Measure (1,000 kg) multiple times
+                    </section>
+                
+                    <section data-menu-title="Lab 2 preview"> <!-- New subsection -->
+                        <!-- <figure> -->
+                            <!-- <iframe src="images/Multiple_measurements.pdf" style="overflow-y: auto !important; bottom: 10px" onload="this.width=screen.width;this.height=screen.height"></iframe> -->
+                        <!-- </figure> -->
+                            <iframe class="r-stretch" src="images/Multiple_measurements.pdf" style="overflow-y: auto ; bottom: 10px" ></iframe>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Problems with averages">
+                        <figure style="float:left; width: 80%; font-size: 0.3em; margin-left: auto; margin-right: auto">
+                            <img src="images/Comparison_standard_deviations.svg"/>
+                            <figcaption>
+                                Comparison of distributions<br>
+                                <a href="https://commons.wikimedia.org/wiki/File:Comparison_standard_deviations.svg">
+                                    https://commons.wikimedia.org/wiki/File:Comparison_standard_deviations.svg
+                                </a>
+                            </figcaption>
+                        </figure>
+                        <div style="width: 19%; float:right; font-size: 0.7em">
+                                Similar average deviation <br/><br/>
+                                Need better comparison
+                        </div>
+                    </section>
+                
+                </section> <!-- End slide -->
+                
+                <section>
+                
+                    <section data-transition="slide-in fade-out" data-menu-title="Excel Basics">
+                        <h3>Excel Basics</h3>
+                        <div class="spreadsheet" data-rows="9" data-cols="3">
+                        , mass (g), deviation
+                        , 2.43,
+                        , 2.54,
+                        , 2.49,
+                        , ,
+                        , ,
+                        Mean, ,
+                        , ,
+                        , ,
+                        </div>
+                    </section>
+                
+                    <section data-transition="fade-in fade-out" data-menu-title="Average Deviation">
+                        <h3>Average Deviation</h3>
+                        <div class="spreadsheet" data-rows="9" data-cols="3">
+                        , mass (g), deviation
+                        , 2.43,'=B2-$B7'
+                        , 2.54,'=B3-$B7'
+                        , 2.49,'=B4-$B7'
+                        , ,
+                        , ,
+                        Mean, '=AVERAGE(B2:B5)','=AVERAGE(C2:C5)'
+                        , ,
+                        , ,
+                        </div>
+                    </section>
+                
+                    <section data-transition="fade-in slide-out" data-menu-title="Standard Deviation">
+                        <h3>Standard Deviation</h3>
+                        <div class="spreadsheet" data-rows="9" data-cols="4">
+                        , mass (g), deviation, (dev)^2
+                        , 2.43,'=B2-$B7','=C2^2'
+                        , 2.54,'=B3-$B7','=C3^2'
+                        , 2.49,'=B4-$B7','=C4^2'
+                        , , ,
+                        , , ,
+                        Mean, '=AVERAGE(B2:B5)','=AVERAGE(C2:C5)' ,'=AVERAGE(D2:D5)'
+                        SQRT(D7),'=SQRT(D7)' ,(g) ,
+                        STD Dev,=SQRT(SUM(D2:D5)/(COUNT(D2:D5)-1)) ,(g) ,
+                        </div>
+                    </section>
+                
+                </section>
+                
+                <section> <!-- Help slides -->
+                
+                    <section data-menu-title="To be completed">
+                        <h3>To be completed</h3>
+                        <ul>
+                            <li>Make a measurement 20 times and create a statistical report</li>
+                            <li>Upload directly to Brightspace: Lab 2</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    
+                </section> <!-- End help slides-->
+                
+            </div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab2_info.html'
+                      },
+                    ]
+                },
+                
+
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                      
+                ],
+				dependencies: [
+                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    
+				]
+			});
+		</script>
+	</body>
+</html>
