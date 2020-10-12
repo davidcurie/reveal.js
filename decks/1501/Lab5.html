@@ -1,0 +1,188 @@
+<!-- /reveal.js/decks/1501/Lab5.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Reveal Settings -->
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <!-- Coloring and styling -->
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>Friction</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slides from content/Lab5x.html inserted with the following variables-->
+                <!-- decks/1501/content/Lab5x.html
+                title="Friction"
+                -->
+                <section data-menu-title="1501 Lab 5"> <!-- Title Slide-->
+                    <h2>1501 Lab 5 </h2>
+                    Online textbook: <a href=https://bookshelf.vitalsource.com/#/books/9781533919779/cfi/6/2!/4/2/4@0:0>bookshelf.vitalsource.com</a>
+                    <br/><br/>
+                    iOLab for Scientists and Engineers<br/>
+                    &emsp;Lab 4: Friction
+                    <br/><br/>
+                    You will need:<br/>
+                    <ul>
+                        <li>IOLab device (+felt pads)</li>
+                        <li>USB-A connection</li>
+                        <li>Smooth table</li>
+                    </ul>
+                </section> <!-- End Title Slide -->
+                
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from previous labs</h3>
+                
+                    <!-- <section data-menu-title="Lab 4: Leftover Comments" data-auto-animate> <!-1- New subsection -1-> -->
+                    <!--     <h4>Error Management</h4> -->
+                    <!--     $Error = Random + Systematic + Human + Least-Count + Others$ -->
+                    <!-- </section> <!-1- End subsection -1-> -->
+                    <section data-menu-title="Lab 4: Leftover Comments" data-auto-animate>
+                        <div data-id="error" style="height: 200px; background: lightsalmon; font-size: 2em;">
+                            <span class="my-red"><b>Random</b></span>
+                            <span class="my-blue"><small>Systematic</small></span>
+                            <span class="my-green"><small>Human</small></span>
+                            <span class="my-purple"><small><small>Least-Count</small></small></span>
+                            <span class="my-gold"><small>Sig Figs</small></span>
+                      </div>
+                    </section>
+                
+                    <section data-menu-title="Error Management" data-auto-animate>
+                        <div data-id="error" style="height: 400px; background: skyblue; font-size: 3em;">
+                            <span class="my-red"><small>Random</small></span>
+                            <span class="my-blue"><b>Systematic</b></span>
+                            <span class="my-orange"><small><small>Human</small></small></span>
+                            <span class="my-purple"><small><small><small>Least-Count</small></small></small></span>
+                            <span class="my-gold"><small><small>Sig Figs</small></small></span>
+                      </div>
+                    </section>
+                
+                    <section data-menu-title="Template"> <!-- New subsection -->
+                        <iframe class="r-stretch" src="images/Lab_Template.pdf" style="overflow-y: auto ; bottom: 10px" ></iframe>
+                    </section> <!-- End subsection -->
+                
+                </section> <!-- End Review Slide -->
+                
+                <section>
+                
+                    <section data-menu-title="Poll">
+                        <center>Poll</center>
+                    </section>
+                
+                </section>
+                
+                <section> <!-- Help slides -->
+                    <h3>To be completed</h3>
+                    <ul>
+                        <li>Follow along online lab manual. Complete "Lab 4"</li>
+                        <li>Submit a report to Brightspace</li>
+                    </ul>
+                    <h4>Hints</h4>
+                    <ul>
+                        <li>Answer all intermediate questions between procedures</li>
+                        <li>Make sure your force sensor is calibrated</li>
+                    </ul>
+                </section> <!-- End help slides-->
+                
+            </div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab5_info.html'
+                      },
+                    ]
+                },
+                
+
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                      
+                ],
+				dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    
+				]
+			});
+		</script>
+	</body>
+</html>
