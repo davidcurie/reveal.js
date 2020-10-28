@@ -1,0 +1,232 @@
+<!-- /reveal.js/decks/1501/Lab8.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="description" content="Reveal.js Presentation">
+        <meta name="keywords" content="Reveal.js, physics">
+        <meta name="author" content="David Curie">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Reveal Settings -->
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <!-- Stylesheets for plugins -->
+        
+        <!-- Coloring and styling -->
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <title>Momentum and Energy</title>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slides from content/Lab8x.html inserted with the following variables-->
+                <!-- decks/1501/content/Lab8x.html
+                title="Momentum and Energy"
+                -->
+                <section data-menu-title="1501 Lab 8"> <!-- Title Slide-->
+                    <h2>1501 Lab 8</h2>
+                    Online textbook: <a href=https://bookshelf.vitalsource.com/#/books/9781533919779/cfi/6/2!/4/2/4@0:0>bookshelf.vitalsource.com</a>
+                    <br/><br/>
+                    iOLab for Scientists and Engineers<br/>
+                    &emsp;Lab 7: Momentum and Energy
+                    <br/><br/>
+                    You will need:<br/>
+                    <ul>
+                        <li>IOLab device (+ spring attachments)</li>
+                        <li>Nearly vertical ramp</li>
+                        <li>Wall or book</li>
+                    </ul>
+                </section> <!-- End Title Slide -->
+                
+                <section> <!-- Review Slide-->
+                    <h3>Leftover comments from Lab 7</h3>
+                
+                    <section data-menu-title="Lab 7: Leftover Comments"> <!-- New subsection -->
+                        <h4>Reasons for apparent non-conservation of energy:</h4>
+                        <ul>
+                            <li>Incorrect velocity before/after collision</li>
+                            <li>Bending of spring upwards/downwards during collision</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Incorrect velocity"> <!-- New subsection -->
+                        <h5>Average of velocity while slowing down due to friction</h5>
+                        <figure class="r-stack">
+                            <img class="plain fragment fade-out" data-fragment-index="0" src="images/Lab07_velocity1.png" alt="Average of full velocity while slowing down" height="400px"/>
+                            <img class="plain fragment current-visible" data-fragment-index="0" src="images/Lab07_velocity2.png" alt="Average of partial velocity while slowing down" height="400px"/>
+                            <img class="plain fragment current-visible" data-fragment-index="1" src="images/Lab07_velocity3.png" alt="Average of less partial velocity while slowing down" height="400px"/>
+                            <img class="plain fragment" src="images/Lab07_velocity4.png" alt="Average of peak velocity while slowing down" height="400px"/>
+                        </figure>
+                    </section> <!-- End subsection -->
+                
+                </section> <!-- End Review Slide -->
+                
+                <section data-menu-title="Poll">
+                    <center>Poll</center>
+                </section>
+                
+                <section>
+                    <h3>Lab 8: Momentum and Energy</h3>
+                
+                    <section data-menu-title="Lab 8: Intro">
+                        <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
+                            <img class="plain" src="images/Pendulum_phase_portrait.svg" alt="Phase space illustration" style="background: rgba(255,255,255,0.6)"/>
+                            <figcaption>
+                                Phase Space<br>
+                                <a href="https://commons.wikimedia.org/wiki/File:Pendulum_phase_portrait_illustration.svg">
+                                    https://commons.wikimedia.org/wiki/File:Pendulum_phase_portrait_illustration.svg
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </section>
+                
+                    <section data-menu-title="Comet Plot">
+                        <center>
+                            <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
+                                <img class="plain" src="images/Comet_plot_1.gif" alt="Example phase plot for chaotic pendulum"/>
+                                <figcaption>
+                                    Comet Plot<br>
+                                    <a href="https://en.wikipedia.org/wiki/Phase_space#/media/File:Comet_plot_1.gif">
+                                        https://en.wikipedia.org/wiki/Phase_space#/media/File:Comet_plot_1.gif
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </center>
+                    </section>
+                
+                    <section data-menu-title="Conservation of Energy">
+                        <div style="float: left; width:50%">
+                            $\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} = 1$
+                            <br/><br/>
+                            $\frac{1}{2}kx^2 + \frac{1}{2}mv^2 = \mathrm{Energy} $
+                        </div>
+                        <figure style="float:right; width: 50%; font-size: 0.6em; margin-left: auto; margin-right: auto">
+                            <img class="plain" src="images/ellipse.jpg"/>
+                        </figure>
+                    </section>
+                
+                    <section data-menu-title="Impulse">
+                        <div style="widh: 50%; float:left">
+                            <h4>Impulse</h4>
+                            \[ \begin{align}
+                            J   &= \int \vec{F} dt \\[1em]
+                            &= \Delta \vec{p} \\[1em]
+                                &= m\vec{v_f} - m\vec{v_i}
+                            \end{align} \]
+                        </div>
+                        <figure style="width: 40%; float:right">
+                            <img class="plain" src="images/impulse.png"/>
+                        </figure>
+                    </section>
+                
+                </section>
+                
+                <section data-menu-title="To Do">
+                    <h4>Hints</h4>
+                    <ul>
+                        <li>195 g &lt; m &lt; 206 g &emsp; OR &emsp; 173 g &lt; m &lt; 180 g</li>
+                        <li>Re-zero your force sensor</li>
+                    </ul>
+                    <br/><br/>
+                    <h4>Be sure to include</h4>
+                    <ul>
+                        <li>Mass calculation</li>
+                        <li>Parametric plot</li>
+                        <li>Zoomed in screenshot of velocity, force</li>
+                    </ul>
+                </section>
+                
+            </div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/Lab8_info.html'
+                      },
+                    ]
+                },
+                
+
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                      
+                ],
+				dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                    {
+                        src: '../../plugin/external/external.js',
+                        condition: function() {
+                           return !!document.querySelector( '[data-external],[data-external-replace]' );
+                        }
+                    },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+                    
+				]
+			});
+		</script>
+	</body>
+</html>
