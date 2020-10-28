@@ -20,15 +20,21 @@ title="Momentum and Energy"
     <h3>Leftover comments from Lab 7</h3>
 
     <section data-menu-title="Lab 7: Leftover Comments"> <!-- New subsection -->
-        Check Brightspace comments
+        <h4>Reasons for apparent non-conservation of energy:</h4>
+        <ul>
+            <li>Incorrect velocity before/after collision</li>
+            <li>Bending of spring upwards/downwards during collision</li>
+        </ul>
     </section> <!-- End subsection -->
 
-    <section data-menu-title="Comments 2"> <!-- New subsection -->
-        <ul>
-            <li>Zoom in on graphs (y-scale)</li>
-            <li>Reflect on intermediate results</li>
-            <li><mark>Beware of typos in the online text</mark></li>
-        </ul>
+    <section data-menu-title="Incorrect velocity"> <!-- New subsection -->
+        <h5>Average of velocity while slowing down due to friction</h5>
+        <figure class="r-stack">
+            <img class="plain fragment fade-out" data-fragment-index="0" src="images/Lab07_velocity1.png" alt="Average of full velocity while slowing down" height="400px"/>
+            <img class="plain fragment current-visible" data-fragment-index="0" src="images/Lab07_velocity2.png" alt="Average of partial velocity while slowing down" height="400px"/>
+            <img class="plain fragment current-visible" data-fragment-index="1" src="images/Lab07_velocity3.png" alt="Average of less partial velocity while slowing down" height="400px"/>
+            <img class="plain fragment" src="images/Lab07_velocity4.png" alt="Average of peak velocity while slowing down" height="400px"/>
+        </figure>
     </section> <!-- End subsection -->
 
 </section> <!-- End Review Slide -->
@@ -42,7 +48,7 @@ title="Momentum and Energy"
 
     <section data-menu-title="Lab 8: Intro">
         <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
-            <img class="plain" src="images/Pendulum_phase_portrait.svg"/>
+            <img class="plain" src="images/Pendulum_phase_portrait.svg" alt="Phase space illustration" style="background: rgba(255,255,255,0.6)"/>
             <figcaption>
                 Phase Space<br>
                 <a href="https://commons.wikimedia.org/wiki/File:Pendulum_phase_portrait_illustration.svg">
@@ -55,7 +61,7 @@ title="Momentum and Energy"
     <section data-menu-title="Comet Plot">
         <center>
             <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
-                <img class="plain" src="images/Comet_plot_1.gif"/>
+                <img class="plain" src="images/Comet_plot_1.gif" alt="Example phase plot for chaotic pendulum"/>
                 <figcaption>
                     Comet Plot<br>
                     <a href="https://en.wikipedia.org/wiki/Phase_space#/media/File:Comet_plot_1.gif">
@@ -78,11 +84,32 @@ title="Momentum and Energy"
     </section>
 
     <section data-menu-title="Impulse">
-        <center>
-            <figure style="width: 80%; font-size: 0.6em; margin-left: auto; margin-right: auto">
-                <img class="plain" src="images/temp8_1.png"/>
-            </figure>
-        </center>
+        <div style="widh: 50%; float:left">
+            <h4>Impulse</h4>
+            \[ \begin{align}
+            J   &= \int \vec{F} dt \\[1em]
+            &= \Delta \vec{p} \\[1em]
+                &= m\vec{v_f} - m\vec{v_i}
+            \end{align} \]
+        </div>
+        <figure style="width: 40%; float:right">
+            <img class="plain" src="images/impulse.png"/>
+        </figure>
     </section>
 
+</section>
+
+<section data-menu-title="To Do">
+    <h4>Hints</h4>
+    <ul>
+        <li>195 g &lt; m &lt; 206 g &emsp; OR &emsp; 173 g &lt; m &lt; 180 g</li>
+        <li>Re-zero your force sensor</li>
+    </ul>
+    <br/><br/>
+    <h4>Be sure to include</h4>
+    <ul>
+        <li>Mass calculation</li>
+        <li>Parametric plot</li>
+        <li>Zoomed in screenshot of velocity, force</li>
+    </ul>
 </section>
