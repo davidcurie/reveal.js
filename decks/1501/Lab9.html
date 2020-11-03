@@ -44,10 +44,10 @@
                     <h3>Leftover comments from Lab 8</h3>
                 
                     <section data-menu-title="Lab 8: Leftover Comments"> <!-- New subsection -->
-                        Check Brightspace comments
+                        <p>Expected disagreement &lt; 0.01 N&middot;s</p>
                     </section> <!-- End subsection -->
                 
-                    <section data-menu-title=""> <!-- New subsection -->
+                    <section data-menu-title="Proper Derivation"> <!-- New subsection -->
                         <center class="my-green">$\begin{align}
                         \int_{t_1}^{t_2} F \mathrm{d}t
                         &= \int_{t_1}^{t_2} \left( ma \right)\mathrm{d}t\\[0.8em]
@@ -57,7 +57,17 @@
                         \end{align}$</center>
                     </section> <!-- End subsection -->
                 
-                    <section data-menu-title=""> <!-- New subsection -->
+                    <section data-menu-title="Adequate Derivation"> <!-- New subsection -->
+                        <center class="my-orange">$\begin{align}
+                        F_\mathrm{avg} \Delta t
+                        &= \left(m a_\mathrm{avg}\right) \Delta t\\[0.8em]
+                        &= m \left(\frac{\Delta v}{\Delta t}\right) \Delta t\\[0.8em]
+                        &= m \Delta v\\
+                        &= m \left( v_f - v_i \right)\\
+                        \end{align}$</center>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Ex: Improper Derivation"> <!-- New subsection -->
                         <center class="my-red">$\begin{align}
                         a &= b \\
                         a(a-b-2) &= b(a-b-2) \\
@@ -69,33 +79,56 @@
                         \end{align}$</center>
                     </section> <!-- End subsection -->
                 
-                    <section data-menu-title="">
-                        What does it mean for values to be "close"?<br/>
-                        <ul>
-                            <li>Uncertainties overlap</li>
-                            <li>(% Diff) $\le$ (Rel Unc)</li>
-                        </ul>
-                    </section>
-                
-                    <section data-menu-title="">
-                        If NOT close<br/>
-                        <ul>
-                            <li>Redo measurement</li>
-                            <li>Identify SPECIFIC reason</li>
-                            <ul>
-                                <li>$\vec{F}$ not $\perp$ $\implies$ $F_{\mathrm{meas}}$ smaller $\implies$ $\int F \, \mathrm{d}t$ smaller </li>
-                                <li>$v_{\mathrm{avg}}$ incorrect $\implies$ $\Delta v$ larger $\implies$ $m \Delta v$ larger </li><br/>
-                                <li><del>Shaky hands</del></li>
-                                <li><del>Human error</del></li>
-                                <li><del>"Could have been friction"</del> (doesn't explain implication)</li>
-                            </ul>
-                        </ul>
-                    </section>
-                
                 </section> <!-- End Review Slide -->
                 
-                <section data-menu-title="Poll">
-                    <center>Poll</center>
+                <section>
+                
+                    <section data-menu-title="Poll">
+                        <center>Poll</center>
+                    </section>
+                
+                    <section data-menu-title="Poll values">
+                        Use this for Questions 1&ndash;2
+                        <figure >
+                            <svg class="my-plain" width="100%" height="450px">
+                                
+                                <ellipse cx="55%" cy="50%" rx="35%" ry="35%" fill="none" style="stroke:currentcolor; stroke-width:3;" />
+                                
+                                <polyline points="100,50 100,400 900,400" fill="none" style="stroke:currentcolor; stroke-width:5;" />
+                                
+                                <text x="10" y="250" transform="rotate(-90 40,250)" font-size="0.8em">Velocity (m/s)</text>
+                                <text x="70" y="20%" font-size="0.7em">1</text>
+                                <text x="70" y="50%" font-size="0.7em">0</text>
+                                <text x="70" y="85%" font-size="0.7em">-1</text>
+                                
+                                <text x="45%" y="97%" font-size="0.8em">postion (m)</text>
+                                <text x="20%" y="95%" font-size="0.7em">1</text>
+                                <text x="90%" y="95%" font-size="0.7em">5</text>
+                                
+                                <ellipse cx="90%" cy="50%" rx="10" ry="10" />
+                                <text x="92%" y="50%">A</text>
+                                <ellipse cx="55%" cy="15%" rx="10" ry="10" />
+                                <text x="52%" y="12%">B</text>
+                                
+                            </svg>
+                            <figcaption class="my-blue" style="font-size:0.8em">
+                                Phase plot for an oscillating spring, $k=10$&nbsp;N/m
+                            </figcaption>
+                        </figure>
+                    </section>
+                
+                    <section data-menu-title="Poll review">
+                        <div style="float: left; width:50%">
+                            $\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} = 1$
+                            <br/><br/>
+                            $\frac{1}{2}k\left(\Delta x\right)^2 + \frac{1}{2}mv^2 = \mathrm{Energy} $
+                            <br/><br/>
+                            $\frac{1}{2}k\left(\Delta x_\mathrm{max}\right)^2 = \frac{1}{2}mv_\mathrm{max}^2
+                            \implies
+                            \sqrt{\frac{k}{m}} = \frac{v_\mathrm{max}}{\Delta x_\mathrm{max}}$
+                        </div>
+                    </section>
+                
                 </section>
                 
                 <section>
@@ -130,11 +163,81 @@
                     <section data-menu-title="Wave language">
                         <center>
                         <figure style="width: 100%; font-size: 0.6em; margin-left: auto; margin-right: auto">
-                            <img class="plain" src="images/period_vs_wavelength.gif" alt="Types of waves"/>
+                            <img class="plain" src="images/period_vs_wavelength.gif" alt="Types of waves" width="700px"/>
                         </figure>
                         </center>
                     </section>
                 
+                </section>
+                
+                <section>
+                
+                    <section data-menu-title="Hints"> <!-- New subsection -->
+                        <h4>Hints</h4>
+                        <p>Online textbook instructions are flawed</p>
+                        <ul>
+                            <li>Change sampling rate</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Sampling Rate" data-transition="slide-in fade-out">
+                        <figure role="group" style="display:inline">
+                            <img class="plain" src="images/sensors.png" alt="iOLab sensors menu with Force sensor (4800 Hz) selected" height="450px" style="width:20%; float:left"/>
+                            <img class="plain" src="images/Force_4800Hz.png" alt="FFT data corresponding to Force measured at 4800 Hz" height="450px" style="width:78%; float:right"/>
+                            <figcaption>
+                                4096 bins in FFT with a sampling rate at 4800 Hz
+                            </figcaption>
+                        </figure>
+                    </section>
+                
+                    <section data-menu-title="Improved Sampling" data-transition="slide-out">
+                        <figure style="position:">
+                            <img class="plain" src="images/sensors2.png" alt="iOLab sensors menu with Force (200 Hz) and Gyroscope (190 Hz) sensor selected" height="450px" style="width:20%; float:left"/>
+                            <img class="plain" src="images/Force_200Hz.png" alt="FFT data corresponding to Force measured at 200 Hz" height="450px" style="width:78%; float:right"/>
+                            <p>4096 bins in FFT with a sampling rate at 200 Hz</p>
+                        </figure>
+                    </section>
+                
+                    <section data-menu-title="Review: Power fits" data-transition="slide-in fade-out">
+                        <h4>Comparing values</h4>
+                        <ul>
+                            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega = \left(\sqrt{k}\right)m^{-1/2}$</ins></li>
+                        </ul>
+                        <center><figure style="height:400px">
+                            <img class="plain" src="images/cent_accel_plt1.png" alt="Power fit with x^2 relationship">
+                        </figure></center>
+                        <mark> Power fits are difficult to analyze meaningfully</mark>
+                    </section> <!-- End subsection -->
+                
+                    <section data-menu-title="Review: Linear fits" data-transition="fade-out">
+                        <h4>Comparing values</h4>
+                        <ul>
+                            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega^2 = k\left( \frac{1}{m} \right)$</ins></li>
+                        </ul>
+                        <center><figure style="height:400px">
+                            <img class="plain" src="images/cent_accel_plt2.png" alt="Linear fit with y=mx relationship">
+                        </figure></center>
+                        <mark> Linear fits are easier</mark>
+                    </section>
+                
+                </section>
+                
+                <section data-menu-title="What to include">
+                    <h4>What to include</h4>
+                    <ul style="font-size:0.93em">
+                        <li>Screenshots of what was used to find &omega; for one mass</li>
+                        <ul>
+                            <li>&omega;<sub>1</sub> = Manual determination</li>
+                            <li>&omega;<sub>2</sub> = FFT</li>
+                        </ul>
+                        <li>Table of 3 masses</li>
+                        <li>Plot of &omega;(m) for each &omega; with desciption on how to find <i>k</i></li>
+                        <ul>
+                            <li>Power fit</li>
+                            <li>Linear fit</li>
+                        </ul>
+                        <li>Comment on which values you trust</li>
+                    </ul>
                 </section>
                 
             </div>
