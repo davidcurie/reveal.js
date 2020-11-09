@@ -43,46 +43,54 @@
                     <h3>Leftover comments from Lab 9</h3>
                 
                     <section data-menu-title="Lab 9: Leftover Comments"> <!-- New subsection -->
-                        <dl>
-                            <dt>Biggest Fault: FFT</dt>
-                            <dd class="my-red">4096 bins was not sufficient in this lab.</dd>
-                            <dt>Improvements:</dt>
-                            <dd class="my-gold">Have more bins in FFT</dd>
-                            <dd class="my-gold">Have a smaller oscillating frequency ($k$,$m$)</dd>
-                            <dd class="my-green fragment" data-fragment-index="1">Decrease sampling rate</dd>
-                            <dt class="fragment" data-fragment-index="1">Key lesson:</dt>
-                            <dd class="fragment" data-fragment-index="1"><mark>Many cycles needed for FFT</mark></dd>
-                        </dl>
+                        <h4>Problems with manual <text style="text-transform: lowercase">&omega;</text></h4>
+                        <ul>
+                            <li>One period is not precise enough</li>
+                            <li>4 periods is better</li>
+                            <li>10 periods is better still</li>
+                        </ul>
+                        <br/><br/>
+                        <h4>Problems with FFT <text style="text-transform: lowercase">&omega;</text></h4>
+                        <ul>
+                            <li>Many cycles needed for analysis</li>
+                            <ul>
+                                <li>Remember to adjust sampling rate</li>
+                                <li>Takes longer to collect data</li>
+                            </ul>
+                            <li>Assumes period doesn't change during collection</li>
+                        </ul>
                     </section> <!-- End subsection -->
                 
-                    <section data-menu-title="Sampling Rate">
-                        <figure style="position:">
-                            <img class="plain" src="images/sensors.png" height="450px" style="float:left"/>
-                            <img class="plain" src="images/sensors2.png" height="450px" style="float:right"/>
-                        </figure>
-                    </section>
-                
-                    <section data-menu-title="Review: Angular acceleration" data-transition="fade-out">
-                        <p class="my-blue">Comparing values</p>
+                    <section data-menu-title="Fits"> <!-- New subsection -->
+                        <h4>Power fits</h4>
                         <ul>
-                            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega = \left(\sqrt{k}\right)m^{-1/2}$</ins></li>
+                            <li>Exponent is very sensitive to errors in data</li>
+                            <li>Errors in exponent affect leading coefficient</li>
+                            <li>Fix: <mark>be sure data spans a wide range along x-axis</mark></li>
                         </ul>
-                        <center><figure style="height:400px">
-                            <img class="plain" src="images/cent_accel_plt1.png">
-                        </figure></center>
-                        <mark> Power fits are difficult to analyze meaningfully</mark>
+                        <br/><br/>
+                        <h4>Linear fits</h4>
+                        <ul>
+                            <li>Need to plot new variables so data is linear</li>
+                            <ul>
+                                <li><del>Use a linear fit on nonlinear data</del></li>
+                            </ul>
+                            <li style="margin-top:0.2em; margin-bottom:0.2em">$y = \omega^2$ &emsp; $x = \frac{1}{m}$ &emsp; slope $= k$</li>
+                            <li>$y = \omega$ &emsp; $x = \frac{1}{\sqrt{m}}$ &emsp; slope $= \sqrt{k}$</li>
+                        </ul>
                     </section> <!-- End subsection -->
                 
-                    <section data-menu-title="Review: Angular acceleration 2" data-transition="fade out">
-                        <p class="my-blue">Comparing values</p>
+                    <section data-menu-title="Analysis"> <!-- New subsection -->
+                        <h4>Analysis</h4>
                         <ul>
-                            <li>We need to verify <del>$\alpha = r \omega^2$</del> <ins>$\omega^2 = k\left( \frac{1}{m} \right)$</ins></li>
+                            <li>Is manual &omega; more reliable than FFT &omega;?</li>
+                            <ul>
+                                <li>Find the spring constant from each data set</li>
+                                <li>Compare each $k$ to the trusted value</li>
+                                <li>Closest to known value = "most trustworthy"</li>
+                            </ul>
                         </ul>
-                        <center><figure style="height:400px">
-                            <img class="plain" src="images/cent_accel_plt2.png">
-                        </figure></center>
-                        <mark> Linear fits are easier</mark>
-                    </section>
+                    </section> <!-- End subsection -->
                 
                 </section> <!-- End Review Slide -->
                 
