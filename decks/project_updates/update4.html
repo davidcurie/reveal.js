@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ORNL Updates</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css">
+ </head>
+ <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section data-background-image="images/HMM.svg" data-background-opacity=0.5 data-menu-title="Objectives">
+            <h2>High-level Objectives</h2>
+            <ul>
+                <li>Improve single-photon emission</li> 
+                <ul>
+                    <li>Layer hBN on HMM</li> 
+                    <li>Observe reduced linewidth in PL</li> 
+                </ul>
+                <li>Investigate photon-phonon interaction</li> 
+            </ul>
+            <h2>Immediate Objectives</h2>
+            <ul>
+                <li>Anti-bunching measurements in Montana (ORNL)</li> 
+                <ul>
+                    <li>Need PL maps for new hBN flakes</li> 
+                </ul>
+                <li>CL measurements of hBN</li> 
+            </ul>
+        </section> <!-- End subsection -->
+
+        <section>
+            <section data-menu-title="Microscopes">
+                <h2><center>Microscopes</center></h2>
+            </section>
+            <section data-background-image="images/Instrument_300S.png" data-background-size="contain" data-background-opacity=0.15 data-menu-title="WITec">
+                <h2>WITec (Stevenson 6517)</h2>
+                <h6>Windows XP Professional (original OS)</h6> 
+                <ul>
+                    <li>Kernel issue with existing install (fatal crash)</li> 
+                    <li>Solvable with Windows XP reinstall?<pre><code>C:\> CHKDSK</code></pre></li> 
+                </ul>
+                <h6>Linux</h6> 
+                <ul>
+                    <li>Non-destructive kernal issue for WITec software</li> 
+                    <li>Move to microcontrolers (NIDAQ) and/or Python</li> 
+                </ul>
+                <h6>Windows XP 64 bit (new install)</h6>
+                <ul>
+                    <li>Driver issues, no comms with microscope</li> 
+                </ul>
+            </section> <!-- End subsection -->
+            <section data-background-image="images/Instrument_Jasco-NRS-3000.png"
+                data-background-size=40%
+                data-background-position="right 7% top 50%"
+                data-background-opacity=0.25
+                data-menu-title="Jasco">
+                <h2>Jasco NRS-3000 (ORNL)</h2>
+                <ul>
+                    <li>Confocal raman microscope</li> 
+                    <ul>
+                        <li>Government excess, donation</li> 
+                    </ul>
+                    <li>Runs Win XP software (2002&ndash;2008)</li>
+                    <ul>
+                        <li>Stage interface via RS-232</li> 
+                        <li>Raw command set provided [bypass Windows XP]</li> 
+                    </ul>
+                    <li><emph>Only</emph> missing a few components</li>
+                    <ul>
+                        <li>Data cables</li> 
+                        <li>Laser filters</li> 
+                    </ul>
+                </ul>
+            </section> <!-- End subsection -->
+        </section>
+
+        <section>
+            <section data-menu-title="ORNL Updates">
+                <h2><center>ORNL Updates</center></h2>
+            </section>
+            <section data-menu-title="Montana">
+                <h2>Montana (CNMS @ ORNL)</h2>
+                <div class="my-blue">Used for:</div>
+                <ul>
+                    <li>Low-temp PL</li>
+                    <li>Auto-correlation measurements</li>
+                </ul>
+                <div class="my-green">Pros</div>
+                <ul>
+                    <li>4K capabilities</li>
+                    <li>Multiple configurable excitation sources</li>
+                </ul>
+                <div class="my-red">Cons</div>
+                <ul>
+                    <li>Jumpy stage movement</li>
+                    <li>Fixed lens [limited FOV]</li>
+                    <li>High user demand</li>
+                </ul>
+            </section>
+            <section data-menu-title="Montana Upgrades">
+                <h6>Upgrades</h6>
+                <table class="simple definition">
+                    <caption>Montana Upgrades</caption>
+                    <thead>
+                        <tr>
+                            <th >Item</th>
+                            <th >Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Galvo scanner</td>
+                            <td>Raster laser beam</td>
+                        </tr>
+                        <tr>
+                            <td style="display:none"></td>
+                            <td><ul>
+                                    <li>Improves spatial precision</li>
+                                </ul></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Polarization mounts</td>
+                            <td>Polarization filtering on output</td>
+                        </tr>
+                        <tr>
+                            <td style="display:none"></td>
+                            <td><ul>
+                                    <li>Programmable</li>
+                                </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-menu-title="Next steps">
+                <h2>Next steps</h2>
+                <h6>Programming</h6>
+                <ul>
+                <li>Automated temperature control</li>
+                    <ul><li>This causes shift in focus</li></ul>
+                <li>Autofocus adjustments scripts</li>
+                <li>Complete Automation</li>
+                </ul>
+            </section>
+            <section data-menu-title="Example script">
+                <h6>Example script:</h6>
+                <pre><code data-trim data-noescape class="language-python">
+                # List of ATSM temperature setpoints we want to step through
+                setpoints = [5, 10, 15, 20, 50, 100, 200, 300]
+
+                # Step ATSM through a series of setpoints, performing
+                # experiment once stable at each setpoint
+                for sp in setpoints:
+                    print(f'Moving ATSM to set-point {sp} K')
+
+                    # Enable ATSM temperature controller and set current
+                    # setpoint
+                    cryo.enable_user1_temperature_controller(sp)
+                                
+                    while True:
+                        # Monitor temperature readouts after 10 seconds
+                        time.sleep(10)
+                        user1_temp_sample = cryo.get_user1_temperature_sample() # Read current ATSM temperature sample
+                        temp_okay         = user1_temp_sample['temperatureOK']           
+                        temp              = user1_temp_sample['temperature']
+                        stab_okay         = user1_temp_sample['temperatureStabilityOK']
+                        stability         = user1_temp_sample['temperatureStability']
+                        stable            = user1_temp_sample['temperatureStable']
+
+                        # Wait for ATSM to become stable at the setpoint 
+                        # before doing experiment
+                        if temp_okay and stab_okay and stable:
+                            _do_experiment(setpoint    = sp,
+                                           temperature = temp,
+                                           stability   = stability)
+                            break # Go to next setpoint
+                </code></pre>
+            </section>
+        </section>
+
+      </div>
+    </div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+
+    <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+                slideNumber: true,
+ 
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+ 
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Night',
+                         theme: '../../dist/theme/night.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/index_info.html'
+                      },
+                    ]
+                },
+                plugins: [
+                      RevealMath,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+                dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+                ]
+        });
+    </script>
+ </body>
+</html>
