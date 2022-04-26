@@ -99,17 +99,47 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 
 /*********************************************
-* OTHER
+* TABLES
 *********************************************/
 
-/* class="simple-table" (centered, no borders)*/
-.reveal table.simple-table th,
-.reveal table.simple-table td{
-  text-align: center;
-  padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 0px; }
+.reveal table th,
+.reveal table td{
+    vertical-align: top;
 }
 
+/* class="simple" (no borders in body)*/
+.reveal table.simple td{
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 0px;
+}
+
+/* class="simple-table" (no borders everywhere)*/
+.reveal table.simple-table th,
+.reveal table.simple-table td{
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 0px;
+}
+
+/* make captions better for all simple tables */
+.reveal table.simple caption,
+.reveal table.simple-table caption {
+  text-align: left;
+  color: gray;
+  font-size: 0.8em;
+  caption-side: bottom;
+}
+
+/* class="center" (centered)*/
+.reveal table.center th,
+.reveal table.center td{
+  text-align: center;
+}
+
+/* class="definition" (color columns)*/
+.reveal table.definition tr td:nth-child(1),
+.reveal table.definition tr th:nth-child(1){
+    color: var(--link-color);
+}
 
 
 
