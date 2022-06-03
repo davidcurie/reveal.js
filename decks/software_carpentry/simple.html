@@ -1,0 +1,249 @@
+<!--decks/software_carpentry/guide.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Software Carpentry Guide</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+
+        <!-- Extra plugin scripts -->
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section> <!-- Title Slide-->
+                    <h2>Software Carpentry</h2>
+                </section> <!-- End Title Slide -->
+                <section>
+                    <h3>Why</h3>
+                    <ul>
+                        <li>Marketable skill in 21st century</li>
+                        <li>Open-source standards at national labs</li>
+                        <li>Free to learn</li>
+                    </ul>
+                </section>
+                <section> <!-- Review Slide-->
+                    <h3>Overview</h3>
+                    <section> <!-- New subsection -->
+                        <h4>Unix Shell</h4>
+                        <pre><code data-trim data-noescape class="language-bash">
+                        rename () {
+                            echo "$1" | sed -e 's/\content\///' -e 's/x//1'
+                        }
+
+                        touch build.log # Initiate a new log instance
+                        cat  build.log > "build_log.tmp" # Store existing log in temporary location
+                        echo "==================================================" > build.log
+                        echo "New log generated on: `date`" >> build.log
+                        echo "" >> build.log
+                        echo "Template: $master" >> build.log
+                        echo "Searching files that match [$search]" >> build.log
+                        { echo -n "Extract and rename: "$search" -> " & rename "$search"; } >> build.log
+                        </code> </pre>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h4>Version Control with Git</h4>
+                        <pre><code data-trim data-noescape class="language-bash">
+                        git init .
+                        edit README.txt
+                        git add README.txt
+                        git commit -m "My first commit"
+                        git log --one-line -10
+                        git rebase -i HEAD~2
+                        </code> </pre>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h4>Programming in Python</h4>
+                        <pre><code data-trim data-noescape class="language-python">
+                        for file in files:
+                            df = pd.read_csv(file, header = None)
+                            df.columns = ['wavelength','counts']
+                            if (plot_by == 'temp'):
+                            key = get_temp(file)
+                            var = var + [key]
+                            full_df[f'Counts at {key} K'] = df.counts
+                            if (plot_by == 'angle'):
+                            key = get_pm(file)
+                            var = var + [key]
+                            full_df[f'Counts at {key} deg pmHWP'] = df.counts
+
+                        x = full_df.wavelength.apply(nm_to_cmm1)  # 1D array to map x-axis
+                        y = var  # 1D array to map y-axis
+
+                        x, y = np.meshgrid(x,y)  # An array of (x,y) pairs for each coordinate to plot
+                        z = full_df.drop('wavelength', axis=1).values.T  # All values in dataframe mapped to X,Y above
+                        </code> </pre>
+                    </section> <!-- End subsection -->
+                </section> <!-- End Review Slide -->
+                <section> <!-- New slide -->
+                    <section> <!-- New subsection -->
+                        <h4>Version Control with Git</h4>
+                        <h5>What is Git?</h5>
+                        <ul>
+                            <li>Version control is like an unlimited 'undo'</li>
+                            <li>Version control allows many people to work in parallel</li>
+                            <li>Works on project-wide scale</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section>
+                        <figure>
+                            <iframe src="https://swcarpentry.github.io/git-novice/01-basics/index.html" style="overflow-y: auto !important; bottom: 10px" onload="this.width=screen.width;this.height=screen.height"></iframe>
+                        </figure>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <h5>How do I Git?</h5>
+                        <ul>
+                            <li>Install <code>Git</code> application on machine</li>
+                            <li>Use command lines on local machine</li>
+                        </ul>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Creating a Repository</h5>
+                        Navigate to your file
+                        <pre class="bash"><code data-trim>
+                            $ cd ~/Desktop
+                            $ mkdir MyProject
+                            $ cd MyProject
+                        </code></pre>
+                        Initialize git
+                        <pre class="bash"><code data-trim>
+                            $ git init
+                        </code></pre>
+                    </section> <!-- End subsection -->
+                    <section> <!-- New subsection -->
+                        <h5>Typical Workflow</h5>
+                        <ol>
+                            <li>Create files</li>
+                            <li>Take snapshot of entire directory</li>
+                            <li>Modify files</li>
+                            <li>Update snapshot</li>
+                        </ol>
+                    </section> <!-- End subsection -->
+                    <section>
+                        <figure>
+                            <center><img class="plain"
+                                src="./images/git-staging-area.svg"
+                                alt="git staging area"
+                                style="height:100%"></img></center>
+                        </figure>
+                    </section>
+                    <section> <!-- New subsection -->
+                        <h5>Other commands</h5>
+                        <ul>
+                            <li>Compare versions</li>
+                            <li>Ignore (stop tracking) certain files</li>
+                            <li>Share repository with others</li>
+                            <ul>
+                                <li class="my-red", style="list-style-type: none;"> Requires GitHub account (free)</li>
+                            </ul>
+                        </ul>
+                    </section> <!-- End subsection -->
+                </section> <!-- End slide -->
+                <section>
+                    <h3>Interested?</h3>
+                    <a mailto:david.a.curie@vanderbilt.edu>david.a.curie@vanderbilt.edu</a>
+                </section>
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                //center: false,
+                //width: "100%",
+                //height: "100%",
+                slideNumber: true,
+                //keyboard: false,
+                //touch: false,
+                //controls: false,
+                
+                // Multiplex for client-side updates
+                multiplex: {
+                    // Example values. To generate your own, see the socket.io server instructions.
+                    secret: '', // null so the clients do not have control of the master presentation
+                    id: '', // id, obtained from socket.io server
+                    url: '' // Location of socket.io server
+                },
+                
+                // For Latex math
+                math: {
+                    mathjax: '../../node_modules/mathjax/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Vanderbilt',
+                         theme: '../../dist/theme/vanderbilt_dark.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+                },
+                
+                plugins: [
+                        RevealMath,
+                        RevealMarkdown,
+                        RevealNotes,
+                        RevealHighlight,
+                        RevealSearch,
+                        RevealMenu,
+                ],
+           
+//				dependencies: [
+//                    { src: '../../plugin/math/math.js', async: true },
+//					{ src: '../../plugin/markdown/marked.js' },
+//					{ src: '../../plugin/markdown/markdown.js' },
+//					{ src: '../../plugin/notes/notes.js', async: true },
+//					{ src: '../../plugin/highlight/highlight.js', async: true },
+//                    { src: '../../node_modules/socket.io-client/dist/socket.io.js', async: true },
+//                    { src: '../../plugin/multiplex/master.js', async: true },
+//                    { src: '../../lib/js/clock.js', async: true},
+//                    { src: '../../plugin/spreadsheet/spreadsheet.js' },
+//				]
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,276 @@
+<!-- decks/correlated_microscopy/index.html -->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Correlative near-field microscopy of hBN defects</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section data-menu-title="Title"> <!-- New slide -->
+                    <h2>Correlative near-field microscopy of hbN defects</h2>
+                    <img style='float:right' src='images/toc_figure.png' alt='Table of contents figure' height=500px />
+                    <p><a href='https://arxiv.org/abs/2203.10075'>https://arxiv.org/abs/2203.10075</a></p>
+                    <h3>David Curie</h3>
+                    <div style="width:55%; margin-left:0.3em; float:left">
+                    <ol style='column-count:2; column-gap:1em' start="2">
+                        <li>Jaron Krogel</li>
+                        <li>Lukas Cavar</li>
+                        <li>Abhishek Solanki</li>
+                        <li>Pramey Upadhyaya</li>
+                        <li>Tongcan Li</li>
+                        <li>Yun-Yi Pai</li>
+                        <li>Michael Chilcolte</li>
+                        <li>Vasudevan Iyer</li>
+                        <li>Alex Puretzsky</li>
+                        <li>Ilia Ivanov</li>
+                        <li>Mao-Hua Du</li>
+                        <li>Fernando Robero</li>
+                        <li>Benjamin Lawrie</li>
+                    </ol>
+                    <\div>
+                </section> <!-- End slide -->
+                <section>
+                    <h2>Motivation</h2>
+                    <section data-menu-title="Spin defects" data-background-image="images/gottscholl.png"
+                        data-background-size="500px"
+                        data-background-position="right">
+                        <h3>V<sub>B</sub><sup>-</sup> Spin Defects</h3>
+                        <div style="width:55%">
+                            <ul>
+                                <li>Triplet ground state <text class="my-gray">(long relaxation)</text></li>
+                                <li>Emission around 810 nm <text class="my-gray">@ room temp</text></li>
+                                <li>Optically Detectable Magnetic Resonance <text class="my-gray">due to spin-phonon interaction</text></li>
+                            </ul>
+                            <p class="my-red">Caveats</p>
+                            <ul>
+                                <li>Only studied with 532 nm laser excitation</li>
+                            </ul>
+                        </div>
+                        <br/>
+                        <p>Nat. Mater. <strong>19</strong>, 540, 2020</p>
+                    </section>
+                    <section data-menu-title="Motivation">
+                        <figure style="width:50%; float:left">
+                            <img src="images/microscope_image.bmp" alt="Microscope image of hBN"/>
+                            <figcaption>100x magnification; He-irradiated hBN (yellow) on non-irradiated hBN (green)</figcaption>
+                        </figure>
+                        <figure style="width:50%; float:right">
+                            <img class="plain" src="images/heatmap.png" alt="Heatmap of hbN under PL irradiation"/>
+                            <figcaption>PL intensity integrated at 800 nm</figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="Initial Results">
+                        <figure>
+                        <img class="plain" src="images/overview.svg" alt="SEM image of flake" width="50%"/>
+                        <img class="plain" src="images/overview_pl_spectra.png" alt="PL spectra at point 1, 2, 3 in SEM image" width="23%"/>
+                        <img class="plain fragment fade-in" data-fragment-index=1 src="images/overview_ODMR_contrast.png" alt="ODMR contrast at point 4" width="25%"/>
+                        <img class="plain fragment fade-in" data-fragment-index=2 src="images/overview_fold_power.png" alt="Power-dependent spectra on a fold" width="24%"/>
+                        <img class="plain fragment fade-in" data-fragment-index=2 src="images/overview_fold_params.png" alt="Linear fit parameters for fold power spectra" width="24%"/>
+                        <img class="plain fragment fade-in" data-fragment-index=3 src="images/overview_off_fold_power.png" alt="Power-dependent spectra off a fold" width="24%"/>
+                        <img class="plain fragment fade-in" data-fragment-index=3 src="images/overview_off_fold_params.png" alt="Linear fit parameters for off-fold power spectra" width="24%"/>
+                        </figure>
+                    </section>
+                </section> <!-- End slide -->
+                <section>
+                    <h2>Background</h2>
+                    <section data-menu-title="NMF Intro">
+                        <h3>Non-negative Matrix Factorization</h3>
+                        <img class="plain" src="images/NMF.png" alt="Representation of rows and columns combining to give a full matrix"/>
+                    </section>
+                    <section data-menu-title="Background" data-background-image="images/underlying_spectra.svg"
+                        data-background-size="75%"
+                        data-background-position="bottom">
+                        <h3>Fitting Models</h3>
+                        <p>How do we know what is happening?</p>
+                        <!-- <img class="plain" src="images/underlying_spectra.svg" alt="Deconvolution of spectra"/> -->
+                    </section>
+                    <section data-menu-title="Movie recommendations" data-background-image="images/NMF_1.png"
+                        data-background-size="80%">
+                        <p style="position:fixed; bottom:1em; font-size:0.7em">Example from Luis Serrano</p>
+                    </section>
+                    <section data-menu-title="Similar movie preferences" data-background-image="images/NMF_2.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Similar movie plots" data-background-image="images/NMF_3.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Combine rows" data-background-image="images/NMF_4.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Average columns" data-background-image="images/NMF_5.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Finding unknown values" data-background-image="images/NMF_6.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Identify classifiers" data-background-image="images/NMF_7.png"
+                        data-background-size="80%">
+                    </section>
+                    <section data-menu-title="Flattening 2D array" data-background-image="images/USID_1.png"
+                        data-background-size="70%">
+                    </section>
+                    <section data-menu-title="Flattening 3D array" data-background-image="images/USID_2.png"
+                        data-background-size="70%">
+                    </section>
+                </section> <!-- End slide -->
+                <section>
+                    <h2>Results</h2>
+                    <section data-menu-title="NMF PL">
+                        <h3>PL NMF</h3>
+                        <figure>
+                            <img class="plain" src="images/nmf_pl_composite.png" alt="NMF spectral decomposition of PL map"/>
+                            <figcaption>NMF spectral decomposition of PL spectrum image</figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="NMF CL">
+                        <h3>CL NMF</h3>
+                        <figure>
+                            <img class="plain" src="images/nmf_cl_composite.png" alt="NMF spectral decomposition of CL map"/>
+                            <figcaption>NMF spectral decomposition of CL spectrum image</figcaption>
+                        </figure>
+                    </section>
+                    <section data-menu-title="NMF Line scan">
+                        <h3>High spatial-resolution line scan</h3>
+                        <figure style="width:70%; float:left">
+                            <img class="plain" src="images/linescan_composite.png" alt="CL spectra at 5nm increments along a line over a fold of hBN" width="950px"/>
+                            <svg class="fragment fade-out" data-fragment-index="1" style="position:absolute; bottom:105px; left:5px" width="600px"><rect width="650px" height="110px" style="fill:white"/></svg>
+                            <svg class="fragment fade-out" data-fragment-index="2" style="position:absolute; bottom:-5px; left:5px" width="600px"><rect width="650px" height="105px" style="fill:white"/></svg>
+                            <svg class="fragment fade-out" data-fragment-index="1" style="position:absolute; bottom:260px; left:605px" width="150px" height="400px"><rect width="150px" height="400px" style="fill:white"/></svg>
+                            <svg class="fragment fade-out" data-fragment-index="2" style="position:absolute; bottom:260px; left:755px" width="155px" height="400px"><rect width="155px" height="400px" style="fill:white"/></svg>
+                        </figure>
+                        <div style="width:30%; float:right">
+                            <dl>
+                                <dt class="fragment fade-in" data-fragment-index="1">Vertical projection</dt>
+                                <dd class="fragment fade-in" data-fragment-index="1">$I(\lambda)$</dd>
+                                <br/>
+                                <dt class="fragment fade-in" data-fragment-index="1">Horizontal projection</dt>
+                                <dd class="fragment fade-in" data-fragment-index="1">$I(x)$</dd>
+                            </dl>
+                        </div>
+                    </section>
+                </section>
+                <section data-menu-title="Conclusions">
+                    <h2>Academic contribution to society</h2>
+                    <dl>
+                        <dt>Existing problem</dt>
+                        <dd>Strain is known to enhance emission, but quantitative high-scale mapping of enhancement is desired.</dd>
+                        <dt>Our efforts</dt>
+                        <dd>CL mapping provides high-spatial resolution data.</dd>
+                        <dd>Secondary electrons provide proxy for enhancement.</dd>
+                        <dt>Lingering problems</dt>
+                        <dd>Need quantitative measure of strain.</dd>
+                        <dt>Future quests</dt>
+                        <dd><text class="my-gold">Compressive sensing</text>: under-sampling 3D dataset, using NMF to obtain spectral and spatial features for the missing data.</dd>
+                    </dl>
+                </section>
+                <section data-visibility="uncounted">
+                    <h3>Appendix</h3>
+                    <section data-background-image="images/appendix_NMF_PL.png"
+                        data-background-size="contain"
+                        data-visibility="uncounted">
+                    </section>
+                    <section data-background-image="images/appendix_NMF_CL.png"
+                        data-background-size="contain"
+                        data-visibility="uncounted">
+                    </section>
+                    <section data-background-image="images/appendix_linescan_2.png"
+                        data-background-size="contain"
+                        data-visibility="uncounted">
+                    </section>
+                </section>
+			</div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                center: false, /* vertical centering of slides */
+                width: "100%",
+                height: "100%",
+                slideNumber: true,
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Vanderbilt',
+                         theme: '../../dist/theme/vanderbilt_dark.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/index_info.html'
+                      },
+                    ]
+                },
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+				dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+				]
+			});
+		</script>
+	</body>
+</html>
+
