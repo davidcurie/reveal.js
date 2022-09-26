@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Quiz Shows</title>
+
+        <link rel="stylesheet" href="../../dist/reset.css">
+        <link rel="stylesheet" href="../../dist/reveal.css">
+        <script src="../../plugin/spreadsheet/ruleJS.all.full.min.js"></script>
+        <link rel="stylesheet" href="../../plugin/spreadsheet/spreadsheet.css">
+        <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+        <link rel="stylesheet" href="../../dist/theme/overrides.css">
+            
+        <!-- Quiz show specific themes -->
+        <link rel="stylesheet" href="quiz.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+            <section>
+                <h1>Deep Thought</h1>
+                <ul>
+                    <li>60 seconds to answer a question</li>
+                    <li>New clue given after 15 seconds for reduced points</li>
+                    <li>If you get a question wrong, the other team has a chance to steal the remaining points</li>
+                </ul>
+            </section>
+            <section>
+                <p>What do the following two images have in common?</p>
+                <div>
+                    <img src="images/test1.png" style='width:200px; float:left' alt=""/>
+                    <img src="images/test2.png" style='width:300px; float:right' alt=""/>
+                </div>
+                <ul>
+                    <li class='fragment'>The woman is Helena Bonham-Carter</li>
+                    <li class='fragment'>It's not a relational comparison</li>
+                    <li class='fragment'>It has to do with the names</li>
+                </ul>
+                <p class='fragment'>Double-barrelled
+            </section>
+
+            <section>
+                <p>What item of clothing is known in Japanese as a 'Sebiro'?</p>
+                <ul>
+                    <li class='fragment'>It has a London connection</li>
+                    <li class='fragment'>It's something to do with the sound of the word</li>
+                    <li class='fragment'>It has a connection to a specific street</li>
+                </ul>
+                <p class='fragment'>A business suit</p>
+            </section>
+
+            <section>
+                <p> In 2012, the Australian Broadcasting Company had to remove one of the episodes of 'Peppa Pig' from its library because of one
+                of the show's characters. However, the show continues to run in
+                the US. What was the problem?
+                </p>
+
+                <ul>
+                    <li class='fragment'>It involved Peppa Pig</li>
+                    <li class='fragment'>It involved something that can be found around the house</li>
+                    <li class='fragment'>It is a safety concern unique to Australia</li>
+                </ul>
+                <p class='fragment'>It showed Peppa being friendly with a spider</p>
+            </section>
+                    
+            <section>
+                <p> In some french villages, it is common to call upon the services of a 'Quatorzieme' at a dinner party or restaurant meal. Though likely unknown to
+                the group, it's thought to be preferable to feed a stranger than leave it to
+                luck. Why?
+                </p>
+                <ul>
+                    <li class='fragment'>It was carried over from a Gallic superstition</li>
+                    <li class='fragment'>It stems from Judas at the Last Supper</li>
+                    <li class='fragment'>'Quatorzieme' means 14th in French</li>
+                </ul>
+                <p class='fragment'>They are the 14th person, to avoid 13 at the table</p>
+            </section>
+
+            <section>
+                <p> In the 1910's, Brooklyn had streetcar trams on the city's roads, which proved to be an occupational hazard for pedestrians and the city. It was such a
+                feature of the city that they named a sports team after those pedestrians. And
+                though the team moved to the West Coast, they retained their nickname. Which
+                team?
+                </p>
+                <ul>
+                   <li class='fragment'>It's a baseball team</li>
+                   <li class='fragment'>It's a member of the National League</li>
+                   <li class='fragment'>They won the 2020 World Series</li>
+                </ul>
+               <p class='fragment'>The Los Angeles Dodgers</p>
+            </section>
+
+            <section>
+                <p> London's Millennium Concert and the wedding of Prince Charles and Lady Diana are just two of the major events that have required the laying of cables over
+                long distances through tiny underground tunnels. The engineers didn't have
+                poles that could push the wires through these long, twisty tunnels. What did
+                they do instead?
+                </p>
+                <ul>
+                   <li class='fragment'>Airplane mechanics also do this</li>
+                   <li class='fragment'>The solution does not involve human power</li>
+                   <li class='fragment'>It requires weeks of preparation before this method can be used</li>
+                </ul>
+                <p class='fragment'>They tied threads onto ferrets</p>
+            </section>
+
+        </section>
+
+        <section>
+            <section>
+                <h1>Second Thought</h1>
+                <ul>
+                    <li>All 12 words have exactly one thing in common</li>
+                    <li>Teams take turns picking and guessing</li>
+                    <li>Points decrease after each round</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class='grid-container'>
+                    <div class='question' onclick='toggleVisible("A1", "a1")'>
+                        <div class='label' id='a1'>1</div>
+                        <div class='answer hidden' id='A1'>
+                            Thursday in French
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A2", "a2")'>
+                        <div class='label' id='a2'>2</div>
+                        <div class='answer hidden' id='A2'>
+                            Famous Anticyclone
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A3", "a3")'>
+                        <div class='label' id='a3'>3</div>
+                        <div class='answer hidden' id='A3'>
+                            Zeus
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A4", "a4")'>
+                        <div class='label' id='a4'>4</div>
+                        <div class='answer hidden' id='A4'>
+                            Strong magnetic field
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A5", "a5")'>
+                        <div class='label' id='a5'>5</div>
+                        <div class='answer hidden' id='A5'>
+                            Largest of 8
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A6", "a6")'>
+                        <div class='label' id='a6'>6</div>
+                        <div class='answer hidden' id='A6'>
+                            Chief
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A7", "a7")'>
+                        <div class='label' id='a7'>7</div>
+                        <div class='answer hidden' id='A7'>
+                            By jove!
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A8", "a8")'>
+                        <div class='label' id='a8'>8</div>
+                        <div class='answer hidden' id='A8'>
+                            Roman army sybmol
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A9", "a9")'>
+                        <div class='label' id='a9'>9</div>
+                        <div class='answer hidden' id='A9'>
+                            Banded surface
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A10", "a10")'>
+                        <div class='label' id='a10'>10</div>
+                        <div class='answer hidden' id='A10'>
+                            Sam's fire engine
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A11", "a11")'>
+                        <div class='label' id='a11'>11</div>
+                        <div class='answer hidden' id='A11'>
+                            One of the giants
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("A12", "a12")'>
+                        <div class='label' id='a12'>12</div>
+                        <div class='answer hidden' id='A12'>
+                            Thunder and lightning
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class='grid-container'>
+                    <div class='question' onclick='toggleVisible("B1", "b1")'>
+                        <div class='label' id='b1'>1</div>
+                        <div class='answer hidden' id='B1'>
+                            Introduces a person and place
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B2", "b2")'>
+                        <div class='label' id='b2'>2</div>
+                        <div class='answer hidden' id='B2'>
+                            Rhymes
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B3", "b3")'>
+                        <div class='label' id='b3'>3</div>
+                        <div class='answer hidden' id='B3'>
+                            Parts 1, 2 & 5: similar ending
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B4", "b4")'>
+                        <div class='label' id='b4'>4</div>
+                        <div class='answer hidden' id='B4'>
+                            Funny
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B5", "b5")'>
+                        <div class='label' id='b5'>5</div>
+                        <div class='answer hidden' id='B5'>
+                            Spike Milligan
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B6", "b6")'>
+                        <div class='label' id='b6'>6</div>
+                        <div class='answer hidden' id='B6'>
+                            Anapaestic
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B7", "b7")'>
+                        <div class='label' id='b7'>7</div>
+                        <div class='answer hidden' id='B7'>
+                            13 feet in total
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B8", "b8")'>
+                        <div class='label' id='b8'>8</div>
+                        <div class='answer hidden' id='B8'>
+                            Irish county
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B9", "b9")'>
+                        <div class='label' id='b9'>9</div>
+                        <div class='answer hidden' id='B9'>
+                            Parts 3 & 4: similar ending
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B10", "b10")'>
+                        <div class='label' id='b10'>10</div>
+                        <div class='answer hidden' id='B10'>
+                            There was...
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B11", "b11")'>
+                        <div class='label' id='b11'>11</div>
+                        <div class='answer hidden' id='B11'>
+                            Sometimes rude
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("B12", "b12")'>
+                        <div class='label' id='b12'>12</div>
+                        <div class='answer hidden' id='B12'>
+                            'Book of Nonsense'
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class='grid-container'>
+                    <div class='question' onclick='toggleVisible("C1", "c1")'>
+                        <div class='label' id='c1'>1</div>
+                        <div class='answer hidden' id='C1'>
+                            Usually has two halves
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C2", "c2")'>
+                        <div class='label' id='c2'>2</div>
+                        <div class='answer hidden' id='C2'>
+                            Picnic item
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C3", "c3")'>
+                        <div class='label' id='c3'>3</div>
+                        <div class='answer hidden' id='C3'>
+                            Created by an earl
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C4", "c4")'>
+                        <div class='label' id='c4'>4</div>
+                        <div class='answer hidden' id='C4'>
+                            Early messageboard
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C5", "c5")'>
+                        <div class='label' id='c5'>5</div>
+                        <div class='answer hidden' id='C5'>
+                            Submarine
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C6", "c6")'>
+                        <div class='label' id='c6'>6</div>
+                        <div class='answer hidden' id='C6'>
+                            University course
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C7", "c7")'>
+                        <div class='label' id='c7'>7</div>
+                        <div class='answer hidden' id='C7'>
+                            Rueben
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C8", "c8")'>
+                        <div class='label' id='c8'>8</div>
+                        <div class='answer hidden' id='C8'>
+                            Kent
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C9", "c9")'>
+                        <div class='label' id='c9'>9</div>
+                        <div class='answer hidden' id='C9'>
+                            Victoria
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C10", "c10")'>
+                        <div class='label' id='c10'>10</div>
+                        <div class='answer hidden' id='C10'>
+                            Can have trimmed edges
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C11", "c11")'>
+                        <div class='label' id='c11'>11</div>
+                        <div class='answer hidden' id='C11'>
+                            Between two things
+                        </div>
+                    </div>
+                    <div class='question' onclick='toggleVisible("C12", "c12")'>
+                        <div class='label' id='c12'>12</div>
+                        <div class='answer hidden' id='C12'>
+                            Filling
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+			</div>
+		</div>
+
+        <script src="../../dist/reveal.js"></script>
+        <script src="../../plugin/notes/notes.js"></script>
+        <script src="../../plugin/markdown/markdown.js"></script>
+        <script src="../../plugin/highlight/highlight.js"></script>
+        <script src="../../plugin/math/math.js"></script>
+        <script src="../../plugin/search/search.js"></script>
+        <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+        <script src="toggle.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                slideNumber: true,
+                              
+                // For Latex math
+                math: {
+                  mathjax: '../../node_modules/mathjax/MathJax.js',
+                  config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                  // pass other options into `MathJax.Hub.Config()`
+                  TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+                              
+                // Slide out menu changes (press `m`)
+                menu: {
+                  numbers: true,
+                  useTextContentForMissingTitles: true,
+                  hideMissingTitles: true,
+                  openButton: false,
+                  openSlideNumber: true,
+                  themes:
+                   [
+                    {
+                        name: 'Auto',
+                        theme: '../../dist/theme/dynamic_white_black.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox.css'
+                    },
+                    {
+                        name: 'White',
+                        theme: '../../dist/theme/presentation_white.css',
+                        highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+                    },
+                    {
+                         name: 'Black',
+                         theme: '../../dist/theme/presentation_black.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                    {
+                         name: 'Vanderbilt',
+                         theme: '../../dist/theme/vanderbilt_dark.css',
+                         highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+                    },
+                   ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/index_info.html'
+                      },
+                    ]
+                },
+                plugins: [
+                      RevealMath,
+                      RevealMarkdown,
+                      RevealNotes,
+                      RevealHighlight,
+                      RevealSearch,
+                      RevealMenu,
+                ],
+				dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+				]
+			});
+		</script>
+	</body>
+</html>
