@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="David Curie">
+  <title>Quantum Applications</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../dist/reset.css">
+  <link rel="stylesheet" href="../../dist/reveal.css">
+  <link rel="stylesheet" href="../../dist/theme/dynamic_white_black.css" id="theme">
+  <link rel="stylesheet" href="../../dist/theme/overrides.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../../plugin/highlight/gruvbox.css" id="highlight-theme">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Quantum Applications</h1>
+  <p class="author">David Curie</p>
+</section>
+
+<section>
+<section id="motivation" class="title-slide slide level1">
+<h1>Motivation</h1>
+<blockquote>
+<p>There’s plenty of room at the bottom.</p>
+<p>– Richard Feynman, 1959</p>
+</blockquote>
+</section>
+<section id="quantum-supremacy" class="slide level2">
+<h2>Quantum Supremacy</h2>
+<p>Desired goals:</p>
+<ul>
+<li>Powerful, efficient, and fast computation</li>
+<li>Secure communication</li>
+</ul>
+<aside class="notes">
+<dl>
+<dt>Quantum supremacy</dt>
+<dd>
+Carry out tasks not possible or practical on a classical computer
+</dd>
+</dl>
+</aside>
+</section>
+<section id="section" class="slide level2"
+data-background-video="images/alice-bob-1.mov">
+<h2 data-background-video="images/alice-bob-1.mov"></h2>
+</section>
+<section id="section-1" class="slide level2"
+data-background-image="images/alice-bob-2.png">
+<h2 data-background-image="images/alice-bob-2.png"></h2>
+</section>
+<section id="section-2" class="slide level2"
+data-background-video="images/alice-bob-3.mov">
+<h2 data-background-video="images/alice-bob-3.mov"></h2>
+</section>
+<section id="rsa-encryption" class="slide level2">
+<h2>RSA Encryption</h2>
+<p><span class="math display">Encrypted key ∝ <em>k</em> × Private
+key × Public key</span></p>
+<ul>
+<li class="fragment"><mark>Security depends on how difficult it is to
+factor large prime numbers</mark></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>1999: RSA-512 took 8,400 MIPS years, or about 7 months</li>
+<li>2020: RSA-250 (250 decimal digits, 829 bits) was brute-forced in
+2,700 CPU years</li>
+<li>RSA-4096 is recommended standard today</li>
+</ul>
+</aside>
+</section>
+<section class="slide level2">
+
+<p>New attack vector:</p>
+<ul>
+<li>Store Now, Decrypt Later</li>
+</ul>
+<p>Solutions:</p>
+<ul>
+<li>Tamper-proof protocols</li>
+<li>Make factoring <em>REALLY</em> difficult</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>See Veritasium video for more details on latter part</li>
+<li>How Quantum Computers Break The Internet…Starting Now</li>
+<li>Ref: https://youtu.be/-UrdExQW0cs</li>
+</ul>
+</aside>
+</section>
+<section id="section-3" class="slide level2"
+data-background-video="images/alice-bob-4.mov">
+<h2 data-background-video="images/alice-bob-4.mov"></h2>
+<aside class="notes">
+<ul>
+<li>Theoretical max throughput is 0.5 of what you send</li>
+<li>After allowing for extra redundancy checks and error correction,
+actual throughput is closer to 0.3</li>
+<li>Entangled sources would bring the theoretical throughput closer to
+1</li>
+<li>Can already achieve this, but not for very far distances</li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="life-at-the-bottom" class="title-slide slide level1">
+<h1>Life at the bottom</h1>
+
+</section>
+<section id="decision-matrix" class="slide level2"
+data-transition="none">
+<h2 data-transition="none">Decision Matrix</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>I know how to get there</th>
+<th>I don’t know how to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I know where I’m going</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>I don’t know where I’m going</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-matrix-1" class="slide level2"
+data-transition="none">
+<h2 data-transition="none">Decision Matrix</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>I know how to get there</th>
+<th>I don’t know how to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I know where I’m going</strong></td>
+<td></td>
+<td>Journey</td>
+</tr>
+<tr class="even">
+<td><strong>I don’t know where I’m going</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-matrix-2" class="slide level2"
+data-transition="none">
+<h2 data-transition="none">Decision Matrix</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>I know how to get there</th>
+<th>I don’t know how to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I know where I’m going</strong></td>
+<td></td>
+<td>Journey</td>
+</tr>
+<tr class="even">
+<td><strong>I don’t know where I’m going</strong></td>
+<td>PhD</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-matrix-3" class="slide level2"
+data-transition="none">
+<h2 data-transition="none">Decision Matrix</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>I know how to get there</th>
+<th>I don’t know how to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I know where I’m going</strong></td>
+<td>Road trip</td>
+<td>Journey</td>
+</tr>
+<tr class="even">
+<td><strong>I don’t know where I’m going</strong></td>
+<td>PhD</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-matrix-4" class="slide level2"
+data-transition="none">
+<h2 data-transition="none">Decision Matrix</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 27%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>I know how to get there</th>
+<th>I don’t know how to get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>I know where I’m going</strong></td>
+<td>Road trip</td>
+<td>Journey</td>
+</tr>
+<tr class="even">
+<td><strong>I don’t know where I’m going</strong></td>
+<td>PhD</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="technology-overview" class="title-slide slide level1">
+<h1>Technology Overview</h1>
+
+</section>
+<section id="section-4" class="slide level2"
+data-background-image="images/diode-1.png">
+<h2 data-background-image="images/diode-1.png"></h2>
+</section>
+<section id="section-5" class="slide level2"
+data-background-image="images/diode-2.png">
+<h2 data-background-image="images/diode-2.png"></h2>
+</section>
+<section id="section-6" class="slide level2"
+data-background-image="images/diode-3.png">
+<h2 data-background-image="images/diode-3.png"></h2>
+</section>
+<section id="section-7" class="slide level2"
+data-background-video="images/diode-4.mov">
+<h2 data-background-video="images/diode-4.mov"></h2>
+</section>
+<section id="section-8" class="slide level2"
+data-background-image="images/diode-5.png">
+<h2 data-background-image="images/diode-5.png"></h2>
+</section>
+<section id="section-9" class="slide level2"
+data-background-image="images/diode-6.png">
+<h2 data-background-image="images/diode-6.png"></h2>
+</section>
+<section id="section-10" class="slide level2"
+data-background-image="images/diode-7.png">
+<h2 data-background-image="images/diode-7.png"></h2>
+</section>
+<section id="section-11" class="slide level2"
+data-background-image="images/diode-8.png">
+<h2 data-background-image="images/diode-8.png"></h2>
+</section>
+<section class="slide level2">
+
+<p>Scenario: I know where I’m going</p>
+<p>Do I know how to get there?</p>
+</section>
+<section id="section-12" class="slide level2"
+data-background-image="images/transitions-1.png">
+<h2 data-background-image="images/transitions-1.png"></h2>
+</section>
+<section id="section-13" class="slide level2"
+data-background-image="images/transitions-2.png">
+<h2 data-background-image="images/transitions-2.png"></h2>
+</section>
+<section id="section-14" class="slide level2"
+data-background-image="images/transitions-3.png">
+<h2 data-background-image="images/transitions-3.png"></h2>
+</section>
+<section id="section-15" class="slide level2"
+data-background-image="images/transitions-4.png">
+<h2 data-background-image="images/transitions-4.png"></h2>
+</section>
+<section id="section-16" class="slide level2"
+data-background-image="images/transitions-5.gif">
+<h2 data-background-image="images/transitions-5.gif"></h2>
+</section>
+<section id="section-17" class="slide level2"
+data-background-image="images/transitions-6.png">
+<h2 data-background-image="images/transitions-6.png"></h2>
+</section>
+<section class="slide level2">
+
+<p>Scenario: I know where I’m going, and I know how to get there</p>
+<p>Example: Engineering advancements</p>
+</section>
+<section id="section-18" class="slide level2"
+data-background-image="images/engineering-1.png">
+<h2 data-background-image="images/engineering-1.png"></h2>
+</section>
+<section id="section-19" class="slide level2"
+data-background-video="images/engineering-2.mov">
+<h2 data-background-video="images/engineering-2.mov"></h2>
+</section>
+<section id="section-20" class="slide level2"
+data-background-video="images/engineering-3.mov">
+<h2 data-background-video="images/engineering-3.mov"></h2>
+</section>
+<section id="section-21" class="slide level2"
+data-background-image="images/engineering-4.png">
+<h2 data-background-image="images/engineering-4.png"></h2>
+</section>
+<section id="section-22" class="slide level2"
+data-background-video="images/engineering-5.mov">
+<h2 data-background-video="images/engineering-5.mov"></h2>
+</section></section>
+<section>
+<section id="analytical-imaging" class="title-slide slide level1">
+<h1>Analytical Imaging</h1>
+
+</section>
+<section id="section-23" class="slide level2"
+data-background-image="images/measurement-1.png">
+<h2 data-background-image="images/measurement-1.png"></h2>
+</section>
+<section id="section-24" class="slide level2"
+data-background-image="images/measurement-2.png">
+<h2 data-background-image="images/measurement-2.png"></h2>
+</section>
+<section class="slide level2">
+
+<p>Scenario: I don’t know where I’m going, but I know how to move
+forward</p>
+</section>
+<section id="section-25" class="slide level2"
+data-background-image="images/analysis-1.png">
+<h2 data-background-image="images/analysis-1.png"></h2>
+</section>
+<section id="section-26" class="slide level2"
+data-background-image="images/analysis-2.png">
+<h2 data-background-image="images/analysis-2.png"></h2>
+</section>
+<section id="section-27" class="slide level2"
+data-background-image="images/analysis-3.png">
+<h2 data-background-image="images/analysis-3.png"></h2>
+</section>
+<section id="section-28" class="slide level2"
+data-background-image="images/analysis-4.png">
+<h2 data-background-image="images/analysis-4.png"></h2>
+</section>
+<section id="section-29" class="slide level2"
+data-background-image="images/analysis-5.png">
+<h2 data-background-image="images/analysis-5.png"></h2>
+</section>
+<section id="section-30" class="slide level2"
+data-background-image="images/analysis-6.png">
+<h2 data-background-image="images/analysis-6.png"></h2>
+</section>
+<section id="section-31" class="slide level2"
+data-background-image="images/analysis-7.png">
+<h2 data-background-image="images/analysis-7.png"></h2>
+</section>
+<section id="section-32" class="slide level2"
+data-background-image="images/analysis-8.png">
+<h2 data-background-image="images/analysis-8.png"></h2>
+</section>
+<section id="section-33" class="slide level2"
+data-background-image="images/analysis-9.png">
+<h2 data-background-image="images/analysis-9.png"></h2>
+</section>
+<section id="section-34" class="slide level2"
+data-background-image="images/analysis-10.png">
+<h2 data-background-image="images/analysis-10.png"></h2>
+</section>
+<section id="section-35" class="slide level2"
+data-background-image="images/analysis-11.png">
+<h2 data-background-image="images/analysis-11.png"></h2>
+</section>
+<section id="section-36" class="slide level2"
+data-background-image="images/analysis-12.png">
+<h2 data-background-image="images/analysis-12.png"></h2>
+</section>
+<section class="slide level2">
+
+<p>Scenario: I know where I am</p>
+</section>
+<section id="section-37" class="slide level2"
+data-background-image="images/hbt-1.png">
+<h2 data-background-image="images/hbt-1.png"></h2>
+</section>
+<section id="section-38" class="slide level2"
+data-background-image="images/hbt-2.png">
+<h2 data-background-image="images/hbt-2.png"></h2>
+</section>
+<section id="section-39" class="slide level2"
+data-background-image="images/hbt-3.png">
+<h2 data-background-image="images/hbt-3.png"></h2>
+</section>
+<section id="section-40" class="slide level2"
+data-background-image="images/hbt-4.png">
+<h2 data-background-image="images/hbt-4.png"></h2>
+</section>
+<section id="section-41" class="slide level2"
+data-background-image="images/hbt-5.png">
+<h2 data-background-image="images/hbt-5.png"></h2>
+</section></section>
+<section id="conclusions" class="title-slide slide level1">
+<h1>Conclusions</h1>
+<p>Skills you can bring to the table:</p>
+<ul>
+<li>Math (Encryption algorithms)</li>
+<li>Theoretical physics (Encryption mechanisms)</li>
+<li>Experimental physics (Protocol testing)</li>
+<li>Nanoscale engineering and materials science</li>
+<li>Automation</li>
+<li>Data analysis</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="../../dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="../../plugin/notes/notes.js"></script>
+  <script src="../../plugin/markdown/markdown.js"></script>
+  <script src="../../plugin/highlight/highlight.js"></script>
+  <script src="../../plugin/search/search.js"></script>
+  <script src="../../plugin/zoom/zoom.js"></script>
+  <script src="../../plugin/math/math.js"></script>
+  <script src="../../node_modules/reveal.js-menu/menu.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: '',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+        menu: {
+          numbers: true,
+          useTextContentForMissingTitles: true,
+          hideMissingTitles: true,
+          openButton: false,
+          openSlideNumber: true,
+          themes:
+           [
+            {
+                name: 'Auto',
+                theme: '../../dist/theme/dynamic_white_black.css',
+                highlightTheme: '../../plugin/highlight/gruvbox.css'
+            },
+            {
+                name: 'White',
+                theme: '../../dist/theme/presentation_white.css',
+                highlightTheme: '../../plugin/highlight/gruvbox-light.css'
+            },
+            {
+                 name: 'Black',
+                 theme: '../../dist/theme/presentation_black.css',
+                 highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+            },
+            {
+                 name: 'Vanderbilt',
+                 theme: '../../dist/theme/vanderbilt_dark.css',
+                 highlightTheme: '../../plugin/highlight/gruvbox-dark.css'
+            },
+           ],
+
+                    custom: [
+                      {
+                        title: 'Info',
+                        icon: '<i class="fa fa-info">',
+                        src: 'menu/index_info.html'
+                      },
+                    ]
+                },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealMarkdown,
+          RevealNotes,
+          RevealHighlight,
+          RevealSearch,
+          RevealMenu,
+        ],
+        dependencies: [
+                    { src: '../../plugin/skip-fragments/skip-fragments.js' },
+                    // For inserting external .html reveal slides/conent
+                     {
+                         src: '../../plugin/external/external.js',
+                         condition: function() {
+                             return !!document.querySelector( '[data-external],[data-external-replace]' );
+                         }
+                     },
+                    { src: '../../plugin/jump/jump.js', async: true }, // Jump navigation
+                    { src: '../../plugin/screenfull/screenfull.min.js' }, // Fullscreen API
+        ]
+      });
+    </script>
+    </body>
+</html>
