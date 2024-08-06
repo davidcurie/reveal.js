@@ -32,9 +32,9 @@
   --heading-text-shadow: none;
   --heading-font-weight: normal;
   --heading1-text-shadow: none;
-  --heading1-size: 3.77em;
-  --heading2-size: 2.11em;
-  --heading3-size: 1.55em;
+  --heading1-size: 2.55em;
+  --heading2-size: 1.55em;
+  --heading3-size: 1.22em;
   --heading4-size: 1em;
   --code-font: monospace;
 /*  --link-color: #e7ad52;*/
@@ -92,22 +92,22 @@
 .reveal h1 {
   color: #D8AB4C;
 /*  font-size: 3.77em; */
-  font-size: 2.5em;
+  font-size: 2.55em;
   text-shadow: none; }
 
 .reveal h2 {
   color: #DDB562;
 /*  font-size: 2.11em; }*/
-  font-size: 1.5em; }
+  font-size: 1.55em; }
 
 .reveal h3 {
   color: #E2C079;
 /*  font-size: 1.55em; }*/
-  font-size: 1.0em; }
+  font-size: 1.22em; }
 
 .reveal h4 {
   color: #E7CA8F;
-  font-size: 0.8em; }
+  font-size: 1.11emem; }
 
 .reveal h5 {
   color: #ECD5A6;
@@ -437,4 +437,18 @@
     color:#f8e4cc;
     fill:#f4d6bc;
     stroke:#f8e4cc;
+}
+
+.small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.1em;
+  vertical-align: top;
+}
+
+.smaller {
+  display: inline-block;
+  font-size: 0.4em;
+  line-height: 1.0em;
+  vertical-align: top;
 }
