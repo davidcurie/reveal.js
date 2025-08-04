@@ -218,3 +218,20 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     display: inline; }
 
 
+/******************************
+ ** Custom classes
+ ******************************/
+
+.small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.1em;
+  vertical-align: top;
+}
+
+.smaller {
+  display: inline-block;
+  font-size: 0.4em;
+  line-height: 1.0em;
+  vertical-align: top;
+}
